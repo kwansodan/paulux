@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* --- Paulux design tokens ---------------------------------------------------
+   Brand palette (deck): #31184b royal purple, #2b0217 plum, #7e4197 orchid,
+   #8039e7 violet, #e9dfdd blush ivory, #cee7b4 sage, #162022 charcoal.
+   Colors are authored in sRGB hex for fidelity to the brand guide. */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* brand-specific extras */
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-orchid: var(--orchid);
+  --color-sage: var(--sage);
+  --color-sage-foreground: var(--sage-foreground);
+
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces Variable", ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --shadow-soft: 0 1px 2px rgba(43, 2, 23, 0.04), 0 8px 24px -12px rgba(49, 24, 75, 0.14);
+  --shadow-lift: 0 2px 4px rgba(43, 2, 23, 0.05), 0 18px 40px -16px rgba(49, 24, 75, 0.22);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Light — airy warm ivory ground, deep-purple ink */
+  --background: #faf6f3;
+  --foreground: #1b1220;
+  --card: #fffdfb;
+  --card-foreground: #1b1220;
+  --popover: #fffdfb;
+  --popover-foreground: #1b1220;
+
+  --primary: #31184b;
+  --primary-foreground: #f6efe9;
+
+  --secondary: #efe6e2;
+  --secondary-foreground: #31184b;
+
+  --muted: #efe6e2;
+  --muted-foreground: #6f6270;
+
+  --accent: #8039e7;
+  --accent-foreground: #ffffff;
+
+  --destructive: #b4243a;
+
+  --border: #e5d9d4;
+  --input: #e5d9d4;
+  --ring: #8039e7;
+
+  --brand: #31184b;
+  --brand-foreground: #f6efe9;
+  --orchid: #7e4197;
+  --sage: #cee7b4;
+  --sage-foreground: #2f4420;
+}
+
+.dark {
+  /* Dark — deep plum ground, lavender highlights */
+  --background: #1a0d16;
+  --foreground: #efe6e2;
+  --card: #271227;
+  --card-foreground: #efe6e2;
+  --popover: #271227;
+  --popover-foreground: #efe6e2;
+
+  --primary: #d8c2f2;
+  --primary-foreground: #241038;
+
+  --secondary: #33203a;
+  --secondary-foreground: #efe6e2;
+
+  --muted: #33203a;
+  --muted-foreground: #b7a7bd;
+
+  --accent: #a06bf0;
+  --accent-foreground: #1a0d16;
+
+  --destructive: #f0637a;
+
+  --border: rgba(239, 230, 226, 0.12);
+  --input: rgba(239, 230, 226, 0.16);
+  --ring: #a06bf0;
+
+  --brand: #d8c2f2;
+  --brand-foreground: #241038;
+  --orchid: #b98fd0;
+  --sage: #cee7b4;
+  --sage-foreground: #2f4420;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .tracking-luxe { letter-spacing: 0.18em; }
+  /* Soft brand wash for hero / feature sections */
+  .bg-brand-wash {
+    background:
+      radial-gradient(120% 120% at 15% 0%, rgba(128, 57, 231, 0.20), transparent 55%),
+      radial-gradient(120% 120% at 100% 20%, rgba(126, 65, 151, 0.18), transparent 50%),
+      linear-gradient(160deg, #31184b 0%, #2b0217 100%);
+  }
+}

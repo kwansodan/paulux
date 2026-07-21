@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="font-family:Georgia,serif;font-size:24px;font-weight:500;margin:0 0 8px;">{{ heading }}</h1>
+<p style="color:#6f6270;margin:0 0 20px;">{{ message }}</p>
+<table style="width:100%;font-size:14px;">
+  <tr><td style="padding:6px 0;color:#6f6270;">Reference</td><td style="padding:6px 0;text-align:right;font-family:monospace;">{{ reference }}</td></tr>
+  <tr><td style="padding:6px 0;color:#6f6270;">Appointment</td><td style="padding:6px 0;text-align:right;">{{ date }} at {{ time }}</td></tr>
+</table>
+{% endblock %}

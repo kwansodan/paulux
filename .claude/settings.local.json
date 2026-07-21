@@ -31,7 +31,8 @@
       "Bash(mkdir -p \"C:/Users/DLP USER/Documents/polaris-live/polaris/next_polaris/src/app/api/product-categories/[id]\")",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git rm *)"
     ]
   }
 }

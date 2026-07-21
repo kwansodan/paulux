@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="font-family:Georgia,serif;font-size:22px;font-weight:500;margin:0 0 8px;">Low stock alert</h1>
+<p style="color:#6f6270;margin:0 0 16px;">A product has reached its low-stock threshold.</p>
+<table style="width:100%;font-size:14px;">
+  <tr><td style="padding:6px 0;color:#6f6270;">Product</td><td style="padding:6px 0;text-align:right;font-weight:600;">{{ product_name }}</td></tr>
+  <tr><td style="padding:6px 0;color:#6f6270;">Remaining</td><td style="padding:6px 0;text-align:right;">{{ stock }}{% if stock == 0 %} (out of stock){% endif %}</td></tr>
+</table>
+{% endblock %}

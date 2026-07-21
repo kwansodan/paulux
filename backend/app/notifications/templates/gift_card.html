@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="font-family:Georgia,serif;font-size:24px;font-weight:500;margin:0 0 8px;">You've received a gift</h1>
+<p style="color:#6f6270;margin:0 0 20px;">{{ sender_name }} has sent you a Paulux gift card.</p>
+{% if personal_message %}
+<p style="font-style:italic;color:#31184b;border-left:3px solid #8039e7;padding-left:12px;margin:0 0 20px;">"{{ personal_message }}"</p>
+{% endif %}
+<div style="text-align:center;background:#31184b;color:#f6efe9;border-radius:14px;padding:24px;">
+  <div style="font-size:12px;letter-spacing:.15em;text-transform:uppercase;opacity:.7;">Gift card</div>
+  <div style="font-family:monospace;font-size:26px;margin:8px 0;">{{ code }}</div>
+  <div style="font-size:18px;">GHS {{ amount }}</div>
+</div>
+{% endblock %}

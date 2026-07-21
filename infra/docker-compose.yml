@@ -1,0 +1,85 @@
+# Paulux — backend stack for the VPS (deployed via Komodo).
+#
+# The SPA is hosted on Vercel at <tenant>.<APP_BASE_DOMAIN>; this stack serves
+# only api.<APP_BASE_DOMAIN> and files.<APP_BASE_DOMAIN>. Both are single
+# hostnames, so Caddy gets certs over HTTP-01 with the stock image.
+#
+# Bring up:  docker compose --env-file .env up -d --build
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-paulux}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB:-paulux}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-paulux}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+  minio:
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:?set MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?set MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio_data:/data
+
+  api:
+    build: ../backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      RUN_MIGRATIONS: "1"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  worker:
+    build: ../backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      RUN_MIGRATIONS: "0"
+    command: ["celery", "-A", "celery_worker.celery", "worker", "--loglevel=info"]
+    depends_on:
+      - api
+      - redis
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      APP_BASE_DOMAIN: ${APP_BASE_DOMAIN}
+      ACME_EMAIL: ${ACME_EMAIL}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+      - minio
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+  caddy_data:
+  caddy_config:

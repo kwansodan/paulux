@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="font-family:Georgia,serif;font-size:24px;font-weight:500;margin:0 0 8px;">Payment received</h1>
+<p style="color:#6f6270;margin:0 0 20px;">Thank you — we've received your payment.</p>
+<table style="width:100%;font-size:14px;">
+  <tr><td style="padding:6px 0;color:#6f6270;">Amount</td><td style="padding:6px 0;text-align:right;font-weight:600;">GHS {{ amount }}</td></tr>
+  <tr><td style="padding:6px 0;color:#6f6270;">Booking</td><td style="padding:6px 0;text-align:right;font-family:monospace;">{{ reference }}</td></tr>
+  {% if invoice_number %}<tr><td style="padding:6px 0;color:#6f6270;">Invoice</td><td style="padding:6px 0;text-align:right;">{{ invoice_number }}</td></tr>{% endif %}
+</table>
+{% endblock %}

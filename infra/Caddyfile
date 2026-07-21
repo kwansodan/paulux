@@ -1,0 +1,34 @@
+# Paulux — API edge. The SPA is hosted on Vercel; this server serves only the
+# API and the object store, so both are single hostnames and plain HTTP-01
+# works. No wildcard cert, no DNS plugin, no custom Caddy build.
+#
+# Tenants are NOT derived from this Host (it is always api.<domain>, a reserved
+# label). The SPA sends the tenant in the X-Tenant-Slug header; see
+# backend/app/tenancy.py.
+
+{
+	email {$ACME_EMAIL}
+}
+
+api.{$APP_BASE_DOMAIN} {
+	reverse_proxy api:5000
+
+	encode gzip zstd
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+}
+
+# Object storage. The browser PUTs here directly against a presigned URL and
+# reads uploaded images back, so it must be publicly reachable over TLS.
+# Set MINIO_PUBLIC_URL=https://files.<domain> in the API environment.
+files.{$APP_BASE_DOMAIN} {
+	reverse_proxy minio:9000
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+	}
+}
