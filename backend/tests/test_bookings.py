@@ -1,7 +1,13 @@
 """Bookings: public creation, snapshots, promo math, transitions, isolation."""
 from __future__ import annotations
 
+from datetime import date, timedelta
+
 from tests.conftest import PASSWORD, _host
+
+# A comfortably-future date so bookings are never rejected as past. Computed at
+# run time (not hardcoded) so the suite doesn't rot as the calendar advances.
+FUTURE_DATE = (date.today() + timedelta(days=30)).isoformat()
 
 
 def _login_client(client, slug):
@@ -39,7 +45,7 @@ def _client_payload(service_id, **overrides):
         "clientName": "Ama Mensah",
         "clientEmail": "ama@customer.example.com",
         "clientPhone": "+233201234567",
-        "bookingDate": "2026-08-01",
+        "bookingDate": FUTURE_DATE,
         "bookingTime": "10:30",
         "services": [{"serviceId": service_id, "quantity": 1}],
         "termsAccepted": True,

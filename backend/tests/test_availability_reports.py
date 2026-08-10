@@ -2,8 +2,29 @@
 from __future__ import annotations
 
 import uuid
+from datetime import date, timedelta
 
 from tests.conftest import PASSWORD, _host
+
+# Availability rules are weekday/past-date sensitive, so dates are computed
+# relative to today (Python weekday: Mon=0 … Sun=6) rather than hardcoded — a
+# fixed date silently rots into "the past" and breaks the suite.
+_TODAY = date.today()
+
+
+def _upcoming(weekday: int) -> date:
+    """The next date on the given weekday, at least a week out (clear of today)."""
+    d = _TODAY + timedelta(days=7)
+    while d.weekday() != weekday:
+        d += timedelta(days=1)
+    return d
+
+
+PAST_DATE = (_TODAY - timedelta(days=30)).isoformat()
+SUNDAY = _upcoming(6).isoformat()      # closed day
+MONDAY = _upcoming(0).isoformat()      # open weekday used for the valid slots
+BLOCKED_DATE = (_upcoming(0) + timedelta(days=7)).isoformat()  # a later open Monday, blocked
+FUTURE_DATE = (_TODAY + timedelta(days=40)).isoformat()        # for admin bookings
 
 
 def _login_client(client, slug):
@@ -48,40 +69,40 @@ def test_availability_rules(app):
     hours = [{"dayOfWeek": d, "startTime": "09:00", "endTime": "17:00",
               "isOpen": d != 0, "maxConcurrentBookings": 1} for d in range(7)]
     assert zen.put("/api/business-hours", json={"hours": hours}, headers=h).status_code == 200
-    # Block 2026-08-07 fully
-    assert zen.post("/api/blocked-dates", json={"date": "2026-08-07", "reason": "Maintenance"},
+    # Block a future open Monday fully
+    assert zen.post("/api/blocked-dates", json={"date": BLOCKED_DATE, "reason": "Maintenance"},
                     headers=h).status_code == 201
 
     # Past date rejected
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-01-01", "10:00"), headers=pub_h)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, PAST_DATE, "10:00"), headers=pub_h)
     assert r.status_code == 422
 
     # Blocked date rejected
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-08-07", "10:00"), headers=pub_h)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, BLOCKED_DATE, "10:00"), headers=pub_h)
     assert r.status_code == 422
 
-    # Sunday (2026-08-02) rejected
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-08-02", "10:00"), headers=pub_h)
+    # Sunday rejected (closed)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, SUNDAY, "10:00"), headers=pub_h)
     assert r.status_code == 422
 
-    # Outside hours rejected (Monday 2026-08-03 at 20:00)
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-08-03", "20:00"), headers=pub_h)
+    # Outside hours rejected (open weekday at 20:00)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, MONDAY, "20:00"), headers=pub_h)
     assert r.status_code == 422
 
     # Valid slot accepted
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-08-03", "10:00"), headers=pub_h)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, MONDAY, "10:00"), headers=pub_h)
     assert r.status_code == 201, r.get_json()
 
     # Same slot again: capacity 1 -> full
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-08-03", "10:00"), headers=pub_h)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, MONDAY, "10:00"), headers=pub_h)
     assert r.status_code == 422
     # Different time is fine
-    r = anon.post("/api/bookings/public", json=_public_payload(svc, "2026-08-03", "11:00"), headers=pub_h)
+    r = anon.post("/api/bookings/public", json=_public_payload(svc, MONDAY, "11:00"), headers=pub_h)
     assert r.status_code == 201
 
     # Admin walk-ins bypass availability (blocked date allowed via admin)
     r = zen.post("/api/bookings",
-                 json={**_public_payload(svc, "2026-08-07", "10:00"), "bookingType": "WALKIN"},
+                 json={**_public_payload(svc, BLOCKED_DATE, "10:00"), "bookingType": "WALKIN"},
                  headers=h)
     assert r.status_code == 201
 
@@ -91,7 +112,7 @@ def test_invoices_issued_for_payments(app):
     token = _login_client(acme, "acme")
     h = {"Host": _host("acme"), "X-CSRF-Token": token}
     svc = _mk_service(acme, h)
-    r = acme.post("/api/bookings", json=_public_payload(svc, "2026-09-10", "10:00"), headers=h)
+    r = acme.post("/api/bookings", json=_public_payload(svc, FUTURE_DATE, "10:00"), headers=h)
     booking_id = r.get_json()["data"]["id"]
 
     r = acme.post("/api/payments/manual-methods",
