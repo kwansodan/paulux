@@ -1,7 +1,11 @@
-"""Marketing domain: promo codes. (Gift cards join this module later.)
+"""Marketing domain: promo codes and standalone-interest leads.
 
 Port of Prisma `PromoCode`; the old global-unique `code` becomes unique per
 tenant so two salons can both run "WELCOME10".
+
+`Lead` is different: it's captured at the apex (no tenant), so it does NOT use
+``TenantMixin`` — a prospect asking for a standalone/own-domain deployment has
+no organization yet.
 """
 from __future__ import annotations
 
@@ -17,6 +21,7 @@ from sqlalchemy import (
     Integer,
     Numeric,
     String,
+    Text,
     UniqueConstraint,
 )
 from sqlalchemy.orm import Mapped, mapped_column
@@ -28,6 +33,24 @@ from app.models.base import TenantMixin, TimestampMixin, UUIDPkMixin
 class DiscountType(enum.Enum):
     PERCENTAGE = "PERCENTAGE"
     FIXED = "FIXED"
+
+
+class Lead(UUIDPkMixin, TimestampMixin, db.Model):
+    """A standalone/own-domain sales enquiry from the marketing site. Apex-scoped
+    (no organization) — ops follows up manually."""
+
+    __tablename__ = "leads"
+    __table_args__ = (Index("ix_leads_created_at", "created_at"),)
+
+    name: Mapped[str] = mapped_column(String(120), nullable=False)
+    business_name: Mapped[str] = mapped_column(String(200), nullable=False)
+    email: Mapped[str] = mapped_column(String(255), nullable=False)
+    phone: Mapped[str | None] = mapped_column(String(40))
+    city: Mapped[str | None] = mapped_column(String(120))
+    team_size: Mapped[int | None] = mapped_column(Integer)
+    message: Mapped[str | None] = mapped_column(Text)
+    # "new" | "contacted" | "closed" — ops workflow, defaults to new.
+    status: Mapped[str] = mapped_column(String(20), default="new", nullable=False)
 
 
 class PromoCode(UUIDPkMixin, TimestampMixin, TenantMixin, db.Model):

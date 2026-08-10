@@ -19,7 +19,7 @@ from app.models.gift_card import (
     GiftCardStatus,
 )
 from app.models.invoice import Invoice
-from app.models.marketing import DiscountType, PromoCode
+from app.models.marketing import DiscountType, Lead, PromoCode
 from app.models.schedule import BlockedDate, BusinessHour, SystemSetting
 from app.models.style_image import StyleImage
 from app.models.payment import (
@@ -60,6 +60,7 @@ __all__ = [
     "StockMovementType",
     "PromoCode",
     "DiscountType",
+    "Lead",
     "Booking",
     "BookingServiceItem",
     "BookingProductItem",

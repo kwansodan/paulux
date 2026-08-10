@@ -20,6 +20,7 @@ import BookingLookupPage from "@/pages/customer/BookingLookupPage";
 import GiftCardPurchasePage from "@/pages/customer/GiftCardPurchasePage";
 import PayCallbackPage from "@/pages/customer/PayCallbackPage";
 import SignupPage from "@/pages/customer/SignupPage";
+import StandalonePage from "@/pages/customer/StandalonePage";
 import { ForgotPasswordPage, ResetPasswordPage } from "@/pages/PasswordResetPages";
 import { TermsPage, PrivacyPage } from "@/pages/legal/LegalPages";
 import { NotFoundPage, UnauthorizedPage } from "@/pages/StatusPages";
@@ -55,6 +56,7 @@ export default function App() {
         <Route path={paths.book} element={<BookPage />} />
         <Route path={paths.bookingLookup} element={<BookingLookupPage />} />
         <Route path={paths.giftCards} element={<GiftCardPurchasePage />} />
+        <Route path={paths.standalone} element={<StandalonePage />} />
         <Route path={paths.payCallback} element={<PayCallbackPage />} />
         <Route path={paths.terms} element={<TermsPage />} />
         <Route path={paths.privacy} element={<PrivacyPage />} />

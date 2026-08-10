@@ -60,6 +60,7 @@ def create_app(settings: Settings | None = None) -> Flask:
         SMS_BACKEND=settings.resolved_sms_backend,
         RESEND_API_KEY=settings.resend_api_key,
         EMAIL_FROM=settings.email_from,
+        OPS_EMAIL=settings.ops_email,
         ARKESEL_API_KEY=settings.arkesel_api_key,
         ARKESEL_SENDER=settings.arkesel_sender,
     )

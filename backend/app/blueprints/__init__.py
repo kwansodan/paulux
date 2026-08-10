@@ -12,6 +12,7 @@ def register_blueprints(app: Flask) -> None:
     from app.blueprints.gift_cards import bp as gift_cards_bp
     from app.blueprints.health import bp as health_bp
     from app.blueprints.inventory import bp as inventory_bp
+    from app.blueprints.leads import bp as leads_bp
     from app.blueprints.org_settings import bp as org_settings_bp
     from app.blueprints.payments import bp as payments_bp
     from app.blueprints.promo_codes import bp as promo_codes_bp
@@ -38,3 +39,4 @@ def register_blueprints(app: Flask) -> None:
     app.register_blueprint(style_images_bp)
     app.register_blueprint(signup_bp)
     app.register_blueprint(billing_bp)
+    app.register_blueprint(leads_bp)

@@ -8,6 +8,7 @@ export const paths = {
   payCallback: "/pay/callback",
   terms: "/terms",
   privacy: "/privacy",
+  standalone: "/standalone",
 
   // Auth
   login: "/login",

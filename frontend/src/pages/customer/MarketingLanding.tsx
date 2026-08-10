@@ -5,6 +5,7 @@ import {
   CalendarCheck,
   CreditCard,
   Gift,
+  Globe,
   Palette,
   TrendingUp,
   Users,
@@ -20,7 +21,13 @@ interface Plan {
   id: string;
   name: string;
   price: number;
+  unit?: string;
+  perSeat?: boolean;
   features: string[];
+}
+
+function formatPrice(price: number): string {
+  return price === 0 ? "Free" : `GHS ${price.toFixed(2)}`;
 }
 
 const FEATURES: { icon: LucideIcon; title: string; body: string }[] = [
@@ -65,17 +72,63 @@ export default function MarketingLanding() {
             </Button>
             <Button asChild size="lg" variant="outline"
                     className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-              <Link to={paths.login}>Sign in</Link>
+              <Link to={paths.standalone}>Get your own domain</Link>
             </Button>
           </div>
           <p className="text-primary-foreground/50 text-xs tracking-wide">
-            14-day free trial · no credit card required
+            30-day free trial · no credit card required
           </p>
         </Container>
       </section>
 
-      {/* Features */}
+      {/* Two ways to run on Paulux */}
       <Container className="py-24">
+        <div className="mb-12 text-center">
+          <p className="text-accent text-xs tracking-luxe uppercase">Two ways to run on Paulux</p>
+          <h2 className="font-serif mt-2 text-3xl">Choose the home that fits you</h2>
+        </div>
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          {/* Shared */}
+          <div className="bg-card flex flex-col gap-4 rounded-2xl border border-border/70 p-8 shadow-[var(--shadow-soft)]">
+            <span className="bg-accent/10 text-accent flex size-11 items-center justify-center rounded-xl">
+              <Users className="size-5" />
+            </span>
+            <h3 className="font-serif text-2xl">Shared workspace</h3>
+            <p className="text-muted-foreground text-sm">
+              Your own branded page on a Paulux subdomain — <span className="whitespace-nowrap">yoursalon.paulux.app</span>.
+              Start in minutes on a subscription, with a 30-day free trial.
+            </p>
+            <ul className="text-muted-foreground flex flex-col gap-2 text-sm">
+              <li className="flex items-start gap-2"><Check className="text-accent mt-0.5 size-4 shrink-0" /> Live in minutes, self-serve</li>
+              <li className="flex items-start gap-2"><Check className="text-accent mt-0.5 size-4 shrink-0" /> From GHS 41.95 /member/mo</li>
+            </ul>
+            <Button asChild className="mt-auto">
+              <Link to={paths.signup}>Sign up <ArrowRight className="size-4" /></Link>
+            </Button>
+          </div>
+          {/* Standalone */}
+          <div className="bg-card flex flex-col gap-4 rounded-2xl border border-accent p-8 shadow-[var(--shadow-lift)]">
+            <span className="bg-accent/10 text-accent flex size-11 items-center justify-center rounded-xl">
+              <Globe className="size-5" />
+            </span>
+            <h3 className="font-serif text-2xl">Standalone</h3>
+            <p className="text-muted-foreground text-sm">
+              Your own domain and a dedicated deployment — fully independent and
+              branded end to end. Sales-led, with hands-on onboarding.
+            </p>
+            <ul className="text-muted-foreground flex flex-col gap-2 text-sm">
+              <li className="flex items-start gap-2"><Check className="text-accent mt-0.5 size-4 shrink-0" /> Your own domain, not a subdomain</li>
+              <li className="flex items-start gap-2"><Check className="text-accent mt-0.5 size-4 shrink-0" /> Isolated, dedicated setup</li>
+            </ul>
+            <Button asChild variant="outline" className="mt-auto">
+              <Link to={paths.standalone}>Request access</Link>
+            </Button>
+          </div>
+        </div>
+      </Container>
+
+      {/* Features */}
+      <Container className="pb-24">
         <div className="mb-12 text-center">
           <p className="text-accent text-xs tracking-luxe uppercase">Everything you need</p>
           <h2 className="font-serif mt-2 text-3xl">One home for your whole business</h2>
@@ -120,38 +173,53 @@ export default function MarketingLanding() {
       {/* Pricing */}
       <Container className="py-24">
         <div className="mb-12 text-center">
-          <p className="text-accent text-xs tracking-luxe uppercase">Pricing</p>
+          <p className="text-accent text-xs tracking-luxe uppercase">Shared workspace pricing</p>
           <h2 className="font-serif mt-2 text-3xl">Simple plans that grow with you</h2>
+          <p className="text-muted-foreground mx-auto mt-3 max-w-md text-sm">
+            Every plan starts with a 30-day free trial — no card required.
+          </p>
         </div>
-        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
-          {(plans.data ?? []).map((p, i) => (
-            <div key={p.id}
-                 className={`flex flex-col gap-4 rounded-2xl border p-6 ${i === 1 ? "border-accent shadow-[var(--shadow-lift)]" : "border-border/70 shadow-[var(--shadow-soft)]"}`}>
-              {i === 1 && (
-                <span className="bg-accent text-accent-foreground w-fit rounded-full px-3 py-0.5 text-xs">
-                  Most popular
-                </span>
-              )}
-              <div>
-                <h3 className="font-serif text-2xl">{p.name}</h3>
-                <p className="mt-1 text-3xl font-medium">
-                  {p.price === 0 ? "Free" : `GHS ${p.price}`}
-                  {p.price !== 0 && <span className="text-muted-foreground text-sm font-normal">/mo</span>}
-                </p>
+        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
+          {(plans.data ?? []).map((p) => {
+            const popular = p.id === "team";
+            return (
+              <div key={p.id}
+                   className={`flex flex-col gap-4 rounded-2xl border p-6 ${popular ? "border-accent shadow-[var(--shadow-lift)]" : "border-border/70 shadow-[var(--shadow-soft)]"}`}>
+                {popular && (
+                  <span className="bg-accent text-accent-foreground w-fit rounded-full px-3 py-0.5 text-xs">
+                    Most popular
+                  </span>
+                )}
+                <div>
+                  <h3 className="font-serif text-2xl">{p.name}</h3>
+                  <p className="mt-1 text-3xl font-medium">
+                    {formatPrice(p.price)}
+                    {p.price !== 0 && (
+                      <span className="text-muted-foreground text-sm font-normal">{p.unit ?? "/mo"}</span>
+                    )}
+                  </p>
+                </div>
+                <ul className="flex flex-col gap-2 text-sm">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <Check className="text-accent mt-0.5 size-4 shrink-0" /> {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild variant={popular ? "default" : "outline"} className="mt-auto">
+                  <Link to={paths.signup}>Start free trial</Link>
+                </Button>
               </div>
-              <ul className="flex flex-col gap-2 text-sm">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2">
-                    <Check className="text-accent mt-0.5 size-4 shrink-0" /> {f}
-                  </li>
-                ))}
-              </ul>
-              <Button asChild variant={i === 1 ? "default" : "outline"} className="mt-auto">
-                <Link to={paths.signup}>Start free trial</Link>
-              </Button>
-            </div>
-          ))}
+            );
+          })}
         </div>
+        <p className="text-muted-foreground mx-auto mt-8 max-w-md text-center text-sm">
+          Want your own domain instead?{" "}
+          <Link to={paths.standalone} className="text-accent hover:underline">
+            Explore standalone
+          </Link>
+          .
+        </p>
       </Container>
 
       {/* Final CTA */}

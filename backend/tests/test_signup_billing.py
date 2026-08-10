@@ -121,12 +121,12 @@ def test_free_plan_checkout_activates_and_webhook(app):
     assert r.status_code == 200 and r.get_json()["data"]["activated"] is True
 
     # Paid plan returns a checkout url, not yet active
-    r = client.post("/api/billing/checkout", json={"plan": "pro"},
+    r = client.post("/api/billing/checkout", json={"plan": "independent"},
                     headers={"Host": _host("acme"), "X-CSRF-Token": csrf})
     assert r.get_json()["data"]["checkoutUrl"] is not None
 
-    # Webhook flips to ACTIVE on the pro plan
-    event = {"event": "subscription.activated", "orgSlug": "acme", "plan": "pro",
+    # Webhook flips to ACTIVE on the independent plan
+    event = {"event": "subscription.activated", "orgSlug": "acme", "plan": "independent",
              "subscriptionId": "sub_123"}
     raw = json.dumps(event).encode()
     r = client.post("/api/billing/webhook", data=raw,
@@ -134,7 +134,7 @@ def test_free_plan_checkout_activates_and_webhook(app):
     assert r.status_code == 200
     r = client.get("/api/billing/subscription", headers={"Host": _host("acme")})
     data = r.get_json()["data"]
-    assert data["status"] == "ACTIVE" and data["plan"] == "pro"
+    assert data["status"] == "ACTIVE" and data["plan"] == "independent"
 
     # Payment failure -> PAST_DUE (still allowed, grace period)
     raw = json.dumps({"event": "invoice.payment_failed", "orgSlug": "acme"}).encode()
@@ -148,5 +148,11 @@ def test_plans_are_public(app):
     client = app.test_client()
     r = client.get("/api/billing/plans", headers={"Host": "lvh.me"})
     assert r.status_code == 200
-    ids = [p["id"] for p in r.get_json()["data"]]
-    assert "starter" in ids and "pro" in ids
+    plans = r.get_json()["data"]
+    ids = [p["id"] for p in plans]
+    # Only the two public subscription plans are offered; starter is internal.
+    assert "independent" in ids and "team" in ids
+    assert "starter" not in ids
+    # Display metadata for the marketing/pricing UI is included.
+    team = next(p for p in plans if p["id"] == "team")
+    assert team["price"] == 41.95 and team["unit"] == "/member/mo" and team["perSeat"] is True

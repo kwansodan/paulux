@@ -15,14 +15,23 @@ from app.models.organization import Organization, OrgStatus
 MAX_TRIAL_EXTENSIONS = 2
 TRIAL_EXTENSION_DAYS = 15
 
-# Prices in the platform's billing currency (minor units at charge time).
+# Prices in GHS. `public` plans are the ones offered on the marketing site and
+# in-app billing; `starter` is the internal trial/default baseline provisioning
+# assigns and is never shown. `unit` is display-only ("/mo" vs "/member/mo").
+# `per_seat` plans (Team) are billed per team member — for now checkout charges
+# the flat base price; automatic seat counting/proration is deferred.
 PLANS: dict[str, dict] = {
-    "starter": {"name": "Starter", "price": 0, "bookings_per_month": 100,
+    "starter": {"name": "Starter", "price": 0, "public": False,
+                "unit": "/mo", "per_seat": False, "bookings_per_month": 100,
                 "features": ["Online booking", "Payments", "1 location"]},
-    "pro": {"name": "Pro", "price": 250, "bookings_per_month": None,
-            "features": ["Everything in Starter", "Gift cards", "Reports", "Unlimited bookings", "Staff roles"]},
-    "elite": {"name": "Elite", "price": 600, "bookings_per_month": None,
-              "features": ["Everything in Pro", "Google Calendar sync", "Priority support", "Custom branding"]},
+    "independent": {"name": "Independent", "price": 62.95, "public": True,
+                    "unit": "/mo", "per_seat": False, "bookings_per_month": None,
+                    "features": ["Your own branded subdomain", "Online booking & deposits",
+                                 "Payments (Paystack, cash & MoMo)", "Gift cards", "Reports"]},
+    "team": {"name": "Team", "price": 41.95, "public": True,
+             "unit": "/member/mo", "per_seat": True, "bookings_per_month": None,
+             "features": ["Everything in Independent", "Staff accounts & roles",
+                          "Per-member scheduling", "Priority support"]},
 }
 
 # Access is allowed in these states; SUSPENDED is blocked.

@@ -7,6 +7,7 @@ request path — a notification failure must not fail the booking/payment.
 from __future__ import annotations
 
 import structlog
+from flask import current_app
 
 from app.notifications.render import render_email
 from app.tasks.notify import send_email_task, send_sms_task
@@ -113,6 +114,37 @@ def notify_gift_card_delivery(card) -> None:
             )
     except Exception as e:  # pragma: no cover
         log.error("notify_gift_card_failed", error=str(e))
+
+
+def notify_ops_lead(lead) -> None:
+    """Notify the platform team of a new standalone/own-domain enquiry.
+
+    Runs at the apex (no tenant). If OPS_EMAIL is unset the lead is still saved;
+    we simply skip the email. Never raises into the request path.
+    """
+    try:
+        ops_email = current_app.config.get("OPS_EMAIL")
+        if not ops_email:
+            log.info("ops_lead_saved_no_email", lead_email=lead.email)
+            return
+        html = render_email(
+            "ops_lead.html",
+            name=lead.name,
+            business_name=lead.business_name,
+            email=lead.email,
+            phone=lead.phone,
+            city=lead.city,
+            team_size=lead.team_size,
+            message=lead.message,
+        )
+        send_email_task.delay(
+            ops_email,
+            f"New standalone enquiry · {lead.business_name}",
+            html,
+            "ops_lead",
+        )
+    except Exception as e:  # pragma: no cover - defensive
+        log.error("notify_ops_lead_failed", error=str(e))
 
 
 def notify_low_stock(product, admin_emails: list[str]) -> None:

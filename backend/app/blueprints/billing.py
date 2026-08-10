@@ -32,10 +32,12 @@ bp = Blueprint("billing", __name__, url_prefix="/api/billing")
 
 @bp.get("/plans")
 def list_plans():
+    # Only public plans are offered; `starter` is an internal trial baseline.
     return ok([
         {"id": pid, "name": p["name"], "price": p["price"],
+         "unit": p.get("unit", "/mo"), "perSeat": p.get("per_seat", False),
          "bookingsPerMonth": p["bookings_per_month"], "features": p["features"]}
-        for pid, p in PLANS.items()
+        for pid, p in PLANS.items() if p.get("public")
     ])
 
 
@@ -70,6 +72,8 @@ def create_checkout():
         apply_subscription_event(org, event="subscription.activated", plan=data.plan)
         db.session.commit()
         return ok({"checkoutUrl": None, "activated": True})
+    # Paid plan. Team is per-member, but for now we charge the flat base price;
+    # automatic seat counting/proration is deferred (see PLANS in services/billing).
     # A real provider (Stripe/Paystack) would return a hosted checkout URL here.
     # The subscription flips to ACTIVE when the provider webhook confirms payment.
     return ok({

@@ -52,6 +52,9 @@ class Settings(BaseSettings):
     sms_backend: str = ""
     resend_api_key: str = ""
     email_from: str = "Paulux <bookings@paulux.app>"
+    # Where standalone/own-domain enquiries are sent. Empty => leads are still
+    # persisted, but no email is dispatched.
+    ops_email: str = ""
     arkesel_api_key: str = ""
     arkesel_sender: str = "Paulux"
     # Celery broker/result backend. Falls back to Redis URL; eager when unset in dev/test.
