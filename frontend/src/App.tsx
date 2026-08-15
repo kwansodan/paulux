@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { RequireAuth, RequirePermission } from "@/auth/guards";
 import AdminLayout from "@/layouts/AdminLayout";
 import CustomerLayout from "@/layouts/CustomerLayout";
@@ -19,7 +19,6 @@ import BookPage from "@/pages/customer/BookPage";
 import BookingLookupPage from "@/pages/customer/BookingLookupPage";
 import GiftCardPurchasePage from "@/pages/customer/GiftCardPurchasePage";
 import PayCallbackPage from "@/pages/customer/PayCallbackPage";
-import SignupPage from "@/pages/customer/SignupPage";
 import StandalonePage from "@/pages/customer/StandalonePage";
 import { ForgotPasswordPage, ResetPasswordPage } from "@/pages/PasswordResetPages";
 import { TermsPage, PrivacyPage } from "@/pages/legal/LegalPages";
@@ -45,7 +44,8 @@ export default function App() {
     <Routes>
       {/* Auth (no chrome) */}
       <Route path={paths.login} element={<LoginPage />} />
-      <Route path={paths.signup} element={<SignupPage />} />
+      {/* Shared self-serve signup is retired — funnel to the standalone enquiry. */}
+      <Route path={paths.signup} element={<Navigate to={paths.standalone} replace />} />
       <Route path={paths.forgotPassword} element={<ForgotPasswordPage />} />
       <Route path={paths.resetPassword} element={<ResetPasswordPage />} />
       <Route path={paths.unauthorized} element={<UnauthorizedPage />} />

@@ -13,10 +13,7 @@ const TENANT_NAV = [
   { to: paths.giftCards, label: "Gift Cards" },
   { to: paths.bookingLookup, label: "My Booking" },
 ];
-const APEX_NAV = [
-  { to: paths.standalone, label: "Own domain" },
-  { to: paths.signup, label: "Sign up" },
-];
+const APEX_NAV = [{ to: paths.standalone, label: "Request access" }];
 
 export default function CustomerLayout() {
   const [open, setOpen] = useState(false);

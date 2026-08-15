@@ -103,13 +103,6 @@ export default function StandalonePage() {
             </li>
           ))}
         </ul>
-        <p className="text-muted-foreground mt-8 text-sm">
-          Want to start today instead?{" "}
-          <Link to={paths.signup} className="text-accent hover:underline">
-            Sign up for a shared workspace
-          </Link>
-          .
-        </p>
       </div>
 
       {/* Form */}
