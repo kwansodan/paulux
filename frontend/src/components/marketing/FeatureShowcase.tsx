@@ -33,6 +33,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { paths } from "@/router/paths";
+import { useCurrency } from "@/context/CurrencyContext";
 
 /* ------------------------------------------------------------------ */
 /* Editorial Row Component                                             */
@@ -105,6 +106,7 @@ const cardBase =
 
 /** 1. Booking Engine & Sticky Cart Vignette */
 function BookingEngineVignette() {
+  const { formatAmount } = useCurrency();
   return (
     <div className={`${cardBase} mx-auto max-w-md p-6 space-y-4`}>
       {/* Step Progress Tracker */}
@@ -140,19 +142,19 @@ function BookingEngineVignette() {
       <div className="rounded-2xl border border-accent/30 bg-accent/5 p-3.5 space-y-2">
         <div className="flex items-center justify-between text-xs font-bold">
           <span className="flex items-center gap-1.5"><ShoppingBag className="size-3.5 text-accent" /> Bundled Cart (2 Items)</span>
-          <span className="text-accent font-mono">$165.00</span>
+          <span className="text-accent font-mono">{formatAmount(165)}</span>
         </div>
         <div className="text-[11px] text-muted-foreground flex justify-between">
           <span>• Balayage Color & Cut</span>
-          <span>$140.00</span>
+          <span>{formatAmount(140)}</span>
         </div>
         <div className="text-[11px] text-muted-foreground flex justify-between">
           <span>• Take-Home Keratin Serum (Retail)</span>
-          <span>$25.00</span>
+          <span>{formatAmount(25)}</span>
         </div>
         <div className="border-t border-accent/20 pt-2 flex items-center justify-between text-xs font-medium">
           <span className="text-muted-foreground">Deposit Required (Hold Slot):</span>
-          <span className="font-bold text-foreground">$50.00</span>
+          <span className="font-bold text-foreground">{formatAmount(50)}</span>
         </div>
       </div>
 
@@ -165,6 +167,7 @@ function BookingEngineVignette() {
 
 /** 2. Consumables & Chemical Material Accounting Vignette (The Big Differentiator) */
 function ConsumablesVignette() {
+  const { formatAmount } = useCurrency();
   return (
     <div className={`${cardBase} mx-auto max-w-md p-6 space-y-4`}>
       <div className="flex items-center justify-between border-b border-border/60 pb-3">
@@ -187,33 +190,33 @@ function ConsumablesVignette() {
         <div className="flex items-center justify-between rounded-xl bg-secondary/40 p-2.5">
           <div>
             <p className="font-semibold text-foreground">Wella Illumina 7/81 Blonde</p>
-            <p className="text-[10px] text-muted-foreground">Unit: $0.18 / g · Batch #B-409</p>
+            <p className="text-[10px] text-muted-foreground">Unit: {formatAmount(0.18, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / g · Batch #B-409</p>
           </div>
           <div className="text-right">
             <span className="font-mono font-bold text-foreground">45 grams</span>
-            <p className="text-[10px] text-accent">$8.10 cost</p>
+            <p className="text-[10px] text-accent">{formatAmount(8.10, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} cost</p>
           </div>
         </div>
 
         <div className="flex items-center justify-between rounded-xl bg-secondary/40 p-2.5">
           <div>
             <p className="font-semibold text-foreground">Welloxon 20-Vol Developer</p>
-            <p className="text-[10px] text-muted-foreground">Unit: $0.04 / ml · Large Backbar</p>
+            <p className="text-[10px] text-muted-foreground">Unit: {formatAmount(0.04, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / ml · Large Backbar</p>
           </div>
           <div className="text-right">
             <span className="font-mono font-bold text-foreground">60 ml</span>
-            <p className="text-[10px] text-accent">$2.40 cost</p>
+            <p className="text-[10px] text-accent">{formatAmount(2.40, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} cost</p>
           </div>
         </div>
 
         <div className="flex items-center justify-between rounded-xl bg-secondary/40 p-2.5">
           <div>
             <p className="font-semibold text-foreground">Olaplex No. 1 Bond Multiplier</p>
-            <p className="text-[10px] text-muted-foreground">Unit: $0.85 / ml · Dispensary</p>
+            <p className="text-[10px] text-muted-foreground">Unit: {formatAmount(0.85, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / ml · Dispensary</p>
           </div>
           <div className="text-right">
             <span className="font-mono font-bold text-foreground">7.5 ml</span>
-            <p className="text-[10px] text-accent">$6.38 cost</p>
+            <p className="text-[10px] text-accent">{formatAmount(6.38, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} cost</p>
           </div>
         </div>
       </div>
@@ -221,8 +224,8 @@ function ConsumablesVignette() {
       {/* Cost Snapshot Summary */}
       <div className="rounded-2xl border border-border/80 bg-secondary/20 p-3 flex items-center justify-between text-xs">
         <div>
-          <span className="text-muted-foreground block text-[10px] uppercase tracking-wider font-semibold">Service Price: $180.00</span>
-          <span className="font-semibold text-foreground">Total Material Cost: $16.88</span>
+          <span className="text-muted-foreground block text-[10px] uppercase tracking-wider font-semibold">Service Price: {formatAmount(180)}</span>
+          <span className="font-semibold text-foreground">Total Material Cost: {formatAmount(16.88, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</span>
         </div>
         <div className="text-right">
           <span className="text-emerald-600 dark:text-emerald-400 font-bold font-mono text-sm">90.6% Net Margin</span>
@@ -235,6 +238,7 @@ function ConsumablesVignette() {
 
 /** 3. Automated Retention & 5-Star Booster Vignette */
 function AutomationVignette() {
+  const { formatAmount } = useCurrency();
   return (
     <div className={`${cardBase} mx-auto max-w-md p-6 space-y-4`}>
       <div className="flex items-center justify-between border-b border-border/60 pb-3">
@@ -251,10 +255,10 @@ function AutomationVignette() {
           <span className="text-[10px] text-muted-foreground">Auto-Sent</span>
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed bg-card/80 p-2.5 rounded-xl border border-border/60 font-sans">
-          "Hi Sophia! It's been 8 weeks since your last balayage at Maison. We reserved $20 off your refresh this week: [1-Click Rebook Link]"
+          "Hi Sophia! It's been 8 weeks since your last balayage at Maison. We reserved {formatAmount(20)} off your refresh this week: [1-Click Rebook Link]"
         </p>
         <div className="flex items-center justify-between text-[11px] text-amber-700 dark:text-amber-300 font-medium pt-1">
-          <span>Client: Sophia M. ($940 LTV)</span>
+          <span>Client: Sophia M. ({formatAmount(940)} LTV)</span>
           <span className="font-bold">Converted in 18 mins</span>
         </div>
       </div>
@@ -277,6 +281,7 @@ function AutomationVignette() {
 
 /** 4. Stylist Mobile Portal & Granular Multi-Assignment Vignette */
 function StylistPortalVignette() {
+  const { formatAmount } = useCurrency();
   return (
     <div className={`${cardBase} mx-auto max-w-md p-6 space-y-4`}>
       <div className="flex items-center justify-between border-b border-border/60 pb-3">
@@ -290,7 +295,7 @@ function StylistPortalVignette() {
           </div>
         </div>
         <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">
-          $380 Commission Today
+          {formatAmount(380)} Commission Today
         </span>
       </div>
 
@@ -298,7 +303,7 @@ function StylistPortalVignette() {
       <div className="rounded-2xl border border-border/80 bg-secondary/30 p-3 space-y-2">
         <div className="flex items-center justify-between text-xs font-semibold">
           <span className="text-foreground">Appointment #1082 · 2 Stylists Split</span>
-          <span className="text-accent">$260 Total</span>
+          <span className="text-accent">{formatAmount(260)} Total</span>
         </div>
         <div className="space-y-1 text-xs">
           <div className="flex items-center justify-between rounded-lg bg-card p-2 border border-border/60">
@@ -328,6 +333,7 @@ function StylistPortalVignette() {
 
 /** 5. Front Desk Walk-In & Audit Trail Vignette */
 function FrontDeskCalendarVignette() {
+  const { formatAmount } = useCurrency();
   return (
     <div className={`${cardBase} mx-auto max-w-md p-6 space-y-4`}>
       <div className="flex items-center justify-between border-b border-border/60 pb-3">
@@ -351,7 +357,7 @@ function FrontDeskCalendarVignette() {
           <div className="bg-card p-2 rounded-lg border border-border/60">Service: Signature Fade</div>
         </div>
         <div className="flex items-center justify-between text-[11px] text-muted-foreground pt-1">
-          <span>Payment: Cash Recorded ($45.00)</span>
+          <span>Payment: Cash Recorded ({formatAmount(45)})</span>
           <span>Status: Chair #2 Assigned</span>
         </div>
       </div>
@@ -369,7 +375,7 @@ function FrontDeskCalendarVignette() {
             <span className="text-emerald-600">Client Self-Service</span>
           </div>
           <div className="flex justify-between py-1">
-            <span>[09:15 AM] $50 Deposit Paid</span>
+            <span>[09:15 AM] {formatAmount(50)} Deposit Paid</span>
             <span className="text-accent">Paystack Webhook</span>
           </div>
         </div>
@@ -380,6 +386,7 @@ function FrontDeskCalendarVignette() {
 
 /** 6. Financial Analytics & Fee Surcharge Pass-Through Vignette */
 function FinancialAnalyticsVignette() {
+  const { formatAmount } = useCurrency();
   return (
     <div className={`${cardBase} mx-auto max-w-md p-6 space-y-4`}>
       <div className="flex items-center justify-between border-b border-border/60 pb-3">
@@ -396,12 +403,12 @@ function FinancialAnalyticsVignette() {
       <div className="grid grid-cols-2 gap-3 text-xs">
         <div className="rounded-2xl border border-border/80 bg-secondary/30 p-3">
           <span className="text-[10px] uppercase font-bold text-muted-foreground tracking-wider block">Realized Today</span>
-          <span className="font-serif text-2xl font-bold text-foreground mt-1 block">$2,840.00</span>
+          <span className="font-serif text-2xl font-bold text-foreground mt-1 block">{formatAmount(2840)}</span>
           <span className="text-[10px] text-emerald-600 font-semibold">18 Completed Appts</span>
         </div>
         <div className="rounded-2xl border border-border/80 bg-secondary/30 p-3">
           <span className="text-[10px] uppercase font-bold text-accent tracking-wider block">Pre-Paid Deposits</span>
-          <span className="font-serif text-2xl font-bold text-accent mt-1 block">$1,450.00</span>
+          <span className="font-serif text-2xl font-bold text-accent mt-1 block">{formatAmount(1450)}</span>
           <span className="text-[10px] text-muted-foreground">For Next 7 Days</span>
         </div>
       </div>

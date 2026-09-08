@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calculator, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { paths } from "@/router/paths";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function RoiCalculator() {
+  const { formatAmount } = useCurrency();
   const [monthlyBookings, setMonthlyBookings] = useState<number>(450);
   const [avgTicket, setAvgTicket] = useState<number>(85);
 
@@ -16,7 +18,7 @@ export default function RoiCalculator() {
   const monthlyFeesLost = Math.round(annualFeesLost / 12);
 
   const waMessage = encodeURIComponent(
-    `Hi Paulux Team! I ran your ROI Calculator. My salon does ~${monthlyBookings} bookings/mo at $${avgTicket} avg ticket. I'm looking to save ~$${annualFeesLost.toLocaleString()}/yr with a standalone system. Let's talk!`
+    `Hi Paulux Team! I ran your ROI Calculator. My salon does ~${monthlyBookings} bookings/mo at ${formatAmount(avgTicket)} avg ticket. I'm looking to save ~${formatAmount(annualFeesLost)}/yr with a standalone system. Let's talk!`
   );
 
   return (
@@ -63,7 +65,7 @@ export default function RoiCalculator() {
           <div className="space-y-3 rounded-2xl bg-secondary/40 p-5">
             <div className="flex items-center justify-between">
               <label className="text-sm font-medium">Average Service Ticket Price</label>
-              <span className="font-mono text-lg font-bold text-accent">${avgTicket}</span>
+              <span className="font-mono text-lg font-bold text-accent">{formatAmount(avgTicket)}</span>
             </div>
             <input
               type="range"
@@ -75,20 +77,20 @@ export default function RoiCalculator() {
               className="w-full accent-primary cursor-pointer"
             />
             <div className="flex justify-between text-xs text-muted-foreground">
-              <span>$25 (Express)</span>
-              <span>$150 (Signature)</span>
-              <span>$350+ (Luxury Package)</span>
+              <span>{formatAmount(25)} (Express)</span>
+              <span>{formatAmount(150)} (Signature)</span>
+              <span>{formatAmount(350)}+ (Luxury Package)</span>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 pt-2">
             <div className="rounded-xl border border-border/60 p-4">
               <p className="text-xs text-muted-foreground">Monthly Gross Revenue</p>
-              <p className="font-serif mt-1 text-xl font-medium">${monthlyGross.toLocaleString()}</p>
+              <p className="font-serif mt-1 text-xl font-medium">{formatAmount(monthlyGross)}</p>
             </div>
             <div className="rounded-xl border border-border/60 p-4">
               <p className="text-xs text-muted-foreground">Annual Gross Revenue</p>
-              <p className="font-serif mt-1 text-xl font-medium">${annualGross.toLocaleString()}</p>
+              <p className="font-serif mt-1 text-xl font-medium">{formatAmount(annualGross)}</p>
             </div>
           </div>
         </div>
@@ -105,12 +107,12 @@ export default function RoiCalculator() {
             </p>
             <div className="mt-1 flex items-baseline gap-2">
               <span className="font-serif text-4xl font-semibold tracking-tight text-white md:text-5xl">
-                ${annualFeesLost.toLocaleString()}
+                {formatAmount(annualFeesLost)}
               </span>
               <span className="text-xs text-primary-foreground/70">/ year</span>
             </div>
             <p className="text-xs text-primary-foreground/60 mt-1">
-              (That is roughly <span className="font-semibold text-white">${monthlyFeesLost.toLocaleString()}/mo</span> you give away to software platforms)
+              (That is roughly <span className="font-semibold text-white">{formatAmount(monthlyFeesLost)}/mo</span> you give away to software platforms)
             </p>
 
             <ul className="mt-6 space-y-2.5 border-t border-primary-foreground/15 pt-5 text-xs text-primary-foreground/85">

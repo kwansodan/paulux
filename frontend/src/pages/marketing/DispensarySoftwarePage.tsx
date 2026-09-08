@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { paths } from "@/router/paths";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const FEATURES_BREAKDOWN = [
   {
@@ -76,6 +77,7 @@ const FAQS = [
 ];
 
 export default function DispensarySoftwarePage() {
+  const { formatAmount } = useCurrency();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqSchema = {
@@ -176,7 +178,7 @@ export default function DispensarySoftwarePage() {
               </div>
               <div className="text-right">
                 <span className="text-xs text-muted-foreground">Ticket Revenue</span>
-                <p className="font-mono text-xl font-semibold text-emerald-600 dark:text-emerald-400">$165.00</p>
+                <p className="font-mono text-xl font-semibold text-emerald-600 dark:text-emerald-400">{formatAmount(165)}</p>
               </div>
             </div>
 
@@ -195,26 +197,26 @@ export default function DispensarySoftwarePage() {
                   <tr>
                     <td className="py-3 font-sans text-foreground font-medium">Wella Blondor Multi-Blonde Lightener</td>
                     <td className="py-3 text-muted-foreground">35.0 grams</td>
-                    <td className="py-3 text-muted-foreground">$0.18 / g</td>
-                    <td className="py-3 text-right text-rose-500">-$6.30</td>
+                    <td className="py-3 text-muted-foreground">{formatAmount(0.18, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / g</td>
+                    <td className="py-3 text-right text-rose-500">-{formatAmount(6.30, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</td>
                   </tr>
                   <tr>
                     <td className="py-3 font-sans text-foreground font-medium">Wella Welloxon Perfect 20 Vol (6%) Developer</td>
                     <td className="py-3 text-muted-foreground">70.0 ml</td>
-                    <td className="py-3 text-muted-foreground">$0.04 / ml</td>
-                    <td className="py-3 text-right text-rose-500">-$2.80</td>
+                    <td className="py-3 text-muted-foreground">{formatAmount(0.04, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / ml</td>
+                    <td className="py-3 text-right text-rose-500">-{formatAmount(2.80, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</td>
                   </tr>
                   <tr>
                     <td className="py-3 font-sans text-foreground font-medium">Redken Shades EQ Gloss (09V + 09P)</td>
                     <td className="py-3 text-muted-foreground">40.0 ml</td>
-                    <td className="py-3 text-muted-foreground">$0.21 / ml</td>
-                    <td className="py-3 text-right text-rose-500">-$8.40</td>
+                    <td className="py-3 text-muted-foreground">{formatAmount(0.21, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / ml</td>
+                    <td className="py-3 text-right text-rose-500">-{formatAmount(8.40, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</td>
                   </tr>
                   <tr>
                     <td className="py-3 font-sans text-foreground font-medium">Olaplex No. 1 Bond Multiplier</td>
                     <td className="py-3 text-muted-foreground">7.5 ml</td>
-                    <td className="py-3 text-muted-foreground">$0.69 / ml</td>
-                    <td className="py-3 text-right text-rose-500">-$5.20</td>
+                    <td className="py-3 text-muted-foreground">{formatAmount(0.69, { maximumFractionDigits: 2, minimumFractionDigits: 2 })} / ml</td>
+                    <td className="py-3 text-right text-rose-500">-{formatAmount(5.20, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</td>
                   </tr>
                 </tbody>
               </table>
@@ -225,12 +227,12 @@ export default function DispensarySoftwarePage() {
               <div className="flex items-center gap-6">
                 <div>
                   <span className="text-xs text-muted-foreground">Total Chemical Cost</span>
-                  <p className="font-mono text-base font-semibold text-rose-500">-$22.70</p>
+                  <p className="font-mono text-base font-semibold text-rose-500">-{formatAmount(22.70, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</p>
                 </div>
                 <div className="h-8 w-px bg-border/80" />
                 <div>
                   <span className="text-xs text-muted-foreground">Realized Gross Margin</span>
-                  <p className="font-mono text-base font-semibold text-emerald-600 dark:text-emerald-400">$142.30</p>
+                  <p className="font-mono text-base font-semibold text-emerald-600 dark:text-emerald-400">{formatAmount(142.30, { maximumFractionDigits: 2, minimumFractionDigits: 2 })}</p>
                 </div>
               </div>
               <div className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400">

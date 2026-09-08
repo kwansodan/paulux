@@ -14,11 +14,13 @@ import IndustryCaseStudyPage from "@/pages/marketing/IndustryCaseStudyPage";
 import { TermsPage, PrivacyPage } from "@/pages/legal/LegalPages";
 import { NotFoundPage } from "@/pages/StatusPages";
 import { paths } from "@/router/paths";
+import { CurrencyProvider } from "@/context/CurrencyContext";
 
 export default function App() {
   return (
-    <Routes>
-      <Route element={<CustomerLayout />}>
+    <CurrencyProvider>
+      <Routes>
+        <Route element={<CustomerLayout />}>
         {/* Core Marketing Routes */}
         <Route path={paths.home} element={<MarketingLanding />} />
         <Route path={paths.standalone} element={<StandalonePage />} />
@@ -45,6 +47,7 @@ export default function App() {
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
+  </CurrencyProvider>
   );
 }
 

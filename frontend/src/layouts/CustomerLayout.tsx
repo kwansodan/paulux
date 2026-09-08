@@ -6,6 +6,7 @@ import { Logo } from "@/components/brand/Logo";
 import ChatwootWidget from "@/components/marketing/ChatwootWidget";
 import WhatsAppFloat from "@/components/marketing/WhatsAppFloat";
 import StickyMobileBar from "@/components/marketing/StickyMobileBar";
+import CurrencySelector from "@/components/marketing/CurrencySelector";
 import { cn } from "@/lib/utils";
 
 const NAV = [
@@ -53,18 +54,24 @@ export default function CustomerLayout() {
                 {n.label}
               </NavLink>
             ))}
+            <div className="pl-2 border-l border-border/60">
+              <CurrencySelector />
+            </div>
           </nav>
 
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="text-foreground hover:bg-secondary flex size-10 items-center justify-center rounded-full transition-colors sm:hidden"
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          {/* Mobile right controls: Currency Selector + Menu toggle */}
+          <div className="flex items-center gap-2 sm:hidden">
+            <CurrencySelector />
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="text-foreground hover:bg-secondary flex size-10 items-center justify-center rounded-full transition-colors"
+            >
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu panel */}
@@ -174,6 +181,9 @@ export default function CustomerLayout() {
                 </li>
                 <li>
                   <Link to={paths.privacy} className="hover:text-foreground">Privacy Policy</Link>
+                </li>
+                <li className="pt-2">
+                  <CurrencySelector />
                 </li>
                 <li className="pt-2 text-muted-foreground/80">
                   © {new Date().getFullYear()} Paulux Software. All rights reserved.
