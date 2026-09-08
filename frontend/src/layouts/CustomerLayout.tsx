@@ -5,17 +5,9 @@ import { paths } from "@/router/paths";
 import { Logo } from "@/components/brand/Logo";
 import WhatsAppFloat from "@/components/marketing/WhatsAppFloat";
 import StickyMobileBar from "@/components/marketing/StickyMobileBar";
-import { currentTenantSlug } from "@/lib/tenant";
 import { cn } from "@/lib/utils";
 
-// Tenant customer site vs. apex marketing site have different nav.
-const TENANT_NAV = [
-  { to: paths.book, label: "Book" },
-  { to: paths.giftCards, label: "Gift Cards" },
-  { to: paths.bookingLookup, label: "My Booking" },
-];
-
-const APEX_NAV = [
+const NAV = [
   { to: paths.salonSoftware, label: "Features" },
   { to: paths.freshaAlternative, label: "Fresha Alternative" },
   { to: paths.roiCalculator, label: "ROI Calculator" },
@@ -27,8 +19,6 @@ const APEX_NAV = [
 export default function CustomerLayout() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const isTenant = currentTenantSlug() !== null;
-  const NAV = isTenant ? TENANT_NAV : APEX_NAV;
 
   // Close the mobile menu whenever the route changes.
   const key = location.pathname;
@@ -62,12 +52,6 @@ export default function CustomerLayout() {
                 {n.label}
               </NavLink>
             ))}
-            <Link
-              to={paths.login}
-              className="text-muted-foreground hover:text-foreground text-xs tracking-luxe uppercase ml-2"
-            >
-              {isTenant ? "Staff" : "Staff Login"}
-            </Link>
           </nav>
 
           {/* Mobile menu toggle */}
@@ -108,13 +92,6 @@ export default function CustomerLayout() {
                   {n.label}
                 </NavLink>
               ))}
-              <Link
-                to={paths.login}
-                onClick={() => setOpen(false)}
-                className="text-muted-foreground hover:bg-secondary mt-2 rounded-xl px-4 py-2.5 text-xs tracking-luxe uppercase"
-              >
-                Staff login
-              </Link>
             </div>
           </nav>
         )}
@@ -191,13 +168,9 @@ export default function CustomerLayout() {
         </div>
       </footer>
 
-      {/* Floating & Mobile Conversion Widgets on Apex */}
-      {!isTenant && (
-        <>
-          <WhatsAppFloat phoneNumber={platformWhatsapp} />
-          <StickyMobileBar phoneNumber={platformWhatsapp} />
-        </>
-      )}
+      {/* Floating & Mobile Conversion Widgets */}
+      <WhatsAppFloat phoneNumber={platformWhatsapp} />
+      <StickyMobileBar phoneNumber={platformWhatsapp} />
     </div>
   );
 }

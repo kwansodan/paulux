@@ -27,32 +27,11 @@ function Centered({
 export function NotFoundPage() {
   return (
     <Centered
-      title="404"
-      message="This page could not be found."
+      title="404 - Page Not Found"
+      message="The page you are looking for does not exist or has been moved."
       to={paths.home}
-      cta="Go home"
+      cta="Back to Paulux Home"
     />
   );
 }
 
-export function UnauthorizedPage() {
-  return (
-    <Centered
-      title="Not authorized"
-      message="You don't have permission to view this page."
-      to={paths.dashboard}
-      cta="Back to dashboard"
-    />
-  );
-}
-
-export function PlaceholderPage({ title }: { title: string }) {
-  return (
-    <div className="flex flex-col gap-2">
-      <h1 className="text-2xl font-semibold">{title}</h1>
-      <p className="text-muted-foreground text-sm">
-        This section is implemented in Phase 2.
-      </p>
-    </div>
-  );
-}

@@ -1,37 +1,25 @@
-/** Central route path builders (ported intent from the old app's paths.ts). */
+/** Marketing, Case Studies, Demo, and Inquiries Route Paths */
 export const paths = {
-  // Customer & Marketing
+  // Core Marketing & Acquisition
   home: "/",
-  book: "/book",
-  bookingLookup: "/my-booking",
-  giftCards: "/gift-cards",
-  payCallback: "/pay/callback",
-  terms: "/terms",
-  privacy: "/privacy",
-  standalone: "/standalone",
   freshaAlternative: "/fresha-alternative",
   salonSoftware: "/salon-booking-software",
   roiCalculator: "/roi-calculator",
   demo: "/demo",
+  standalone: "/standalone",
   caseStudies: "/case-studies",
   caseStudyDetail: "/case-studies/:slug",
 
-  // Auth
+  // Legal & Trust
+  terms: "/terms",
+  privacy: "/privacy",
+
+  // Aliases / Funnels
+  book: "/book",
+  bookingLookup: "/my-booking",
+  giftCards: "/gift-cards",
   login: "/login",
   signup: "/signup",
-  forgotPassword: "/forgot-password",
-  resetPassword: "/reset-password",
-  unauthorized: "/unauthorized",
-
-  // Admin
   dashboard: "/admin",
-  bookings: "/admin/bookings",
-  payments: "/admin/payments",
-  services: "/admin/services",
-  packages: "/admin/packages",
-  products: "/admin/products",
-  promoCodes: "/admin/promo-codes",
-  giftCardOrders: "/admin/gift-card-orders",
-  reports: "/admin/reports",
-  settings: "/admin/settings",
 } as const;
+
