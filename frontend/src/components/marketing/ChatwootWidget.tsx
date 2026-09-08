@@ -42,7 +42,7 @@ export function openChatwoot(): boolean {
 }
 
 export default function ChatwootWidget({
-  websiteToken = import.meta.env.VITE_CHATWOOT_WEBSITE_TOKEN,
+  websiteToken = import.meta.env.VITE_CHATWOOT_WEBSITE_TOKEN || "Awys7gWzgZif6qbf8Eu2hcXU",
   baseUrl = import.meta.env.VITE_CHATWOOT_BASE_URL || "https://app.chatwoot.com",
 }: ChatwootWidgetProps) {
   useEffect(() => {
