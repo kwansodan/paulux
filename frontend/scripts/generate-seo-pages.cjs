@@ -93,6 +93,110 @@ const PAGES = [
     }
   },
   {
+    path: "booksy-alternative",
+    title: "Zero-Commission Booksy Alternative for Barbers & Studios | Paulux",
+    description: "Ditch Booksy's monthly per-chair fees and marketplace commissions. Paulux delivers white-label booking on your own custom domain with 15-second walk-in check-in, deposit protection, and 0% fees.",
+    keywords: "booksy alternative, booksy alternative for barbers, zero commission barber software, booksy competitors, custom domain barbershop booking, barber chair rental software",
+    canonical: "https://www.pauluxbooking.com/booksy-alternative",
+    content: `
+      <header><h1>Zero-Commission Booksy Alternative for Barbershops & Studios</h1></header>
+      <main>
+        <p>Stop paying Booksy's $29.99/month base fee plus $20/month per additional barber while surrendering your client list to a marketplace that advertises your competitors.</p>
+        <h2>Why Barbershops Are Migrating from Booksy to Paulux</h2>
+        <ul>
+          <li><strong>Marketplace Commission:</strong> Booksy up to 20% on new client discovery vs. Paulux 0% — keep 100% of your earnings</li>
+          <li><strong>Monthly Staff Fees:</strong> Booksy $29.99/mo base + $20/mo per barber vs. Paulux flat deployment quote with no per-staff penalties</li>
+          <li><strong>Booking Domain:</strong> booksy.com/your-shop vs. booking.yourbarbershop.com (your own custom domain)</li>
+          <li><strong>Walk-In Mode:</strong> Multi-click process vs. Paulux 15-second rapid walk-in chair assignment</li>
+          <li><strong>Staff Portal:</strong> Shared Booksy app vs. Independent /stylist mobile portal per barber</li>
+          <li><strong>Client Data:</strong> Booksy markets competing barbers to your clients vs. 100% private isolated database</li>
+        </ul>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Can each barber manage their own schedule independently?</h3>
+        <p>Yes. Paulux includes an independent /stylist mobile portal where each barber accesses their own daily schedule, chair assignments, and revenue totals without seeing shop-wide financials.</p>
+        <h3>How does the 15-second walk-in check-in work?</h3>
+        <p>The front-desk walk-in mode lets staff tap a service, select the available barber chair, process payment, and lock the chair all within 15 seconds — built specifically for high foot-traffic barbershops.</p>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why are barbershops switching from Booksy to Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Booksy charges $29.99/month base plus $20/month per extra staff, takes marketplace commission on new client bookings, and promotes competitor barbershops to your own clients. Paulux provides a 0% commission, white-label booking system hosted on your custom domain." } },
+        { "@type": "Question", "name": "Can each barber manage their own schedule?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each barber gets an independent /stylist mobile portal with personal schedule, chair availability, and daily revenue without access to shop-wide accounting." } }
+      ]
+    }
+  },
+  {
+    path: "mindbody-alternative",
+    title: "Modern Mindbody Alternative for MedSpas & Aesthetic Clinics | Paulux",
+    description: "Escape Mindbody's $159-$699/mo subscription fees and bloated complexity. Paulux provides a luxury, white-label booking and clinical deposit system deployed on your own custom domain.",
+    keywords: "mindbody alternative, mindbody alternative medspa, aesthetic clinic booking software, medspa scheduling system, luxury spa software, clinical deposit booking system",
+    canonical: "https://www.pauluxbooking.com/mindbody-alternative",
+    content: `
+      <header><h1>Modern Mindbody Alternative for MedSpas & Aesthetic Clinics</h1></header>
+      <main>
+        <p>Escape Mindbody's $159–$699/month recurring subscription tiers. Paulux provides a full-featured, white-label booking and clinical deposit enforcement system on your custom domain.</p>
+        <h2>Why MedSpas Are Switching from Mindbody to Paulux</h2>
+        <ul>
+          <li><strong>Monthly Cost:</strong> Mindbody $159–$699+/month vs. Paulux flat dedicated deployment — no monthly lock-in</li>
+          <li><strong>Client Data Privacy:</strong> Mindbody shared corporate database vs. Paulux 100% private isolated database owned by your clinic</li>
+          <li><strong>Clinical Deposit Enforcer:</strong> Mindbody complex merchant add-ons vs. Paulux native full/partial deposit requirement on high-ticket slots</li>
+          <li><strong>Custom Booking Domain:</strong> mindbodyonline.com/your-spa vs. booking.yourmedspa.com</li>
+          <li><strong>Technical Allergy & Formula Notes:</strong> Generic text fields vs. Paulux instant scalp/allergy flags and formula records in client CRM</li>
+        </ul>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Why are MedSpas leaving Mindbody?</h3>
+        <p>Mindbody charges the highest recurring fees in the industry while locking clinics into proprietary payment processing. Paulux runs on your own custom domain with database isolation and no monthly rent.</p>
+        <h3>How does Paulux protect high-value treatment slots from no-shows?</h3>
+        <p>Paulux's Deposit Enforcer requires clients to authorize a full or fixed deposit before confirming any appointment, with funds transferring directly to your bank account via Paystack or Stripe.</p>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why are MedSpas leaving Mindbody for Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Mindbody charges $159–$699/month in subscription fees, locks clinics into proprietary payment processors, and stores patient data in a shared corporate database. Paulux provides a 0% commission, white-label system on your custom domain with full database isolation." } },
+        { "@type": "Question", "name": "How does Paulux protect high-value medspa treatment slots?", "acceptedAnswer": { "@type": "Answer", "text": "Paulux's native Deposit Enforcer requires clients to authorize a full or fixed deposit at booking time, preventing ghost appointments on high-ticket slots like Botox, laser, or HydraFacial treatments." } }
+      ]
+    }
+  },
+  {
+    path: "salon-chemical-dispensary-software",
+    title: "Salon Chemical Dispensary & Backbar Inventory Software (ml/g) | Paulux",
+    description: "Stop losing profit at the color bar. Track professional hair dye, lighteners, and developer down to exact grams and milliliters with real-time service gross margin P&L accounting.",
+    keywords: "salon chemical inventory management, hair salon color dispensary app, salon backbar inventory tracking, hair color grams milliliters inventory tracker, salon cost per service chemical tracking",
+    canonical: "https://www.pauluxbooking.com/salon-chemical-dispensary-software",
+    content: `
+      <header><h1>Salon Chemical Dispensary & Backbar Consumables Accounting Software</h1></header>
+      <main>
+        <p>Track professional hair dye, lightener, developer, and backbar treatments down to exact milliliters (ml) and grams (g) on every appointment ticket with real-time service gross margin calculations.</p>
+        <h2>What Makes Paulux the Enterprise Dispensary Standard</h2>
+        <ul>
+          <li><strong>Gram & Milliliter Precision:</strong> Record bleach powder (g), developer oxidants (ml), gloss shades (ml), and bond rebuilders (ml) per bowl</li>
+          <li><strong>Live Service Gross Margin:</strong> Real-time ticket P&L — e.g. Service Price $165.00 - Chemical Cost $22.70 = Gross Margin $142.30 (86.2%)</li>
+          <li><strong>Historical Snapshot P&L Accounting:</strong> Locks in purchase costs at checkout time so historical P&L reports stay 100% accurate forever</li>
+          <li><strong>Department Cost Centers:</strong> Separate Color Bar, Aesthetics, and Nail Backbar into independent chemical cost centers</li>
+          <li><strong>Formula Vault in Client CRM:</strong> Complete color formula history saved per client — developer ratios, toner codes, processing times</li>
+          <li><strong>Low-Stock Reorder Alerts:</strong> Automated threshold alerts based on projected bookings and remaining ml/g volume</li>
+        </ul>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Why do salons lose money on chemical dispensary waste?</h3>
+        <p>Without milliliter and gram-level tracking, stylists mix by eye and owners cannot accurately price services, identify product waste, or calculate true per-ticket gross margins.</p>
+        <h3>Can stylists access client formula histories on mobile?</h3>
+        <p>Yes. Through the /stylist mobile portal, stylists can look up exact formulas, developer strength, processing times, and tone records from every previous appointment.</p>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why do salons lose profit without ml/g chemical tracking?", "acceptedAnswer": { "@type": "Answer", "text": "Without gram and milliliter-level dispensary records, salons cannot price long hair add-ons correctly, identify chemical waste or theft, or calculate their true per-service gross margins on color tickets." } },
+        { "@type": "Question", "name": "How does Paulux's chemical dispensary ledger work?", "acceptedAnswer": { "@type": "Answer", "text": "Stylists log the exact formulation mixed per ticket (e.g. 35g lightener + 70ml 20vol developer + 15ml Olaplex No.1). Paulux calculates the precise material cost, deducts from backbar inventory, and shows the realized gross margin in real time." } }
+      ]
+    }
+  },
+  {
     path: "roi-calculator",
     title: "Salon Commission Savings Calculator | Paulux",
     description: "Calculate how much your salon loses to Fresha, Mindbody, and marketplace booking platforms every year. See your savings with a 0% commission standalone system.",

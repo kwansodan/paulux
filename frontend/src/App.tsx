@@ -3,6 +3,9 @@ import CustomerLayout from "@/layouts/CustomerLayout";
 import MarketingLanding from "@/pages/customer/MarketingLanding";
 import StandalonePage from "@/pages/customer/StandalonePage";
 import FreshaAlternativePage from "@/pages/marketing/FreshaAlternativePage";
+import BooksyAlternativePage from "@/pages/marketing/BooksyAlternativePage";
+import MindbodyAlternativePage from "@/pages/marketing/MindbodyAlternativePage";
+import DispensarySoftwarePage from "@/pages/marketing/DispensarySoftwarePage";
 import SalonSoftwarePage from "@/pages/marketing/SalonSoftwarePage";
 import RoiCalculatorPage from "@/pages/marketing/RoiCalculatorPage";
 import DemoPage from "@/pages/marketing/DemoPage";
@@ -20,6 +23,9 @@ export default function App() {
         <Route path={paths.home} element={<MarketingLanding />} />
         <Route path={paths.standalone} element={<StandalonePage />} />
         <Route path={paths.freshaAlternative} element={<FreshaAlternativePage />} />
+        <Route path={paths.booksyAlternative} element={<BooksyAlternativePage />} />
+        <Route path={paths.mindbodyAlternative} element={<MindbodyAlternativePage />} />
+        <Route path={paths.dispensarySoftware} element={<DispensarySoftwarePage />} />
         <Route path={paths.salonSoftware} element={<SalonSoftwarePage />} />
         <Route path={paths.roiCalculator} element={<RoiCalculatorPage />} />
         <Route path={paths.demo} element={<DemoPage />} />

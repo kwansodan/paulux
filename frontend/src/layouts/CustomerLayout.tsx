@@ -116,37 +116,52 @@ export default function CustomerLayout() {
               <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Software</p>
               <ul className="space-y-2 text-xs text-muted-foreground">
                 <li>
-                  <Link to={paths.salonSoftware} className="hover:text-foreground">Salon Booking Features</Link>
+                  <Link to={paths.salonSoftware} className="hover:text-foreground">12 Enterprise Features</Link>
                 </li>
                 <li>
-                  <Link to={paths.freshaAlternative} className="hover:text-foreground">Fresha Alternative (0% Fees)</Link>
+                  <Link to={paths.dispensarySoftware} className="hover:text-foreground font-medium text-accent">Chemical Dispensary (ml/g)</Link>
                 </li>
                 <li>
-                  <Link to={paths.roiCalculator} className="hover:text-foreground">Savings Calculator</Link>
+                  <Link to={paths.roiCalculator} className="hover:text-foreground">Commission Calculator</Link>
                 </li>
                 <li>
-                  <Link to={paths.demo} className="hover:text-foreground">Interactive Demo</Link>
+                  <Link to={paths.demo} className="hover:text-foreground">Interactive Platform Tour</Link>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-2.5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Solutions & Case Studies</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Alternatives</p>
               <ul className="space-y-2 text-xs text-muted-foreground">
                 <li>
-                  <Link to={paths.caseStudies} className="hover:text-foreground font-medium text-accent">All Industry Case Studies</Link>
+                  <Link to={paths.freshaAlternative} className="hover:text-foreground">Fresha Alternative (0% Cut)</Link>
                 </li>
                 <li>
-                  <Link to="/case-studies/barbershops" className="hover:text-foreground">Barbershop Booking</Link>
+                  <Link to={paths.booksyAlternative} className="hover:text-foreground">Booksy Alternative (Barbers)</Link>
+                </li>
+                <li>
+                  <Link to={paths.mindbodyAlternative} className="hover:text-foreground">Mindbody Alternative (MedSpas)</Link>
+                </li>
+                <li>
+                  <Link to={paths.standalone} className="hover:text-foreground font-medium text-accent">Request Custom Quote</Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-2.5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Case Studies</p>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li>
+                  <Link to={paths.caseStudies} className="hover:text-foreground font-medium text-accent">All Industry Studies</Link>
+                </li>
+                <li>
+                  <Link to="/case-studies/barbershops" className="hover:text-foreground">Barbershops & Grooming</Link>
                 </li>
                 <li>
                   <Link to="/case-studies/medspas-aesthetics" className="hover:text-foreground">MedSpa & Aesthetics</Link>
                 </li>
                 <li>
-                  <Link to="/case-studies/tattoo-piercing" className="hover:text-foreground">Tattoo & Piercing</Link>
-                </li>
-                <li>
-                  <Link to={paths.standalone} className="hover:text-foreground">Request Deployment Quote</Link>
+                  <Link to="/case-studies/hair-salons" className="hover:text-foreground">Hair Salons & Color Bars</Link>
                 </li>
               </ul>
             </div>

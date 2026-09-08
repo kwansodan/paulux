@@ -3,6 +3,9 @@ export const paths = {
   // Core Marketing & Acquisition
   home: "/",
   freshaAlternative: "/fresha-alternative",
+  booksyAlternative: "/booksy-alternative",
+  mindbodyAlternative: "/mindbody-alternative",
+  dispensarySoftware: "/salon-chemical-dispensary-software",
   salonSoftware: "/salon-booking-software",
   roiCalculator: "/roi-calculator",
   demo: "/demo",
