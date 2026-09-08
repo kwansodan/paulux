@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { AxiosError } from "axios";
-import { ArrowLeft, Check, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowLeft, Check, MessageCircle, MessageSquare, Sparkles } from "lucide-react";
 import { api, ensureCsrf } from "@/lib/api";
+import { openChatwoot } from "@/components/marketing/ChatwootWidget";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -87,6 +88,17 @@ export default function StandalonePage() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <button
+            type="button"
+            onClick={() => {
+              const opened = openChatwoot();
+              if (!opened) window.open(`https://wa.me/?text=${waLeadMsg}`, "_blank", "noopener,noreferrer");
+            }}
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md hover:bg-primary/90 transition-all"
+          >
+            <MessageSquare className="size-4" />
+            <span>Open Live Chat</span>
+          </button>
           <a
             href={`https://wa.me/?text=${waLeadMsg}`}
             target="_blank"
@@ -94,7 +106,7 @@ export default function StandalonePage() {
             className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#20bd5a] transition-all"
           >
             <MessageCircle className="size-4 fill-white text-transparent" />
-            <span>Chat Directly on WhatsApp</span>
+            <span>WhatsApp Us</span>
           </a>
           <Button asChild variant="outline">
             <Link to={paths.home}>
@@ -143,16 +155,30 @@ export default function StandalonePage() {
           <div className="mt-10 rounded-2xl border border-border/70 bg-secondary/30 p-5">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">Need Instant Answers?</p>
             <p className="text-muted-foreground mt-1 text-xs leading-relaxed">
-              Want to speak with a solutions engineer right now? Skip the form and chat directly on WhatsApp.
+              Want to speak with a solutions specialist right now? Start a live chat or message us directly on WhatsApp.
             </p>
-            <a
-              href={`https://wa.me/?text=${waLeadMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 text-xs font-bold text-[#25D366] hover:underline"
-            >
-              ?? Connect on WhatsApp ?
-            </a>
+            <div className="mt-3.5 flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  const opened = openChatwoot();
+                  if (!opened) window.open(`https://wa.me/?text=${waLeadMsg}`, "_blank", "noopener,noreferrer");
+                }}
+                className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 transition-all"
+              >
+                <MessageSquare className="size-3.5" />
+                <span>Start Live Chat</span>
+              </button>
+              <a
+                href={`https://wa.me/?text=${waLeadMsg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-card px-3.5 py-2 text-xs font-semibold text-[#25D366] hover:bg-secondary transition-all"
+              >
+                <MessageCircle className="size-3.5" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
 

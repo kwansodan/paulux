@@ -4,11 +4,13 @@ import { MessageCircle, X } from "lucide-react";
 interface WhatsAppFloatProps {
   phoneNumber?: string;
   defaultMessage?: string;
+  position?: "left" | "right";
 }
 
 export default function WhatsAppFloat({
   phoneNumber = "",
   defaultMessage = "Hi! I'm interested in deploying a standalone Paulux booking system on my own domain. Could you share details and pricing?",
+  position = "left",
 }: WhatsAppFloatProps) {
   const [openTooltip, setOpenTooltip] = useState(true);
 
@@ -18,8 +20,17 @@ export default function WhatsAppFloat({
     ? `https://wa.me/${cleanPhone}?text=${encodeURIComponent(defaultMessage)}`
     : `https://wa.me/?text=${encodeURIComponent(defaultMessage)}`;
 
+  const isLeft = position === "left";
+
   return (
-    <aside aria-label="Direct WhatsApp Contact" className="fixed bottom-20 right-4 z-40 sm:bottom-6 sm:right-6 flex flex-col items-end gap-2">
+    <aside
+      aria-label="Direct WhatsApp Contact"
+      className={`fixed z-40 flex flex-col gap-2 ${
+        isLeft
+          ? "bottom-20 left-4 sm:bottom-6 sm:left-6 items-start"
+          : "bottom-20 right-4 sm:bottom-6 sm:right-6 items-end"
+      }`}
+    >
       {openTooltip && (
         <div className="relative hidden max-w-xs animate-in fade-in slide-in-from-bottom-2 rounded-2xl border border-border/80 bg-card p-4 shadow-xl sm:block">
           <button

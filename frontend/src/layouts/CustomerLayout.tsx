@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { paths } from "@/router/paths";
 import { Logo } from "@/components/brand/Logo";
+import ChatwootWidget from "@/components/marketing/ChatwootWidget";
 import WhatsAppFloat from "@/components/marketing/WhatsAppFloat";
 import StickyMobileBar from "@/components/marketing/StickyMobileBar";
 import { cn } from "@/lib/utils";
@@ -169,6 +170,7 @@ export default function CustomerLayout() {
       </footer>
 
       {/* Floating & Mobile Conversion Widgets */}
+      <ChatwootWidget />
       <WhatsAppFloat phoneNumber={platformWhatsapp} />
       <StickyMobileBar phoneNumber={platformWhatsapp} />
     </div>

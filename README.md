@@ -27,10 +27,18 @@ This repository contains the marketing, SEO snapshot generation, interactive dem
 
 ## Environment Variables
 
-For lead notifications on Vercel:
+### Live Chat (Chatwoot)
+- `VITE_CHATWOOT_WEBSITE_TOKEN`: Website Inbox Token from your Chatwoot Dashboard (**Settings** -> **Inboxes** -> **Add Inbox** -> **Website**).
+- `VITE_CHATWOOT_BASE_URL`: Chatwoot instance base URL (defaults to `https://app.chatwoot.com`, or your self-hosted Chatwoot domain).
+
+### Lead Notifications (Vercel Serverless Function)
 - `RESEND_API_KEY`: Resend API key for admin email alerts.
 - `OPS_EMAIL`: Email address to receive lead notifications.
 - `ARKESEL_API_KEY`: Arkesel API key for instant SMS dispatch.
 - `OPS_PHONE`: Operations phone number for SMS alerts.
 - `ARKESEL_SENDER_ID`: Custom SMS Sender ID (e.g. `Paulux`).
-- `VITE_PLATFORM_WHATSAPP`: WhatsApp support phone number for the floating conversion widget.
+
+### Direct Contact Widgets
+- `VITE_PLATFORM_WHATSAPP`: WhatsApp support phone number for direct messaging widget.
+- `VITE_PLATFORM_INSTAGRAM`: Instagram handle without `@`.
+
