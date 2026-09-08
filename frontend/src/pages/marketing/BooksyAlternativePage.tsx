@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
 import RoiCalculator from "@/components/marketing/RoiCalculator";
 import { paths } from "@/router/paths";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const COMPARISON_ROWS = [
   {
@@ -76,6 +77,7 @@ const FAQS = [
 ];
 
 export default function BooksyAlternativePage() {
+  const { localizeText } = useCurrency();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqSchema = {
@@ -157,13 +159,13 @@ export default function BooksyAlternativePage() {
                   <td className="p-4 md:p-6 text-muted-foreground">
                     <div className="flex items-start gap-2">
                       <X className="size-4 text-rose-500 shrink-0 mt-0.5" />
-                      <span>{r.booksy}</span>
+                      <span>{localizeText(r.booksy)}</span>
                     </div>
                   </td>
                   <td className="p-4 md:p-6 text-foreground bg-accent/5">
                     <div className="flex items-start gap-2">
                       <Check className="size-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                      <span className="font-semibold text-accent">{r.paulux}</span>
+                      <span className="font-semibold text-accent">{localizeText(r.paulux)}</span>
                     </div>
                   </td>
                 </tr>
@@ -173,51 +175,46 @@ export default function BooksyAlternativePage() {
         </div>
       </Container>
 
-      {/* Embedded ROI Calculator */}
+      {/* ROI Calculator Section */}
+      <Container className="py-12 md:py-20 max-w-5xl">
+        <div className="mb-10 text-center">
+          <p className="text-accent text-xs tracking-luxe uppercase font-semibold">Live Impact Calculator</p>
+          <h2 className="font-serif mt-2 text-3xl md:text-4xl">Calculate your shop's annual marketplace bleed</h2>
+        </div>
+        <RoiCalculator />
+      </Container>
+
+      {/* FAQ Section */}
       <section className="bg-secondary/30 py-20">
-        <Container>
-          <div className="text-center mb-10">
-            <p className="text-accent text-xs tracking-luxe uppercase font-semibold">Cost Breakdown</p>
-            <h2 className="font-serif mt-1 text-3xl">How Much Do You Lose to App Marketplace Fees?</h2>
+        <Container className="max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-medium">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground mt-2 text-sm">Everything you need to know about ditching Booksy.</p>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <RoiCalculator />
+
+          <div className="space-y-4">
+            {FAQS.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div key={faq.q} className="rounded-2xl border border-border/80 bg-card p-5 shadow-sm">
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="flex w-full items-center justify-between text-left font-medium text-base gap-4"
+                  >
+                    <span className="font-serif text-lg">{localizeText(faq.q)}</span>
+                    {isOpen ? <ChevronUp className="size-5 shrink-0 text-accent" /> : <ChevronDown className="size-5 shrink-0 text-muted-foreground" />}
+                  </button>
+                  {isOpen && (
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground border-t border-border/60 pt-3">
+                      {localizeText(faq.a)}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>
-
-      {/* FAQ Section */}
-      <Container className="py-20 md:py-28 max-w-4xl">
-        <div className="text-center mb-12">
-          <p className="text-accent text-xs tracking-luxe uppercase font-semibold">Common Questions</p>
-          <h2 className="font-serif mt-2 text-3xl md:text-4xl">Frequently Asked Questions</h2>
-        </div>
-
-        <div className="space-y-4">
-          {FAQS.map((faq, idx) => {
-            const isOpen = openFaq === idx;
-            return (
-              <div
-                key={faq.q}
-                className="rounded-2xl border border-border/80 bg-card p-5 transition-colors shadow-sm"
-              >
-                <button
-                  onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between text-left font-medium text-base gap-4"
-                >
-                  <span className="font-serif text-lg">{faq.q}</span>
-                  {isOpen ? <ChevronUp className="size-5 shrink-0 text-accent" /> : <ChevronDown className="size-5 shrink-0 text-muted-foreground" />}
-                </button>
-                {isOpen && (
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground border-t border-border/60 pt-3">
-                    {faq.a}
-                  </p>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </Container>
 
       {/* Final Call to Action */}
       <section className="bg-brand-wash text-primary-foreground py-20 text-center">

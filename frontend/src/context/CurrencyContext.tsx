@@ -96,6 +96,7 @@ interface CurrencyContextValue {
       compact?: boolean;
     }
   ) => string;
+  localizeText: (text: string) => string;
   setCurrency: (code: string) => void;
   isAutoDetected: boolean;
   currencies: CurrencyConfig[];
@@ -262,6 +263,42 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     return `${config.symbol}${formattedNumber}`;
   };
 
+  /**
+   * Automatically parses and localizes any USD amounts embedded in strings (e.g. "$19,400", "$240k+", "$31,200")
+   */
+  const localizeText = (text: string): string => {
+    if (!text) return text;
+    if (currency === "USD") return text;
+
+    return text.replace(
+      /\$([0-9]{1,3}(?:,[0-9]{3})*(?:\.[0-9]+)?)([kKmMbB]?\+?)/g,
+      (match, numStr: string, suffix: string) => {
+        const rawNum = parseFloat(numStr.replace(/,/g, ""));
+        if (isNaN(rawNum)) return match;
+
+        let multiplier = 1;
+        const lowerSuffix = suffix.toLowerCase();
+        if (lowerSuffix.startsWith("k")) multiplier = 1000;
+        else if (lowerSuffix.startsWith("m")) multiplier = 1000000;
+
+        const totalUsd = rawNum * multiplier;
+        const converted = totalUsd * rate;
+
+        if (multiplier > 1) {
+          if (converted >= 1000000) {
+            const val = (converted / 1000000).toFixed(1).replace(/\.0$/, "");
+            return `${config.symbol}${val}M${suffix.includes("+") ? "+" : ""}`;
+          }
+          const val = Math.round(converted / 1000);
+          return `${config.symbol}${val}k${suffix.includes("+") ? "+" : ""}`;
+        }
+
+        const rounded = Math.round(converted);
+        return `${config.symbol}${rounded.toLocaleString()}${suffix}`;
+      }
+    );
+  };
+
   const currenciesList = useMemo(() => Object.values(SUPPORTED_CURRENCIES), []);
 
   return (
@@ -274,6 +311,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
         rates,
         convert,
         formatAmount,
+        localizeText,
         setCurrency,
         isAutoDetected,
         currencies: currenciesList,

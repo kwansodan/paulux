@@ -1,12 +1,14 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { CASE_STUDIES } from "@/data/caseStudies";
 import { paths } from "@/router/paths";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function CaseStudiesHubPage() {
+  const { localizeText } = useCurrency();
 
   const hubSchema = {
     "@context": "https://schema.org",
@@ -46,7 +48,7 @@ export default function CaseStudiesHubPage() {
           {/* Aggregate Metrics Bar */}
           <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-4xl w-full text-left">
             <div className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur-sm">
-              <span className="font-serif text-2xl md:text-3xl font-bold text-white">$240k+</span>
+              <span className="font-serif text-2xl md:text-3xl font-bold text-white">{localizeText("$240k+")}</span>
               <p className="text-xs text-primary-foreground/75 mt-1">Commissions Saved</p>
             </div>
             <div className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur-sm">
@@ -93,7 +95,7 @@ export default function CaseStudiesHubPage() {
                   {study.businessName}
                 </h3>
                 <p className="text-muted-foreground mt-2 text-xs leading-relaxed">
-                  {study.summary}
+                  {localizeText(study.summary)}
                 </p>
 
                 {/* Key Metric Callout */}
@@ -103,7 +105,7 @@ export default function CaseStudiesHubPage() {
                     <span>Key Outcome:</span>
                   </p>
                   <p className="text-xs text-muted-foreground mt-1">
-                    {study.metrics.annualSavings}
+                    {localizeText(study.metrics.annualSavings)}
                   </p>
                 </div>
               </div>

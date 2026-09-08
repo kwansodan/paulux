@@ -111,9 +111,9 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "hair-salons",
     industry: "Hair Salons & Color Studios",
-    businessName: "Atelier Saint-Honor�",
+    businessName: "Atelier Saint-Honoré",
     tagline: "Multi-Service Carts & Master Stylist Scheduling",
-    heroHeadline: "How Atelier Saint-Honor� Reclaimed $27,800/Year Lost to Marketplace Cuts",
+    heroHeadline: "How Atelier Saint-Honoré Reclaimed $27,800/Year Lost to Marketplace Cuts",
     summary: "A premier hair coloring and balayage boutique replaced Fresha with a standalone Paulux deployment, allowing clients to book multi-hour color treatments seamlessly.",
     location: "Toronto, Canada",
     teamSize: "9 Colorists & Stylists",

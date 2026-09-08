@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,8 +6,10 @@ import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
 import { CASE_STUDIES } from "@/data/caseStudies";
 import { paths } from "@/router/paths";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function IndustryCaseStudyPage() {
+  const { localizeText } = useCurrency();
   const { slug } = useParams<{ slug: string }>();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
@@ -86,11 +88,11 @@ export default function IndustryCaseStudyPage() {
           </div>
 
           <h1 className="font-serif mt-6 text-3xl font-medium leading-tight sm:text-4xl md:text-5xl">
-            {study.heroHeadline}
+            {localizeText(study.heroHeadline)}
           </h1>
 
           <p className="text-primary-foreground/80 mt-5 text-base md:text-lg leading-relaxed">
-            {study.summary}
+            {localizeText(study.summary)}
           </p>
 
           {/* Metric Dashboard */}
@@ -112,7 +114,7 @@ export default function IndustryCaseStudyPage() {
             </div>
             <div className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/10 p-4 backdrop-blur-sm">
               <p className="text-xs text-primary-foreground/70">Annual ROI</p>
-              <p className="font-serif text-2xl font-bold text-emerald-300 mt-1">{study.metrics.annualSavings.split(" ")[0]}</p>
+              <p className="font-serif text-2xl font-bold text-emerald-300 mt-1">{localizeText(study.metrics.annualSavings).split(" ")[0]}</p>
               <p className="text-[10px] text-primary-foreground/70 mt-0.5">Retained profit</p>
             </div>
           </div>
@@ -129,7 +131,7 @@ export default function IndustryCaseStudyPage() {
               Why {study.previousPlatform} was hurting {study.businessName}
             </h2>
             <p className="text-muted-foreground mt-3 text-sm md:text-base leading-relaxed">
-              {study.challenge}
+              {localizeText(study.challenge)}
             </p>
           </div>
 
@@ -139,7 +141,7 @@ export default function IndustryCaseStudyPage() {
               Dedicated deployment on their own custom domain
             </h2>
             <p className="text-muted-foreground mt-3 text-sm md:text-base leading-relaxed">
-              {study.solution}
+              {localizeText(study.solution)}
             </p>
           </div>
         </div>
@@ -160,7 +162,7 @@ export default function IndustryCaseStudyPage() {
         {/* Testimonial Quote */}
         <div className="mt-16 rounded-3xl border border-accent/40 bg-accent/5 p-8 md:p-10 shadow-md">
           <p className="font-serif text-xl md:text-2xl italic leading-relaxed text-foreground">
-            "{study.testimonial.quote}"
+            "{localizeText(study.testimonial.quote)}"
           </p>
           <div className="mt-6 flex items-center gap-3">
             <div className="flex size-11 items-center justify-center rounded-full bg-accent text-accent-foreground font-serif font-bold text-base">
@@ -168,7 +170,7 @@ export default function IndustryCaseStudyPage() {
             </div>
             <div>
               <p className="font-serif font-medium text-base">{study.testimonial.author}</p>
-              <p className="text-xs text-muted-foreground">{study.testimonial.role} ï¿½ {study.businessName}</p>
+              <p className="text-xs text-muted-foreground">{study.testimonial.role} · {study.businessName}</p>
             </div>
           </div>
         </div>
@@ -185,12 +187,12 @@ export default function IndustryCaseStudyPage() {
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="flex w-full items-center justify-between text-left font-medium text-base gap-4"
                   >
-                    <span className="font-serif text-lg">{faq.q}</span>
+                    <span className="font-serif text-lg">{localizeText(faq.q)}</span>
                     {isOpen ? <ChevronUp className="size-5 shrink-0 text-accent" /> : <ChevronDown className="size-5 shrink-0 text-muted-foreground" />}
                   </button>
                   {isOpen && (
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground border-t border-border/60 pt-3">
-                      {faq.a}
+                      {localizeText(faq.a)}
                     </p>
                   )}
                 </div>
