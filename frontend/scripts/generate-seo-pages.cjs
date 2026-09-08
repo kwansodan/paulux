@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Static SEO Page Snapshot Generator for Paulux Standalone Platform
  *
  * Runs after Vite build to generate dedicated pre-rendered HTML files
@@ -56,31 +56,37 @@ const PAGES = [
   },
   {
     path: "salon-booking-software",
-    title: "White-Label Salon Booking Software on Your Custom Domain | Paulux",
-    description: "The premier standalone booking and management platform for luxury salons and spas. Custom domain deployment, zero commissions, and complete data privacy.",
-    keywords: "white label salon booking software, bespoke salon management software, spa appointment scheduling software, luxury salon pos system, self hosted salon booking",
+    title: "Enterprise Salon Booking & Consumables Accounting Software | Paulux",
+    description: "The complete standalone salon & clinic platform: 0% commissions, back-of-house chemical consumable tracking (ml/g), automated 30/60/90-day win-backs, dedicated stylist portal, and custom domain deployment.",
+    keywords: "salon booking software, salon chemical inventory, salon consumables tracking, backbar product accounting, salon win back sms automation, white label salon software, dedicated stylist portal, zero commission salon software",
     canonical: "https://www.pauluxbooking.com/salon-booking-software",
     content: `
-      <header><h1>Bespoke Salon & Spa Software Deployed on Your Own Domain</h1></header>
+      <header><h1>Enterprise Salon Booking & Chemical Consumables Accounting Software</h1></header>
       <main>
-        <p>Stop relying on generic marketplace templates. Paulux gives your brand a dedicated, luxury booking experience with total independence and zero commissions.</p>
-        <h2>Core Capabilities for Luxury Salons</h2>
+        <p>Paulux delivers the complete operational engine for salons, aesthetic clinics, and appointment studios. Deploy on your custom domain with 0% commissions.</p>
+        <h2>12 Enterprise Operational Modules</h2>
         <ul>
-          <li><strong>Your Own Custom Domain:</strong> booking.yourbrand.com</li>
-          <li><strong>Zero Booking Commissions:</strong> Keep 100% of every client transaction</li>
-          <li><strong>100% Private Client Data:</strong> Isolated database owned solely by your salon</li>
-          <li><strong>Instant 2-Way Calendar Sync:</strong> Synchronize automatically with Google Calendar</li>
-          <li><strong>Upfront Deposits:</strong> Prevent no-shows with integrated card deposits</li>
-          <li><strong>Gift Cards & Loyalty:</strong> Sell and redeem digital gift cards effortlessly</li>
+          <li><strong>01. Online Booking Engine:</strong> Mobile-first 4-step booking wizard with smart device autofill, dynamic 7-column calendar, sticky mobile cart drawer, and universal .ics invites.</li>
+          <li><strong>02. Deposit Enforcer & No-Show Shield:</strong> Full or fixed upfront deposits, service-specific deposit rules, dual Paystack gateway failover, and processing fee surcharge pass-through.</li>
+          <li><strong>03. Front-Desk Coordination Hub:</strong> Multi-view calendar, 15-second fast walk-in booking mode, real-time chair capacity locks, and timestamped audit trails.</li>
+          <li><strong>04. Dedicated Stylist Mobile Portal:</strong> Independent mobile schedule access (/stylist), multi-stylist split assignments per booking, and role-based permissions.</li>
+          <li><strong>05. Digital Gift Cards Engine:</strong> Branded public storefront (/gift-cards), recipient delivery via SMS and email, and partial balance deductions.</li>
+          <li><strong>06. Promo Codes & Marketing Campaigns:</strong> Fixed and percentage vouchers, usage redemption caps, expiry dates, and revenue attribution.</li>
+          <li><strong>07. Retail Inventory POS:</strong> Categorized SKU catalog, automated stock-in/stock-out movements, and auto-deductions when packages include take-home items.</li>
+          <li><strong>08. Back-of-House Consumables Accounting (The Enterprise Differentiator):</strong> Track professional color dyes, bleaches, developer, and serums by exact milliliters (ml) and grams (g) across department cost centers with locked snapshot P&L accounting.</li>
+          <li><strong>09. Automated Messaging & Win-Backs:</strong> Multi-tier SMS/Email reminders (24h & 2h before), automated 30/60/90-day win-back engine, and 1-click Google Review 5-star boosters.</li>
+          <li><strong>10. Client CRM & Formula Records:</strong> Technical chemical formula notes (dye codes, developer ratios), scalp allergy warnings, and VIP client lifetime spend (LTV) tracking.</li>
+          <li><strong>11. Executive Financial Analytics:</strong> Real-time KPI dashboard separating today's realized revenue from future pre-collected deposits, with 1-click CSV/Excel export.</li>
+          <li><strong>12. White-Label Branding & CMS:</strong> Dedicated custom domain, dynamic hero media showcase, lookbook, and SEO service prep/aftercare instructions.</li>
         </ul>
         <h2>Turnkey 48-Hour Onboarding</h2>
-        <p>We handle domain connection, SSL security, data migration, and payment gateway setup.</p>
+        <p>We handle domain connection, SSL certificates, client and catalog migration, and payment gateway setup.</p>
       </main>
     `,
     schema: {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Paulux White-Label Salon Booking System",
+      "name": "Paulux Enterprise Salon Booking & Consumables Accounting System",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
