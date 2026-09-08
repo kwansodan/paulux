@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Check, Clock, CreditCard, Eye, LayoutDashboard, Shield, Sparkles, Smartphone, User, Scissors } from "lucide-react";
+import { ArrowRight, Calendar, Check, CreditCard, Eye, LayoutDashboard, Smartphone, User, Scissors } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";

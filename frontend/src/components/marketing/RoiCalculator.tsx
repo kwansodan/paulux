@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Calculator, Check, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, Calculator, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { paths } from "@/router/paths";
 

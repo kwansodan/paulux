@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Check, Clock, CreditCard, Gift, Globe, Layers, Shield, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Calendar, CreditCard, Gift, Globe, Shield, Sparkles, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";

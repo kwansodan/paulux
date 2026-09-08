@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronUp, DollarSign, Globe, Lock, Shield, Sparkles, TrendingUp, Users } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";

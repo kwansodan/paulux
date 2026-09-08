@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, DollarSign, Shield, Sparkles, TrendingUp, Users } from "lucide-react";
+import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
@@ -8,7 +7,6 @@ import { CASE_STUDIES } from "@/data/caseStudies";
 import { paths } from "@/router/paths";
 
 export default function CaseStudiesHubPage() {
-  const [filter, setFilter] = useState<string>("all");
 
   const hubSchema = {
     "@context": "https://schema.org",

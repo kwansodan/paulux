@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { AxiosError } from "axios";
-import { ArrowLeft, Check, Clock, Globe, Lock, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowLeft, Check, MessageCircle, Sparkles } from "lucide-react";
 import { api, ensureCsrf } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

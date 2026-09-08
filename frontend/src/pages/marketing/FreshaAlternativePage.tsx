@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, ChevronDown, ChevronUp, DollarSign, Globe, Lock, ShieldCheck, X } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, ChevronUp, ShieldCheck, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";

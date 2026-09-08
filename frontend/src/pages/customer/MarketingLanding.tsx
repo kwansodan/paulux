@@ -6,15 +6,9 @@ import {
   ChevronDown,
   ChevronUp,
   Clock,
-  Database,
   Globe,
   Lock,
-  Percent,
-  Shield,
   Sparkles,
-  Star,
-  Users,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
