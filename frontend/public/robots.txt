@@ -15,4 +15,5 @@ Allow: /terms
 Allow: /privacy
 
 # Production XML Sitemap reference
-Sitemap: https://paulux.app/sitemap.xml
+Sitemap: https://www.pauluxbooking.com/sitemap.xml
+

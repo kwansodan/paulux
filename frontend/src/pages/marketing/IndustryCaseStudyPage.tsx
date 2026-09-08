@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,11 +25,11 @@ export default function IndustryCaseStudyPage() {
     "publisher": {
       "@type": "Organization",
       "name": "Paulux",
-      "url": "https://paulux.app",
+      "url": "https://www.pauluxbooking.com",
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://paulux.app/case-studies/${study.slug}`,
+      "@id": `https://www.pauluxbooking.com/case-studies/${study.slug}`,
     },
   };
 
@@ -168,7 +168,7 @@ export default function IndustryCaseStudyPage() {
             </div>
             <div>
               <p className="font-serif font-medium text-base">{study.testimonial.author}</p>
-              <p className="text-xs text-muted-foreground">{study.testimonial.role} � {study.businessName}</p>
+              <p className="text-xs text-muted-foreground">{study.testimonial.role} ï¿½ {study.businessName}</p>
             </div>
           </div>
         </div>
@@ -230,3 +230,4 @@ export default function IndustryCaseStudyPage() {
     </>
   );
 }
+

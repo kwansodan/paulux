@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Static SEO Page Snapshot Generator for Paulux Standalone Platform
  *
  * Runs after Vite build to generate dedicated pre-rendered HTML files
@@ -25,7 +25,7 @@ const PAGES = [
     title: "Zero-Commission Fresha Alternative | Own Your Salon Software Outright | Paulux",
     description: "Stop paying 20% commission on new clients. Paulux is the private, white-label salon booking software deployed on your custom domain with 0% fees and 100% data privacy.",
     keywords: "fresha alternative, zero commission salon software, fresha 20 percent fee, alternative to fresha booking, self hosted salon software, own domain spa booking system",
-    canonical: "https://paulux.app/fresha-alternative",
+    canonical: "https://www.pauluxbooking.com/fresha-alternative",
     content: `
       <header><h1>The Zero-Commission Fresha Alternative for Premier Salons</h1></header>
       <main>
@@ -59,7 +59,7 @@ const PAGES = [
     title: "White-Label Salon Booking Software on Your Custom Domain | Paulux",
     description: "The premier standalone booking and management platform for luxury salons and spas. Custom domain deployment, zero commissions, and complete data privacy.",
     keywords: "white label salon booking software, bespoke salon management software, spa appointment scheduling software, luxury salon pos system, self hosted salon booking",
-    canonical: "https://paulux.app/salon-booking-software",
+    canonical: "https://www.pauluxbooking.com/salon-booking-software",
     content: `
       <header><h1>Bespoke Salon & Spa Software Deployed on Your Own Domain</h1></header>
       <main>
@@ -91,7 +91,7 @@ const PAGES = [
     title: "Salon Commission Savings Calculator | Paulux",
     description: "Calculate how much your salon loses to Fresha, Mindbody, and marketplace booking platforms every year. See your savings with a 0% commission standalone system.",
     keywords: "salon commission calculator, fresha fee calculator, salon booking fee comparison, salon software savings",
-    canonical: "https://paulux.app/roi-calculator",
+    canonical: "https://www.pauluxbooking.com/roi-calculator",
     content: `
       <header><h1>Salon Commission Savings Calculator</h1></header>
       <main>
@@ -105,7 +105,7 @@ const PAGES = [
     title: "Interactive Live Demo | Paulux Standalone Salon Booking Software",
     description: "Experience the Paulux salon booking platform live. Preview the luxury customer appointment wizard and the powerful salon manager admin dashboard.",
     keywords: "salon software demo, live booking software preview, spa appointment system demo, white label salon dashboard",
-    canonical: "https://paulux.app/demo",
+    canonical: "https://www.pauluxbooking.com/demo",
     content: `
       <header><h1>Interactive Live Demo of Paulux</h1></header>
       <main>
@@ -119,7 +119,7 @@ const PAGES = [
     title: "Request Standalone Salon Software Deployment | Paulux",
     description: "Deploy Paulux on your own domain with 0% commissions and complete client data privacy. Fill in your salon details for a fast turnkey deployment quote.",
     keywords: "standalone salon software quote, own domain booking setup, bespoke spa software deployment, white label salon platform inquiry",
-    canonical: "https://paulux.app/standalone",
+    canonical: "https://www.pauluxbooking.com/standalone",
     content: `
       <header><h1>Run Paulux on Your Own Custom Domain</h1></header>
       <main>
@@ -133,7 +133,7 @@ const PAGES = [
     title: "Appointment Booking Software Case Studies | Barbers, MedSpas, Salons & Studios | Paulux",
     description: "See how barbershops, aesthetic clinics, hair studios, tattoo artists, massage therapists, and pet groomers eliminated marketplace commissions and automated appointments with Paulux.",
     keywords: "salon booking case study, barbershop software case study, medspa appointment software, tattoo studio booking system, white label booking software industries",
-    canonical: "https://paulux.app/case-studies",
+    canonical: "https://www.pauluxbooking.com/case-studies",
     content: `
       <header><h1>Appointment Booking Software Case Studies</h1></header>
       <main>
@@ -147,7 +147,7 @@ const PAGES = [
     title: "Barbershop Booking Software Case Study | The Noble Barber Co. | Paulux",
     description: "How The Noble Barber Co. saved $19,400/year and eliminated no-shows by migrating from Booksy to their own dedicated domain.",
     keywords: "barbershop booking software case study, booksy alternative for barbers, own domain barbershop booking, zero commission barber system",
-    canonical: "https://paulux.app/case-studies/barbershops",
+    canonical: "https://www.pauluxbooking.com/case-studies/barbershops",
     content: `
       <header><h1>Barbershop Booking Software Case Study: The Noble Barber Co.</h1></header>
       <main>
@@ -161,7 +161,7 @@ const PAGES = [
     title: "MedSpa & Clinical Aesthetics Booking Case Study | Aura Aesthetics | Paulux",
     description: "How Aura Medical Aesthetics secured $42,000 in pre-paid treatment deposits and protected patient privacy with Paulux.",
     keywords: "medspa booking software case study, aesthetic clinic scheduling, mindbody alternative medspa, clinical deposit booking system",
-    canonical: "https://paulux.app/case-studies/medspas-aesthetics",
+    canonical: "https://www.pauluxbooking.com/case-studies/medspas-aesthetics",
     content: `
       <header><h1>MedSpa & Clinical Aesthetics Case Study: Aura Medical Aesthetics</h1></header>
       <main>
@@ -175,7 +175,7 @@ const PAGES = [
     title: "Tattoo & Piercing Studio Case Study | Iron & Oak Tattoo | Paulux",
     description: "How Iron & Oak eliminated 8-hour artist gaps with mandatory online non-refundable booking deposits on their own domain.",
     keywords: "tattoo studio booking software, tattoo deposit booking system, artist schedule software, custom tattoo booking",
-    canonical: "https://paulux.app/case-studies/tattoo-piercing",
+    canonical: "https://www.pauluxbooking.com/case-studies/tattoo-piercing",
     content: `
       <header><h1>Tattoo & Piercing Studio Case Study: Iron & Oak Tattoo</h1></header>
       <main>
@@ -247,3 +247,4 @@ PAGES.forEach((page) => {
 });
 
 console.log("All SEO static route snapshots successfully generated!");
+

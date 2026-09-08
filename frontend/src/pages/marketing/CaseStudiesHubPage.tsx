@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -13,7 +13,7 @@ export default function CaseStudiesHubPage() {
     "@type": "CollectionPage",
     "name": "Paulux Appointment Booking Case Studies & Industry Solutions",
     "description": "Real-world case studies showing how barbershops, medspas, hair salons, tattoo studios, and appointment-based businesses save thousands by owning their software on their own domain.",
-    "url": "https://paulux.app/case-studies",
+    "url": "https://www.pauluxbooking.com/case-studies",
   };
 
   return (
@@ -40,7 +40,7 @@ export default function CaseStudiesHubPage() {
           </h1>
 
           <p className="text-primary-foreground/80 mt-5 max-w-2xl text-base md:text-lg">
-            From high-turnover barbershops and clinical medspas to private coaching and tattoo studios — see how businesses eliminated 20% marketplace commissions and took total control of their client relationships.
+            From high-turnover barbershops and clinical medspas to private coaching and tattoo studios â€” see how businesses eliminated 20% marketplace commissions and took total control of their client relationships.
           </p>
 
           {/* Aggregate Metrics Bar */}
@@ -144,3 +144,4 @@ export default function CaseStudiesHubPage() {
     </>
   );
 }
+

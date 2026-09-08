@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 
 export interface SeoProps {
   title: string;
@@ -14,7 +14,7 @@ export function SeoHead({
   description,
   keywords,
   canonicalPath = "",
-  ogImage = "https://paulux.app/og-image.png",
+  ogImage = "https://www.pauluxbooking.com/og-image.png",
   schema,
 }: SeoProps) {
   useEffect(() => {
@@ -40,7 +40,7 @@ export function SeoHead({
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
     setMeta("og:image", ogImage, true);
-    const fullUrl = `https://paulux.app${canonicalPath}`;
+    const fullUrl = `https://www.pauluxbooking.com${canonicalPath}`;
     setMeta("og:url", fullUrl, true);
 
     // Twitter
@@ -75,3 +75,4 @@ export function SeoHead({
 
   return null;
 }
+
