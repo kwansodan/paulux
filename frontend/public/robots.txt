@@ -1,18 +1,16 @@
-# Paulux — Search Engine Robot Directives
+ï»¿# Paulux - Search Engine Robot Directives
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /admin/
 Disallow: /api/
-Disallow: /reset-password
-Disallow: /forgot-password
 
-# Allow search engine indexing of all marketing & comparison pages
+# Priority Marketing & Comparison Routes
 Allow: /fresha-alternative
 Allow: /salon-booking-software
 Allow: /roi-calculator
 Allow: /demo
 Allow: /standalone
+Allow: /case-studies
+Allow: /case-studies/*
 Allow: /terms
 Allow: /privacy
 
