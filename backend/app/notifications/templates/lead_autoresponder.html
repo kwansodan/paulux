@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="font-family:Georgia,serif;font-size:22px;font-weight:500;margin:0 0 12px;color:#201822;">Thank you for your enquiry, {{ name }}</h1>
+<p style="color:#524754;font-size:15px;line-height:1.6;margin:0 0 16px;">
+  We have received your enquiry for <strong>{{ business_name }}</strong> regarding a standalone, dedicated Paulux deployment on your own domain.
+</p>
+<div style="background:#faf7f9;border-left:3px solid #8e627d;padding:14px 18px;border-radius:4px;margin:20px 0;">
+  <p style="margin:0 0 8px;font-weight:600;font-size:14px;color:#201822;">What happens next:</p>
+  <ul style="margin:0;padding-left:20px;color:#524754;font-size:14px;line-height:1.6;">
+    <li>Our solutions specialist is reviewing your salon's requirements.</li>
+    <li>We will reach out to you directly to discuss your custom branding, domain setup, and migration.</li>
+    <li>You'll get an exact turnkey deployment timeline (typically under 48 hours).</li>
+  </ul>
+</div>
+<p style="color:#524754;font-size:14px;line-height:1.6;margin:20px 0 16px;">
+  Need immediate answers or want to discuss pricing right now? You can connect with our team directly on WhatsApp:
+</p>
+<div style="margin:20px 0 24px;">
+  <a href="https://wa.me/?text=Hi%20Paulux%20Team!%20I%20just%20submitted%20a%20standalone%20enquiry%20for%20{{ business_name|urlencode }}." style="background:#25D366;color:#ffffff;padding:12px 22px;text-decoration:none;border-radius:6px;display:inline-block;font-weight:600;font-size:14px;">
+    ?? Chat with Us on WhatsApp
+  </a>
+</div>
+<p style="color:#887b89;font-size:13px;margin:24px 0 0;border-top:1px solid #eee7eb;padding-top:16px;">
+  Paulux — Private, White-Label Salon & Spa Booking Systems.
+</p>
+{% endblock %}

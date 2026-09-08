@@ -61,6 +61,7 @@ def create_app(settings: Settings | None = None) -> Flask:
         RESEND_API_KEY=settings.resend_api_key,
         EMAIL_FROM=settings.email_from,
         OPS_EMAIL=settings.ops_email,
+        OPS_PHONE=settings.ops_phone,
         ARKESEL_API_KEY=settings.arkesel_api_key,
         ARKESEL_SENDER=settings.arkesel_sender,
     )

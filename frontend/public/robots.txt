@@ -1,0 +1,20 @@
+# Paulux — Search Engine Robot Directives
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /reset-password
+Disallow: /forgot-password
+
+# Allow search engine indexing of all marketing & comparison pages
+Allow: /fresha-alternative
+Allow: /salon-booking-software
+Allow: /roi-calculator
+Allow: /demo
+Allow: /standalone
+Allow: /terms
+Allow: /privacy
+
+# Production XML Sitemap reference
+Sitemap: https://paulux.app/sitemap.xml

@@ -49,7 +49,7 @@ export default function HomePage() {
       <section className="bg-brand-wash text-primary-foreground relative overflow-hidden">
         <Container className="relative flex flex-col items-center gap-7 py-28 text-center md:py-36">
           <span className="text-primary-foreground/70 text-xs tracking-luxe uppercase">
-            {slug ? "Luxury wellness" : "Multi-tenant spa platform"}
+            {slug ? "Luxury wellness" : "Standalone Salon Platform"}
           </span>
           <h1 className="font-serif max-w-3xl text-5xl leading-[1.05] font-medium md:text-6xl">
             {slug ? `Moments of calm at ${slug}` : "Paulux"}
@@ -57,7 +57,7 @@ export default function HomePage() {
           <p className="text-primary-foreground/80 max-w-xl text-lg">
             {slug
               ? "Book your treatment in a few gentle steps — relaxation, care, and a seamless experience."
-              : "The booking platform for luxury spas. Each business, its own branded home."}
+              : "Private, white-label booking software for luxury salons and spas on your own domain."}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             {slug ? (

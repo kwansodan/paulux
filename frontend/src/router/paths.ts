@@ -1,6 +1,6 @@
 /** Central route path builders (ported intent from the old app's paths.ts). */
 export const paths = {
-  // Customer-facing
+  // Customer & Marketing
   home: "/",
   book: "/book",
   bookingLookup: "/my-booking",
@@ -9,6 +9,12 @@ export const paths = {
   terms: "/terms",
   privacy: "/privacy",
   standalone: "/standalone",
+  freshaAlternative: "/fresha-alternative",
+  salonSoftware: "/salon-booking-software",
+  roiCalculator: "/roi-calculator",
+  demo: "/demo",
+  caseStudies: "/case-studies",
+  caseStudyDetail: "/case-studies/:slug",
 
   // Auth
   login: "/login",

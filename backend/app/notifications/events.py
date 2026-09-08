@@ -117,32 +117,67 @@ def notify_gift_card_delivery(card) -> None:
 
 
 def notify_ops_lead(lead) -> None:
-    """Notify the platform team of a new standalone/own-domain enquiry.
+    """Notify the platform team of a new standalone/own-domain enquiry and
+    send an immediate confirmation auto-responder to the prospect.
 
-    Runs at the apex (no tenant). If OPS_EMAIL is unset the lead is still saved;
-    we simply skip the email. Never raises into the request path.
+    Runs at the apex (no tenant). Never raises into the request path.
     """
     try:
         ops_email = current_app.config.get("OPS_EMAIL")
-        if not ops_email:
+        ops_phone = current_app.config.get("OPS_PHONE")
+
+        # 1. Admin Email Dossier
+        if ops_email:
+            html = render_email(
+                "ops_lead.html",
+                name=lead.name,
+                business_name=lead.business_name,
+                email=lead.email,
+                phone=lead.phone,
+                city=lead.city,
+                team_size=lead.team_size,
+                message=lead.message,
+            )
+            send_email_task.delay(
+                ops_email,
+                f"🚨 New standalone enquiry · {lead.business_name}",
+                html,
+                "ops_lead",
+            )
+        else:
             log.info("ops_lead_saved_no_email", lead_email=lead.email)
-            return
-        html = render_email(
-            "ops_lead.html",
-            name=lead.name,
-            business_name=lead.business_name,
-            email=lead.email,
-            phone=lead.phone,
-            city=lead.city,
-            team_size=lead.team_size,
-            message=lead.message,
-        )
-        send_email_task.delay(
-            ops_email,
-            f"New standalone enquiry · {lead.business_name}",
-            html,
-            "ops_lead",
-        )
+
+        # 2. Instant Admin SMS Alert
+        if ops_phone:
+            sms_body = (
+                f"🚨 New Paulux Lead: {lead.name} from {lead.business_name} "
+                f"({lead.city or 'No city'}). Phone: {lead.phone or 'N/A'}. "
+                f"Team: {lead.team_size or 'N/A'}"
+            )
+            send_sms_task.delay(ops_phone, sms_body, "ops_lead_alert")
+
+        # 3. Prospect Auto-Responder Email
+        if lead.email:
+            auto_html = render_email(
+                "lead_autoresponder.html",
+                name=lead.name,
+                business_name=lead.business_name,
+            )
+            send_email_task.delay(
+                lead.email,
+                f"Thank you for your enquiry, {lead.name} · Paulux Standalone",
+                auto_html,
+                "lead_autoresponder",
+            )
+
+        # 4. Prospect SMS Auto-Confirmation (if mobile provided)
+        if lead.phone:
+            send_sms_task.delay(
+                lead.phone,
+                f"Hi {lead.name}, thanks for reaching out to Paulux regarding {lead.business_name}! "
+                f"Our deployment team has received your enquiry and will be in touch shortly.",
+                "lead_sms_confirmation",
+            )
     except Exception as e:  # pragma: no cover - defensive
         log.error("notify_ops_lead_failed", error=str(e))
 

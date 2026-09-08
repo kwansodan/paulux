@@ -13,7 +13,15 @@ const TENANT_NAV = [
   { to: paths.giftCards, label: "Gift Cards" },
   { to: paths.bookingLookup, label: "My Booking" },
 ];
-const APEX_NAV = [{ to: paths.standalone, label: "Request access" }];
+
+const APEX_NAV = [
+  { to: paths.salonSoftware, label: "Features" },
+  { to: paths.freshaAlternative, label: "Fresha Alternative" },
+  { to: paths.roiCalculator, label: "ROI Calculator" },
+  { to: paths.caseStudies, label: "Case Studies" },
+  { to: paths.demo, label: "Live Demo" },
+  { to: paths.standalone, label: "Get Quote", isCta: true },
+];
 
 export default function CustomerLayout() {
   const [open, setOpen] = useState(false);
@@ -23,9 +31,10 @@ export default function CustomerLayout() {
 
   // Close the mobile menu whenever the route changes.
   const key = location.pathname;
+  const platformWhatsapp = import.meta.env.VITE_PLATFORM_WHATSAPP || "";
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col pb-16 sm:pb-0">
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6 py-4">
           <Link to={paths.home} aria-label="Paulux home" onClick={() => setOpen(false)}>
@@ -33,17 +42,19 @@ export default function CustomerLayout() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-8 text-sm sm:flex">
+          <nav className="hidden items-center gap-6 text-sm sm:flex">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 className={({ isActive }) =>
                   cn(
-                    "tracking-wide transition-colors",
-                    isActive
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground",
+                    "tracking-wide transition-colors text-sm font-medium",
+                    "isCta" in n && n.isCta
+                      ? "rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 shadow-sm"
+                      : isActive
+                        ? "text-foreground font-semibold"
+                        : "text-muted-foreground hover:text-foreground",
                   )
                 }
               >
@@ -52,9 +63,9 @@ export default function CustomerLayout() {
             ))}
             <Link
               to={paths.login}
-              className="text-muted-foreground hover:text-foreground text-xs tracking-luxe uppercase"
+              className="text-muted-foreground hover:text-foreground text-xs tracking-luxe uppercase ml-2"
             >
-              {isTenant ? "Staff" : "Sign in"}
+              {isTenant ? "Staff" : "Staff Login"}
             </Link>
           </nav>
 
@@ -74,9 +85,9 @@ export default function CustomerLayout() {
         {open && (
           <nav
             key={key}
-            className="border-t border-border/60 bg-background px-6 py-4 sm:hidden"
+            className="border-t border-border/60 bg-background px-6 py-5 sm:hidden shadow-lg"
           >
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               {NAV.map((n) => (
                 <NavLink
                   key={n.to}
@@ -84,10 +95,12 @@ export default function CustomerLayout() {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     cn(
-                      "rounded-xl px-3 py-2.5 text-sm transition-colors",
-                      isActive
-                        ? "bg-secondary text-foreground font-medium"
-                        : "text-muted-foreground hover:bg-secondary",
+                      "rounded-xl px-4 py-3 text-sm transition-colors font-medium",
+                      "isCta" in n && n.isCta
+                        ? "bg-primary text-primary-foreground font-semibold text-center mt-2"
+                        : isActive
+                          ? "bg-secondary text-foreground font-semibold"
+                          : "text-muted-foreground hover:bg-secondary",
                     )
                   }
                 >
@@ -97,7 +110,7 @@ export default function CustomerLayout() {
               <Link
                 to={paths.login}
                 onClick={() => setOpen(false)}
-                className="text-muted-foreground hover:bg-secondary mt-1 rounded-xl px-3 py-2.5 text-xs tracking-luxe uppercase"
+                className="text-muted-foreground hover:bg-secondary mt-2 rounded-xl px-4 py-2.5 text-xs tracking-luxe uppercase"
               >
                 Staff login
               </Link>
@@ -110,22 +123,80 @@ export default function CustomerLayout() {
         <Outlet />
       </main>
 
-      <footer className="mt-20 border-t border-border/60">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-12 text-center">
-          <Logo />
-          <p className="text-muted-foreground max-w-md text-sm">
-            Relaxation, care, and luxury wellness — a seamless booking experience.
-          </p>
-          <div className="text-muted-foreground/70 flex items-center gap-4 text-xs tracking-wide">
-            <Link to={paths.terms} className="hover:text-foreground">Terms</Link>
-            <Link to={paths.privacy} className="hover:text-foreground">Privacy</Link>
-            <span>© {new Date().getFullYear()} Paulux</span>
+      <footer className="mt-20 border-t border-border/60 bg-secondary/20">
+        <div className="mx-auto max-w-6xl px-6 py-14">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 text-left">
+            <div className="space-y-3">
+              <Logo />
+              <p className="text-muted-foreground text-xs leading-relaxed max-w-xs">
+                Private, white-label salon & spa booking systems. Dedicated deployment on your own domain with 0% commissions.
+              </p>
+            </div>
+
+            <div className="space-y-2.5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Software</p>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li>
+                  <Link to={paths.salonSoftware} className="hover:text-foreground">Salon Booking Features</Link>
+                </li>
+                <li>
+                  <Link to={paths.freshaAlternative} className="hover:text-foreground">Fresha Alternative (0% Fees)</Link>
+                </li>
+                <li>
+                  <Link to={paths.roiCalculator} className="hover:text-foreground">Savings Calculator</Link>
+                </li>
+                <li>
+                  <Link to={paths.demo} className="hover:text-foreground">Interactive Demo</Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-2.5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Solutions & Case Studies</p>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li>
+                  <Link to={paths.caseStudies} className="hover:text-foreground font-medium text-accent">All Industry Case Studies</Link>
+                </li>
+                <li>
+                  <Link to="/case-studies/barbershops" className="hover:text-foreground">Barbershop Booking</Link>
+                </li>
+                <li>
+                  <Link to="/case-studies/medspas-aesthetics" className="hover:text-foreground">MedSpa & Aesthetics</Link>
+                </li>
+                <li>
+                  <Link to="/case-studies/tattoo-piercing" className="hover:text-foreground">Tattoo & Piercing</Link>
+                </li>
+                <li>
+                  <Link to={paths.standalone} className="hover:text-foreground">Request Deployment Quote</Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="space-y-2.5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Legal & Trust</p>
+              <ul className="space-y-2 text-xs text-muted-foreground">
+                <li>
+                  <Link to={paths.terms} className="hover:text-foreground">Terms of Service</Link>
+                </li>
+                <li>
+                  <Link to={paths.privacy} className="hover:text-foreground">Privacy Policy</Link>
+                </li>
+                <li className="pt-2 text-muted-foreground/80">
+                  © {new Date().getFullYear()} Paulux Software. All rights reserved.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
 
-      {/* Apex-only enquiry button (self-gates on tenant subdomains) */}
-      <FloatingContact />
+      {/* Floating & Mobile Conversion Widgets on Apex */}
+      {!isTenant && (
+        <>
+          <WhatsAppFloat phoneNumber={platformWhatsapp} />
+          <StickyMobileBar phoneNumber={platformWhatsapp} />
+        </>
+      )}
     </div>
   );
 }

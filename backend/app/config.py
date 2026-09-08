@@ -55,6 +55,8 @@ class Settings(BaseSettings):
     # Where standalone/own-domain enquiries are sent. Empty => leads are still
     # persisted, but no email is dispatched.
     ops_email: str = ""
+    # Admin phone number for instant SMS alerts on new leads (e.g. +233... or +1...)
+    ops_phone: str = ""
     arkesel_api_key: str = ""
     arkesel_sender: str = "Paulux"
     # Celery broker/result backend. Falls back to Redis URL; eager when unset in dev/test.

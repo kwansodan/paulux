@@ -20,6 +20,12 @@ import BookingLookupPage from "@/pages/customer/BookingLookupPage";
 import GiftCardPurchasePage from "@/pages/customer/GiftCardPurchasePage";
 import PayCallbackPage from "@/pages/customer/PayCallbackPage";
 import StandalonePage from "@/pages/customer/StandalonePage";
+import FreshaAlternativePage from "@/pages/marketing/FreshaAlternativePage";
+import SalonSoftwarePage from "@/pages/marketing/SalonSoftwarePage";
+import RoiCalculatorPage from "@/pages/marketing/RoiCalculatorPage";
+import DemoPage from "@/pages/marketing/DemoPage";
+import CaseStudiesHubPage from "@/pages/marketing/CaseStudiesHubPage";
+import IndustryCaseStudyPage from "@/pages/marketing/IndustryCaseStudyPage";
 import { ForgotPasswordPage, ResetPasswordPage } from "@/pages/PasswordResetPages";
 import { TermsPage, PrivacyPage } from "@/pages/legal/LegalPages";
 import { NotFoundPage, UnauthorizedPage } from "@/pages/StatusPages";
@@ -50,13 +56,19 @@ export default function App() {
       <Route path={paths.resetPassword} element={<ResetPasswordPage />} />
       <Route path={paths.unauthorized} element={<UnauthorizedPage />} />
 
-      {/* Customer-facing */}
+      {/* Customer & Marketing Routes */}
       <Route element={<CustomerLayout />}>
         <Route path={paths.home} element={<HomePage />} />
         <Route path={paths.book} element={<BookPage />} />
         <Route path={paths.bookingLookup} element={<BookingLookupPage />} />
         <Route path={paths.giftCards} element={<GiftCardPurchasePage />} />
         <Route path={paths.standalone} element={<StandalonePage />} />
+        <Route path={paths.freshaAlternative} element={<FreshaAlternativePage />} />
+        <Route path={paths.salonSoftware} element={<SalonSoftwarePage />} />
+        <Route path={paths.roiCalculator} element={<RoiCalculatorPage />} />
+        <Route path={paths.demo} element={<DemoPage />} />
+        <Route path={paths.caseStudies} element={<CaseStudiesHubPage />} />
+        <Route path={paths.caseStudyDetail} element={<IndustryCaseStudyPage />} />
         <Route path={paths.payCallback} element={<PayCallbackPage />} />
         <Route path={paths.terms} element={<TermsPage />} />
         <Route path={paths.privacy} element={<PrivacyPage />} />

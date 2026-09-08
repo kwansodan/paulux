@@ -22,6 +22,7 @@ def _post(client, token, body, extra=None):
 def test_lead_persists_and_notifies_ops(app):
     client = app.test_client()
     app.config["OPS_EMAIL"] = "ops@paulux.example.com"
+    app.config["OPS_PHONE"] = "+233201111111"
     outbox.clear()
 
     token = _csrf(client)
@@ -40,9 +41,18 @@ def test_lead_persists_and_notifies_ops(app):
         assert lead.business_name == "Glow Standalone"
         assert lead.team_size == 4 and lead.status == "new"
 
-    # Ops was emailed via the in-memory backend.
+    # 1. Ops was emailed dossier
     assert any(e.kind == "ops_lead" and e.to == "ops@paulux.example.com"
                for e in outbox.emails)
+    # 2. Ops received instant SMS alert
+    assert any(s.kind == "ops_lead_alert" and s.to == "+233201111111"
+               for s in outbox.sms)
+    # 3. Prospect received auto-responder email
+    assert any(e.kind == "lead_autoresponder" and e.to == "ama@glow.example.com"
+               for e in outbox.emails)
+    # 4. Prospect received confirmation SMS
+    assert any(s.kind == "lead_sms_confirmation" and s.to == "+233200000000"
+               for s in outbox.sms)
 
 
 def test_lead_saved_even_without_ops_email(app):
