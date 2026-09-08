@@ -2,20 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Calendar,
-  Check,
-  CreditCard,
+  Clock,
+  Crown,
   Eye,
   FileSpreadsheet,
   FlaskConical,
   LayoutDashboard,
   MessageSquare,
   Scissors,
-  ShoppingBag,
   Smartphone,
   Sparkles,
   Star,
-  User,
   Users,
   Zap,
 } from "lucide-react";

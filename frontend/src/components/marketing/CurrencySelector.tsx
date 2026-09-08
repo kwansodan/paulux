@@ -3,11 +3,10 @@ import { ChevronDown, Globe } from "lucide-react";
 import { useCurrency } from "@/context/CurrencyContext";
 
 interface CurrencySelectorProps {
-  compact?: boolean;
   className?: string;
 }
 
-export default function CurrencySelector({ compact = false, className = "" }: CurrencySelectorProps) {
+export default function CurrencySelector({ className = "" }: CurrencySelectorProps) {
   const { currency, config, setCurrency, currencies } = useCurrency();
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
