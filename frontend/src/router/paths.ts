@@ -24,5 +24,7 @@ export const paths = {
   login: "/login",
   signup: "/signup",
   dashboard: "/admin",
+  admin: "/admin",
+  adminLogin: "/admin/login",
 } as const;
 

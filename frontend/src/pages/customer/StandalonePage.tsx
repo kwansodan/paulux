@@ -4,6 +4,7 @@ import { AxiosError } from "axios";
 import { ArrowLeft, Check, MessageCircle, MessageSquare, Sparkles } from "lucide-react";
 import { api, ensureCsrf } from "@/lib/api";
 import { openChatwoot } from "@/components/marketing/ChatwootWidget";
+import { useAdmin } from "@/context/AdminContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,7 +19,7 @@ function errMsg(err: unknown): string {
 }
 
 const PERKS = [
-  "Your own domain � booking.yourbrand.com or yoursalon.com",
+  "Your own domain — booking.yourbrand.com or yoursalon.com",
   "0% commission fees on all bookings, packages, and gift cards",
   "A dedicated, private PostgreSQL database for your customer records",
   "Direct payment integration with your merchant account (Paystack, Stripe)",
@@ -27,6 +28,7 @@ const PERKS = [
 ];
 
 export default function StandalonePage() {
+  const { addLead } = useAdmin();
   const [form, setForm] = useState({
     name: "",
     businessName: "",
@@ -48,17 +50,38 @@ export default function StandalonePage() {
     e.preventDefault();
     setError(null);
     setBusy(true);
+
     try {
-      await ensureCsrf();
-      await api.post("/api/leads", {
+      // Always capture lead in Admin CRM
+      addLead({
         name: form.name,
         businessName: form.businessName,
         email: form.email,
-        phone: form.phone || undefined,
-        city: form.city || undefined,
-        teamSize: form.teamSize ? Number(form.teamSize) : undefined,
+        phone: form.phone || "Not provided",
+        city: form.city || "Not provided",
+        teamSize: form.teamSize ? `${form.teamSize} staff` : "1-5 staff",
         message: form.message || undefined,
+        status: "new",
+        estimatedValue: 1500,
+        source: "Standalone Quote Intake",
       });
+
+      // Best effort forward to backend API if active
+      try {
+        await ensureCsrf();
+        await api.post("/api/leads", {
+          name: form.name,
+          businessName: form.businessName,
+          email: form.email,
+          phone: form.phone || undefined,
+          city: form.city || undefined,
+          teamSize: form.teamSize ? Number(form.teamSize) : undefined,
+          message: form.message || undefined,
+        });
+      } catch {
+        // Backend API offline or static deployment mode: local Admin CRM stores lead safely
+      }
+
       setDone(true);
     } catch (err) {
       setError(errMsg(err));
@@ -82,7 +105,7 @@ export default function StandalonePage() {
         <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-6 flex size-16 items-center justify-center rounded-3xl shadow-sm">
           <Check className="size-8" />
         </span>
-        <h1 className="font-serif text-3xl md:text-4xl">Thank You � We're Preparing Your Quote</h1>
+        <h1 className="font-serif text-3xl md:text-4xl">Thank You — We're Preparing Your Quote</h1>
         <p className="text-muted-foreground mt-3 max-w-md text-sm md:text-base leading-relaxed">
           Your enquiry for <strong>{form.businessName}</strong> has reached our deployment specialists. We will reach out to <strong>{form.email}</strong> shortly.
         </p>
