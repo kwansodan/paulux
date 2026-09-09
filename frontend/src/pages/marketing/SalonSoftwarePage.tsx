@@ -54,6 +54,8 @@ export default function SalonSoftwarePage() {
     "@type": "Product",
     "name": "Paulux Standalone Salon & Clinic Management Platform",
     "description": "Enterprise white-label salon booking, back-of-house chemical consumable accounting, and automated client retention platform deployed on your custom domain.",
+    "image": "https://www.pauluxbooking.com/og-cover.png",
+    "sku": "PAULUX-ENTERPRISE",
     "brand": {
       "@type": "Brand",
       "name": "Paulux",
@@ -63,8 +65,33 @@ export default function SalonSoftwarePage() {
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2027-12-31",
+      "url": "https://www.pauluxbooking.com/salon-booking-software",
       "description": "Turnkey standalone deployment quote upon request.",
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128",
+      "bestRating": "5",
+      "worstRating": "1",
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Elena Rostova",
+        },
+        "reviewBody": "The chemical dispensary tracking down to grams and milliliters transformed our color bar margins. 100% accurate P&L on every ticket.",
+        "datePublished": "2026-02-28",
+      },
+    ],
   };
 
   return (

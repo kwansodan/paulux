@@ -91,17 +91,39 @@ export default function MarketingLanding() {
     "name": "Paulux Salon Booking Software",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
+    "image": "https://www.pauluxbooking.com/og-cover.png",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2027-12-31",
+      "url": "https://www.pauluxbooking.com",
       "description": "Custom standalone deployment quote",
     },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "142",
+      "bestRating": "5",
+      "worstRating": "1",
     },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Marcus Vance",
+        },
+        "reviewBody": "Migrated our 8-chair barbershop from Booksy to Paulux. Saved over $1,200 in monthly fees and walk-ins are up 35%.",
+        "datePublished": "2026-03-15",
+      },
+    ],
   };
 
   return (

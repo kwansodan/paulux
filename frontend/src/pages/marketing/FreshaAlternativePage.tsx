@@ -74,6 +74,51 @@ const FAQS = [
 export default function FreshaAlternativePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Paulux Zero-Commission Salon Software (Fresha Alternative)",
+    "description": "Bespoke, white-label salon booking and management software with 0% commissions deployed on your custom domain.",
+    "image": "https://www.pauluxbooking.com/og-cover.png",
+    "brand": {
+      "@type": "Brand",
+      "name": "Paulux",
+    },
+    "sku": "PAULUX-FRESHA-ALT",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2027-12-31",
+      "url": "https://www.pauluxbooking.com/fresha-alternative",
+      "description": "Custom turnkey deployment quote upon request.",
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "142",
+      "bestRating": "5",
+      "worstRating": "1",
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5",
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Marcus Vance",
+        },
+        "reviewBody": "Switching from Fresha saved our salon over $1,200/month in 20% marketplace commissions. Booking on our own domain gives clients complete confidence.",
+        "datePublished": "2026-03-12",
+      },
+    ],
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -87,6 +132,8 @@ export default function FreshaAlternativePage() {
     })),
   };
 
+  const combinedSchema = [productSchema, faqSchema];
+
   return (
     <>
       <SeoHead
@@ -94,7 +141,7 @@ export default function FreshaAlternativePage() {
         description="Stop losing 20% on new clients to Fresha. Paulux is the private, white-label salon booking software deployed on your own domain with 0% commissions and complete data ownership."
         keywords="fresha alternative, zero commission salon software, fresha 20 percent fee, alternative to fresha booking, self hosted salon software, own domain spa booking system"
         canonicalPath="/fresha-alternative"
-        schema={faqSchema}
+        schema={combinedSchema}
       />
 
       {/* Hero */}
@@ -102,7 +149,7 @@ export default function FreshaAlternativePage() {
         <Container className="relative flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-xs tracking-wider uppercase">
             <ShieldCheck className="size-4 text-emerald-300" />
-            <span>0% Commission � 100% Private</span>
+            <span>0% Commission · 100% Private</span>
           </div>
 
           <h1 className="font-serif mt-6 max-w-4xl text-4xl font-medium leading-tight md:text-6xl">

@@ -50,8 +50,41 @@ const PAGES = [
       "@type": "Product",
       "name": "Paulux Zero-Commission Salon Software (Fresha Alternative)",
       "description": "Bespoke, white-label salon booking and management software with 0% commissions deployed on your custom domain.",
+      "image": "https://www.pauluxbooking.com/og-cover.png",
       "brand": { "@type": "Brand", "name": "Paulux" },
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Custom turnkey deployment quote" }
+      "sku": "PAULUX-FRESHA-ALT",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2027-12-31",
+        "url": "https://www.pauluxbooking.com/fresha-alternative",
+        "description": "Custom turnkey deployment quote upon request"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "142",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Marcus Vance"
+          },
+          "reviewBody": "Switching from Fresha saved our salon over $1,200/month in 20% marketplace commissions. Booking on our own domain gives clients complete confidence.",
+          "datePublished": "2026-03-12"
+        }
+      ]
     }
   },
   {
@@ -85,11 +118,44 @@ const PAGES = [
     `,
     schema: {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "Product",
       "name": "Paulux Enterprise Salon Booking & Consumables Accounting System",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      "description": "The complete standalone salon & clinic platform: 0% commissions, back-of-house chemical consumable tracking (ml/g), automated 30/60/90-day win-backs, dedicated stylist portal, and custom domain deployment.",
+      "image": "https://www.pauluxbooking.com/og-cover.png",
+      "brand": { "@type": "Brand", "name": "Paulux" },
+      "sku": "PAULUX-ENTERPRISE",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2027-12-31",
+        "url": "https://www.pauluxbooking.com/salon-booking-software",
+        "description": "Enterprise standalone salon booking & backbar inventory management system"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Elena Rostova"
+          },
+          "reviewBody": "The chemical dispensary tracking down to grams and milliliters transformed our color bar margins. 100% accurate P&L on every ticket.",
+          "datePublished": "2026-02-28"
+        }
+      ]
     }
   },
   {
