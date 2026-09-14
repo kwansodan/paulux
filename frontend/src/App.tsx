@@ -2,15 +2,15 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import CustomerLayout from "@/layouts/CustomerLayout";
 import MarketingLanding from "@/pages/customer/MarketingLanding";
 import StandalonePage from "@/pages/customer/StandalonePage";
-import FreshaAlternativePage from "@/pages/marketing/FreshaAlternativePage";
-import BooksyAlternativePage from "@/pages/marketing/BooksyAlternativePage";
-import MindbodyAlternativePage from "@/pages/marketing/MindbodyAlternativePage";
 import DispensarySoftwarePage from "@/pages/marketing/DispensarySoftwarePage";
 import SalonSoftwarePage from "@/pages/marketing/SalonSoftwarePage";
 import RoiCalculatorPage from "@/pages/marketing/RoiCalculatorPage";
 import DemoPage from "@/pages/marketing/DemoPage";
 import CaseStudiesHubPage from "@/pages/marketing/CaseStudiesHubPage";
 import IndustryCaseStudyPage from "@/pages/marketing/IndustryCaseStudyPage";
+import CompareHubPage from "@/pages/marketing/CompareHubPage";
+import CompetitorComparisonPage from "@/pages/marketing/CompetitorComparisonPage";
+import HeadToHeadComparisonPage from "@/pages/marketing/HeadToHeadComparisonPage";
 import { TermsPage, PrivacyPage } from "@/pages/legal/LegalPages";
 import { NotFoundPage } from "@/pages/StatusPages";
 import { paths } from "@/router/paths";
@@ -36,9 +36,13 @@ export default function App() {
             {/* Core Marketing Routes */}
             <Route path={paths.home} element={<MarketingLanding />} />
             <Route path={paths.standalone} element={<StandalonePage />} />
-            <Route path={paths.freshaAlternative} element={<FreshaAlternativePage />} />
-            <Route path={paths.booksyAlternative} element={<BooksyAlternativePage />} />
-            <Route path={paths.mindbodyAlternative} element={<MindbodyAlternativePage />} />
+            <Route path={paths.compareHub} element={<CompareHubPage />} />
+            <Route path={paths.versusHub} element={<Navigate to={paths.compareHub} replace />} />
+            <Route path={paths.versusCompetitor} element={<CompetitorComparisonPage />} />
+            <Route path={paths.comparePair} element={<HeadToHeadComparisonPage />} />
+            <Route path={paths.freshaAlternative} element={<CompetitorComparisonPage forcedSlug="fresha" />} />
+            <Route path={paths.booksyAlternative} element={<CompetitorComparisonPage forcedSlug="booksy" />} />
+            <Route path={paths.mindbodyAlternative} element={<CompetitorComparisonPage forcedSlug="mindbody" />} />
             <Route path={paths.dispensarySoftware} element={<DispensarySoftwarePage />} />
             <Route path={paths.salonSoftware} element={<SalonSoftwarePage />} />
             <Route path={paths.roiCalculator} element={<RoiCalculatorPage />} />

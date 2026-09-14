@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { to: paths.salonSoftware, label: "Features" },
-  { to: paths.freshaAlternative, label: "Fresha Alternative" },
+  { to: paths.compareHub, label: "Compare" },
   { to: paths.roiCalculator, label: "ROI Calculator" },
   { to: paths.caseStudies, label: "Case Studies" },
   { to: paths.demo, label: "Live Demo" },
@@ -138,19 +138,31 @@ export default function CustomerLayout() {
             </div>
 
             <div className="space-y-2.5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Alternatives</p>
-              <ul className="space-y-2 text-xs text-muted-foreground">
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Compare & Versus</p>
+              <ul className="space-y-1.5 text-xs text-muted-foreground">
                 <li>
-                  <Link to={paths.freshaAlternative} className="hover:text-foreground">Fresha Alternative (0% Cut)</Link>
+                  <Link to={paths.compareHub} className="hover:text-foreground font-medium text-accent">Comparison Hub (All Platforms)</Link>
                 </li>
                 <li>
-                  <Link to={paths.booksyAlternative} className="hover:text-foreground">Booksy Alternative (Barbers)</Link>
+                  <Link to={paths.versusFresha} className="hover:text-foreground">Fresha Alternative (0% Cut)</Link>
                 </li>
                 <li>
-                  <Link to={paths.mindbodyAlternative} className="hover:text-foreground">Mindbody Alternative (MedSpas)</Link>
+                  <Link to={paths.versusBooksy} className="hover:text-foreground">Booksy Alternative (Barbers)</Link>
                 </li>
                 <li>
-                  <Link to={paths.standalone} className="hover:text-foreground font-medium text-accent">Request Custom Quote</Link>
+                  <Link to={paths.versusMindbody} className="hover:text-foreground">Mindbody Alternative (MedSpas)</Link>
+                </li>
+                <li>
+                  <Link to={paths.versusVagaro} className="hover:text-foreground">Vagaro Alternative (No Add-Ons)</Link>
+                </li>
+                <li>
+                  <Link to={paths.versusSquare} className="hover:text-foreground">Square Appointments vs. Paulux</Link>
+                </li>
+                <li>
+                  <Link to={paths.versusPhorest} className="hover:text-foreground">Phorest Alternative (No Contracts)</Link>
+                </li>
+                <li>
+                  <Link to="/compare/fresha-vs-booksy" className="hover:text-foreground italic">Fresha vs. Booksy Guide</Link>
                 </li>
               </ul>
             </div>

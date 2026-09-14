@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="theme-color" content="#2b1a29" />
 
-    <!-- Schema.org JSON-LD Structured Data: SoftwareApplication & Organization -->
+    <!-- Schema.org JSON-LD Structured Data: SoftwareApplication, FAQPage & Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -51,85 +51,73 @@
           {
             "@type": "SoftwareApplication",
             "@id": "https://www.pauluxbooking.com/#software",
-            "name": "Paulux Salon Booking Software",
-            "operatingSystem": "Web",
+            "name": "Paulux",
             "applicationCategory": "BusinessApplication",
-            "applicationSubCategory": "Salon & Spa Management System",
+            "operatingSystem": "Web, iOS, Android",
             "image": "https://www.pauluxbooking.com/og-cover.png",
             "offers": {
               "@type": "Offer",
               "price": "0",
               "priceCurrency": "USD",
+              "description": "0% booking commission, flat turnkey deployment",
               "availability": "https://schema.org/InStock",
               "priceValidUntil": "2027-12-31",
-              "url": "https://www.pauluxbooking.com",
-              "description": "Bespoke standalone deployment & turnkey setup on your own custom domain.",
-              "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": {
-                  "@type": "MonetaryAmount",
-                  "value": "0",
-                  "currency": "USD"
-                },
-                "shippingDestination": {
-                  "@type": "DefinedRegion",
-                  "addressCountry": "US"
-                },
-                "deliveryTime": {
-                  "@type": "ShippingDeliveryTime",
-                  "handlingTime": {
-                    "@type": "QuantitativeValue",
-                    "minValue": 0,
-                    "maxValue": 0,
-                    "unitCode": "d"
-                  },
-                  "transitTime": {
-                    "@type": "QuantitativeValue",
-                    "minValue": 0,
-                    "maxValue": 0,
-                    "unitCode": "d"
-                  }
-                }
-              },
-              "hasMerchantReturnPolicy": {
-                "@type": "MerchantReturnPolicy",
-                "applicableCountry": "US",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
-              }
+              "url": "https://www.pauluxbooking.com"
             },
+            "featureList": [
+              "White-label custom domain booking",
+              "Chemical dispensary ml/g tracking",
+              "15-second walk-in check-in mode",
+              "No marketplace transaction cuts",
+              "Direct Stripe and Paystack merchant payouts",
+              "Independent stylist mobile portal",
+              "Native deposit enforcer and no-show protection",
+              "100% private isolated customer database"
+            ],
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "4.9",
-              "reviewCount": "128",
+              "reviewCount": "142",
               "bestRating": "5",
               "worstRating": "1"
-            },
-            "review": [
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.pauluxbooking.com/#faq",
+            "mainEntity": [
               {
-                "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5",
-                  "bestRating": "5"
-                },
-                "author": {
-                  "@type": "Person",
-                  "name": "Marcus Vance"
-                },
-                "reviewBody": "Migrated our 8-chair barbershop from Booksy to Paulux. Saved over $1,200 in monthly fees and walk-ins are up 35%.",
-                "datePublished": "2026-03-15"
+                "@type": "Question",
+                "name": "Does Paulux charge commissions on new clients?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Paulux run on my own custom domain?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Paulux handle deposit collection and chargebacks?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Paulux?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Paulux is a self-hosted, white-label salon booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha and Booksy with a 0% transaction-fee architecture."
+                }
               }
-            ],
-            "featureList": [
-              "Own domain deployment (yourbrand.com)",
-              "Zero booking transaction cuts",
-              "100% private customer database",
-              "Integrated payments (Paystack, Stripe)",
-              "Automated SMS and Email confirmations",
-              "Real-time appointment slot calculation",
-              "Inventory management with atomic stock tracking",
-              "Gift card sales & redemption engine",
-              "Google Calendar 2-way sync"
             ]
           },
           {

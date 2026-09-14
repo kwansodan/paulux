@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Check,
   ChevronDown,
-  ChevronUp,
   Clock,
   Globe,
   Lock,
@@ -32,7 +30,7 @@ const PAIN_POINTS = [
   {
     title: "The Paulux Standalone Solution",
     points: [
-      "0% commission � keep 100% of your earnings",
+      "0% commission — keep 100% of your earnings",
       "Runs on your custom domain (booking.yourbrand.com)",
       "Clients stay 100% loyal to your brand only",
       "You own your dedicated deployment and customer database",
@@ -44,8 +42,8 @@ const PAIN_POINTS = [
 const STEPS = [
   {
     n: "01",
-    title: "Consultation & Domain Setup",
-    body: "Tell us about your salon. We connect your custom domain and configure your SSL certificates.",
+    title: "Architecture & Domain Provisioning",
+    body: "We set up an isolated database and connect your custom domain with automated SSL security.",
   },
   {
     n: "02",
@@ -61,102 +59,61 @@ const STEPS = [
 
 const FAQS = [
   {
+    q: "Does Paulux charge commissions on new clients?",
+    a: "No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.",
+  },
+  {
+    q: "Can Paulux run on my own custom domain?",
+    a: "Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.",
+  },
+  {
+    q: "How does Paulux handle deposit collection and chargebacks?",
+    a: "Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.",
+  },
+  {
     q: "How is Paulux different from SaaS platforms like Fresha, Mindbody, or Booksy?",
-    a: "SaaS platforms place your salon inside a crowded marketplace, take up to 20% on new clients, and show competitor ads to your customers. Paulux is a standalone software deployment dedicated exclusively to your salon on your own custom domain (e.g. booking.yourbrand.com). There are 0% booking fees, no marketplace competitors, and you own your data 100%.",
+    a: "SaaS platforms place your salon inside a shared marketplace, take up to 20% commissions, and advertise rival salons to your clients. Paulux is a dedicated standalone software deployment on your own domain with 0% commissions, private client data, and chemical dispensary tracking.",
   },
   {
-    q: "How much does a standalone deployment cost?",
-    a: "We offer tailored turnkey deployments based on your salon's team size and location count. Because there are zero recurring percentage commissions, our clients typically recoup their initial investment within 2 to 4 months compared to what they were paying in marketplace cuts.",
-  },
-  {
-    q: "How long does setup take?",
-    a: "Most standalone deployments go live within 48 hours. Our team handles the server provisioning, domain DNS connection, payment gateway integration, and service catalog import.",
-  },
-  {
-    q: "What payment gateways are supported?",
-    a: "We support direct integrations with Paystack, Stripe, and other major regional gateways. Payments go directly into your merchant account with zero intermediaries holding your funds.",
-  },
-  {
-    q: "Can clients book from mobile phones easily?",
-    a: "Yes! The customer booking wizard is engineered mobile-first. It loads instantly, works beautifully on iPhone and Android browsers with zero app download required, and offers Apple Pay, Google Pay, and card payments.",
+    q: "How long does turnkey deployment take?",
+    a: "Most standalone deployments go live within 48 hours. Our engineering team handles complete technical setup including server provisioning, custom domain DNS connection, payment gateway integration, and migrating your existing client histories, chemical formula logs, and service menus with zero downtime.",
   },
 ];
 
 export default function MarketingLanding() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  const homeSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Paulux Salon Booking Software",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
-    "image": "https://www.pauluxbooking.com/og-cover.png",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "priceValidUntil": "2027-12-31",
-      "url": "https://www.pauluxbooking.com",
-      "description": "Custom standalone deployment quote",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingRate": {
-          "@type": "MonetaryAmount",
-          "value": "0",
-          "currency": "USD",
-        },
-        "shippingDestination": {
-          "@type": "DefinedRegion",
-          "addressCountry": "US",
-        },
-        "deliveryTime": {
-          "@type": "ShippingDeliveryTime",
-          "handlingTime": {
-            "@type": "QuantitativeValue",
-            "minValue": 0,
-            "maxValue": 0,
-            "unitCode": "d",
-          },
-          "transitTime": {
-            "@type": "QuantitativeValue",
-            "minValue": 0,
-            "maxValue": 0,
-            "unitCode": "d",
-          },
-        },
+  const homeSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Paulux",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "0% booking commission, flat turnkey deployment",
       },
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "US",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-      },
+      "featureList": [
+        "White-label custom domain booking",
+        "Chemical dispensary ml/g tracking",
+        "15-second walk-in check-in mode",
+        "No marketplace transaction cuts",
+      ],
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "142",
-      "bestRating": "5",
-      "worstRating": "1",
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
     },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5",
-          "bestRating": "5",
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Marcus Vance",
-        },
-        "reviewBody": "Migrated our 8-chair barbershop from Booksy to Paulux. Saved over $1,200 in monthly fees and walk-ins are up 35%.",
-        "datePublished": "2026-03-15",
-      },
-    ],
-  };
+  ];
 
   return (
     <>
@@ -180,6 +137,16 @@ export default function MarketingLanding() {
             Stop Paying 20% Commissions. <br />
             <span className="italic text-accent">Own Your Appointment Booking System</span> Outright.
           </h1>
+
+          {/* Definition-First Semantic Passage Block */}
+          <div className="mx-auto max-w-3xl rounded-2xl border border-accent/40 bg-accent/10 p-5 text-left backdrop-blur-sm shadow-sm">
+            <h2 className="text-accent text-xs font-mono uppercase tracking-wider font-semibold">
+              What is Paulux?
+            </h2>
+            <p className="text-primary-foreground/90 mt-1 text-sm sm:text-base leading-relaxed">
+              Paulux is a self-hosted, white-label salon booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha and Booksy with a 0% transaction-fee architecture.
+            </p>
+          </div>
 
           <p className="text-primary-foreground/80 max-w-2xl text-base sm:text-lg">
             Paulux provisions a dedicated booking platform running on your custom domain for appointment-based businesses — barbershops, aesthetic clinics, salons, tattoo studios, massage therapists, and wellness centers. Keep 100% of your earnings.
@@ -386,28 +353,20 @@ export default function MarketingLanding() {
         </div>
 
         <div className="space-y-4">
-          {FAQS.map((faq, idx) => {
-            const isOpen = openFaq === idx;
-            return (
-              <div
-                key={faq.q}
-                className="rounded-2xl border border-border/80 bg-card p-5 transition-colors shadow-sm"
-              >
-                <button
-                  onClick={() => setOpenFaq(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between text-left font-medium text-base gap-4"
-                >
-                  <span className="font-serif text-lg">{faq.q}</span>
-                  {isOpen ? <ChevronUp className="size-5 shrink-0 text-accent" /> : <ChevronDown className="size-5 shrink-0 text-muted-foreground" />}
-                </button>
-                {isOpen && (
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground border-t border-border/60 pt-3">
-                    {faq.a}
-                  </p>
-                )}
-              </div>
-            );
-          })}
+          {FAQS.map((faq) => (
+            <details
+              key={faq.q}
+              className="group rounded-2xl border border-border/80 bg-card p-5 transition-colors shadow-sm open:border-accent/50"
+            >
+              <summary className="cursor-pointer list-none flex w-full items-center justify-between text-left font-serif text-lg font-medium gap-4">
+                <h3 className="font-serif text-lg font-medium text-foreground">{faq.q}</h3>
+                <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 group-open:text-accent" />
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground border-t border-border/60 pt-3">
+                {faq.a}
+              </p>
+            </details>
+          ))}
         </div>
       </Container>
 

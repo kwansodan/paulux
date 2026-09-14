@@ -292,6 +292,297 @@ const PAGES = [
     }
   },
   {
+    path: "compare",
+    title: "Salon & Clinic Booking Software Comparison Hub (2026) | Paulux",
+    description: "Comprehensive side-by-side comparison of salon and clinic booking platforms: Fresha, Booksy, Mindbody, Vagaro, Square Appointments, and Phorest vs. Paulux.",
+    keywords: "salon booking software comparison, compare salon software, fresha vs booksy, mindbody alternative, vagaro competitors, phorest alternative, square appointments salon",
+    canonical: "https://www.pauluxbooking.com/compare",
+    content: `
+      <header><h1>The Definitive Salon & Clinic Booking Software Comparison Hub</h1></header>
+      <main>
+        <p>Evaluate marketplace commissions, monthly fee creep, backbar chemical dispensary tracking (ml/g), and hardware freedom across all major salon, aesthetic clinic, and barbershop platforms.</p>
+        <h2>Platform Overview</h2>
+        <ul>
+          <li><strong>Fresha:</strong> Free software but charges an aggressive 20% commission on every new client discovery.</li>
+          <li><strong>Booksy:</strong> Built for barbers, but charges $29.99/mo + $20/mo per additional barber chair plus marketplace fees.</li>
+          <li><strong>Mindbody:</strong> Legacy fitness/wellness enterprise charging $159–$699+/month in subscription rent.</li>
+          <li><strong>Vagaro:</strong> Advertises $30/mo base but adds $10/user, forms fees, website fees, and SMS surcharges.</li>
+          <li><strong>Square Appointments:</strong> Generic retail POS lacking backbar chemical dispensary accounting (ml/g) and custom domain white-labeling.</li>
+          <li><strong>Phorest:</strong> Feature-rich for hair chains but requires $1,000+ setup fees, locked annual contracts, and high monthly rent.</li>
+          <li><strong>Paulux:</strong> Turnkey dedicated deployment on your custom domain with 0% commissions, gram/milliliter dispensary tracking, and 100% private database.</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "When is a marketplace like Fresha better than Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Marketplaces are helpful for brand-new solo stylists with zero existing clients who rely 100% on walk-in stranger discovery. Established salons with their own brand choose Paulux to stop surrendering 20% commissions." } },
+        { "@type": "Question", "name": "What makes Paulux's chemical dispensary tracking unique?", "acceptedAnswer": { "@type": "Answer", "text": "Unlike other platforms that only count retail bottles, Paulux tracks bleach powder, developers, and color tubes down to exact grams and milliliters per bowl, calculating live ticket gross margins." } }
+      ]
+    }
+  },
+  {
+    path: "versus/fresha",
+    title: "Fresha Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Fresha? Compare 20% marketplace fees against Paulux's 0% commission, custom domain booking, and backbar chemical dispensary tracking (ml/g).",
+    keywords: "fresha alternative, fresha competitor, switch from fresha, zero commission salon software",
+    canonical: "https://www.pauluxbooking.com/versus/fresha",
+    content: `
+      <header><h1>The Zero-Commission Fresha Alternative for Premier Salons</h1></header>
+      <main>
+        <p>Stop paying 20% commission on every new client and displaying neighboring competitor salons on your booking page.</p>
+        <h2>Fresha vs. Paulux Highlights</h2>
+        <ul>
+          <li><strong>New Client Commission:</strong> Fresha 20% vs. Paulux 0%</li>
+          <li><strong>Booking Domain:</strong> fresha.com vs. booking.yourbrand.com</li>
+          <li><strong>Dispensary Tracking:</strong> Whole bottle only vs. Grams & milliliters (ml/g) per bowl</li>
+          <li><strong>SMS Rates:</strong> High markups vs. Direct wholesale pricing</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why are salons migrating from Fresha to Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Salons leave Fresha to stop paying 20% commission on new client discovery, eliminate competitor cross-selling, and gain custom domain white-labeling with ml/g chemical dispensary tracking." } }
+      ]
+    }
+  },
+  {
+    path: "versus/booksy",
+    title: "Booksy Alternative for Barbershops & Studios | Paulux",
+    description: "Ditch Booksy's monthly per-chair fee penalties and marketplace discovery cuts. Deploy a dedicated white-label booking engine with 15-second walk-in check-in and 0% commission.",
+    keywords: "booksy alternative, booksy alternative for barbers, zero commission barber software",
+    canonical: "https://www.pauluxbooking.com/versus/booksy",
+    content: `
+      <header><h1>The Zero-Commission Booksy Alternative for Barbershops</h1></header>
+      <main>
+        <p>Eliminate Booksy's $20/month per additional barber penalty and protect your clients from competitor recommendations.</p>
+        <h2>Booksy vs. Paulux Highlights</h2>
+        <ul>
+          <li><strong>Per-Barber Monthly Fees:</strong> Booksy $20/chair vs. Paulux $0 per additional staff</li>
+          <li><strong>Walk-In Check-In:</strong> Multi-click flow vs. Paulux 15-second rapid chair assignment</li>
+          <li><strong>Stylist Portal:</strong> Shared app vs. Independent /stylist mobile portal</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can each barber manage their schedule independently?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Paulux provides an independent /stylist mobile portal for each barber showing personal appointments and daily earnings without exposing shop accounting." } }
+      ]
+    }
+  },
+  {
+    path: "versus/mindbody",
+    title: "Mindbody Alternative for MedSpas & Aesthetic Clinics | Paulux",
+    description: "Escape Mindbody's $159–$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience with clinical deposit enforcement and patient data isolation.",
+    keywords: "mindbody alternative, mindbody alternative medspa, aesthetic clinic booking software",
+    canonical: "https://www.pauluxbooking.com/versus/mindbody",
+    content: `
+      <header><h1>The Modern Mindbody Alternative for MedSpas & Aesthetic Clinics</h1></header>
+      <main>
+        <p>Escape Mindbody's $159-$699/mo subscription fees and bloated complexity. Deploy a luxury, white-label booking and clinical deposit system.</p>
+        <h2>Mindbody vs. Paulux Highlights</h2>
+        <ul>
+          <li><strong>Monthly Fee:</strong> Mindbody $159-$699+/mo vs. Paulux $0 monthly software rent</li>
+          <li><strong>Clinical Deposit Enforcer:</strong> Complex merchant add-ons vs. Native upfront deposit requirement</li>
+          <li><strong>Data Privacy:</strong> Aggregated database vs. 100% Private, isolated database</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How does Paulux protect high-ticket aesthetic slots?", "acceptedAnswer": { "@type": "Answer", "text": "Paulux's Deposit Enforcer requires upfront deposits on high-ticket clinical treatments like Botox or laser appointments, preventing no-shows." } }
+      ]
+    }
+  },
+  {
+    path: "versus/vagaro",
+    title: "Vagaro Alternative for High-Ticket Salons & Spas | Paulux",
+    description: "Tired of Vagaro's endless add-on fees and marketplace cross-promotion? Deploy a luxury, bespoke booking platform on your custom domain with chemical dispensary (ml/g) and 0% fees.",
+    keywords: "vagaro alternative, vagaro competitor, switch from vagaro, salon software no add-on fees",
+    canonical: "https://www.pauluxbooking.com/versus/vagaro",
+    content: `
+      <header><h1>The Independent Vagaro Alternative for High-Ticket Salons</h1></header>
+      <main>
+        <p>Stop paying for every extra user, intake form, and website builder add-on. Own an all-inclusive luxury booking platform on your domain.</p>
+        <h2>Vagaro vs. Paulux Highlights</h2>
+        <ul>
+          <li><strong>Per-User Fees:</strong> Vagaro $10/user/mo vs. Paulux $0 per extra stylist</li>
+          <li><strong>Add-On Creep:</strong> Forms and website fees extra vs. All features included</li>
+          <li><strong>Chemical Dispensary:</strong> Retail SKU only vs. Bowl-by-bowl ml/g tracking with live ticket margin</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why switch from Vagaro to Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Paulux eliminates Vagaro's monthly per-user fees and add-on nickel-and-diming, provides complete client data privacy without directory cross-selling, and offers true ml/g chemical tracking." } }
+      ]
+    }
+  },
+  {
+    path: "versus/square-appointments",
+    title: "Square Appointments Alternative for Salons & Clinics | Paulux",
+    description: "Upgrade from Square's generic appointment calendar to Paulux's backbar chemical dispensary (ml/g), stylist mobile portals, and white-label custom domain booking.",
+    keywords: "square appointments alternative, square salon software alternative, purpose built salon software",
+    canonical: "https://www.pauluxbooking.com/versus/square-appointments",
+    content: `
+      <header><h1>The Purpose-Built Square Appointments Alternative for Salons</h1></header>
+      <main>
+        <p>Square is designed for general retail. Paulux delivers purpose-built salon workflows including chemical dispensary tracking (ml/g), formula vaults, and stylist portals.</p>
+        <h2>Square vs. Paulux Highlights</h2>
+        <ul>
+          <li><strong>Chemical Dispensary:</strong> Square Not available vs. Paulux Bowl-by-bowl ml/g tracking</li>
+          <li><strong>Custom Domain:</strong> square.site vs. booking.yourbrand.com</li>
+          <li><strong>Stylist Portals:</strong> Requires Team Plus add-on vs. Dedicated /stylist mobile portal</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can Square track hair color by grams and milliliters?", "acceptedAnswer": { "@type": "Answer", "text": "No. Square Appointments only tracks retail units. Paulux tracks exact grams and milliliters of bleach, developer, and color per bowl." } }
+      ]
+    }
+  },
+  {
+    path: "versus/phorest",
+    title: "Phorest Alternative: 0% Commissions & Zero Contract Lock-In | Paulux",
+    description: "Escape Phorest's $1,000+ setup fees, locked annual contracts, and expensive monthly software rent. Deploy a luxury, dedicated salon platform on your custom domain in 48 hours.",
+    keywords: "phorest alternative, phorest competitor, switch from phorest, salon software no contract",
+    canonical: "https://www.pauluxbooking.com/versus/phorest",
+    content: `
+      <header><h1>The Modern Phorest Alternative with Zero Contract Lock-In</h1></header>
+      <main>
+        <p>Get enterprise salon capabilities without $1,000+ setup fees or locked 12-36 month contracts.</p>
+        <h2>Phorest vs. Paulux Highlights</h2>
+        <ul>
+          <li><strong>Setup Fees:</strong> Phorest $1,000+ vs. Paulux Turnkey deployment included</li>
+          <li><strong>Contracts:</strong> Phorest 12-36 month locked contracts vs. Paulux Zero contract lock-in</li>
+          <li><strong>Chemical Dispensary:</strong> Requires 3rd-party integration vs. Native ml/g tracking with live ticket margin</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Does Paulux require long-term contracts like Phorest?", "acceptedAnswer": { "@type": "Answer", "text": "No. Paulux requires zero annual contract commitments. You receive a dedicated deployment that you own outright on your custom domain." } }
+      ]
+    }
+  },
+  {
+    path: "compare/fresha-vs-booksy",
+    title: "Fresha vs. Booksy: 2026 Comparison & The Modern Alternative | Paulux",
+    description: "Evaluating Fresha vs. Booksy for your salon or barbershop? Compare 20% marketplace commissions against $20/chair monthly fees, and see why top studios choose Paulux.",
+    keywords: "fresha vs booksy, compare fresha and booksy, salon booking comparison",
+    canonical: "https://www.pauluxbooking.com/compare/fresha-vs-booksy",
+    content: `
+      <header><h1>Fresha vs. Booksy: 2026 Comparison & The Independent Alternative</h1></header>
+      <main>
+        <p>Marketplace commissions vs. per-chair monthly fees: choose the right booking engine or deploy a dedicated platform with Paulux.</p>
+        <h2>Side-by-Side Comparison</h2>
+        <ul>
+          <li><strong>New Client Fee:</strong> Fresha 20% vs. Booksy up to 20% vs. Paulux 0%</li>
+          <li><strong>Staff Fees:</strong> Fresha Add-ons vs. Booksy $20/barber/mo vs. Paulux $0 extra</li>
+          <li><strong>Booking Domain:</strong> fresha.com vs. booksy.com vs. booking.yourbrand.com</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which costs more: Fresha or Booksy?", "acceptedAnswer": { "@type": "Answer", "text": "Fresha takes 20% of new clients, costing busy salons $1,000+/mo. Booksy charges $29.99/mo + $20/barber plus marketplace cuts. Paulux eliminates both with 0% commissions." } }
+      ]
+    }
+  },
+  {
+    path: "compare/mindbody-vs-vagaro",
+    title: "Mindbody vs. Vagaro: 2026 Comparison & The Dedicated Alternative | Paulux",
+    description: "Comparing Mindbody vs. Vagaro for your medspa, clinic, or wellness center? Compare $159-$699/mo enterprise bloat against tiered add-on fees, and explore Paulux.",
+    keywords: "mindbody vs vagaro, compare mindbody and vagaro, medspa software comparison",
+    canonical: "https://www.pauluxbooking.com/compare/mindbody-vs-vagaro",
+    content: `
+      <header><h1>Mindbody vs. Vagaro: 2026 Comparison & The Dedicated Alternative</h1></header>
+      <main>
+        <p>Legacy high-cost enterprise vs. add-on tiered fees: see why aesthetic practices and clinics choose Paulux.</p>
+        <h2>Side-by-Side Comparison</h2>
+        <ul>
+          <li><strong>Monthly Fee:</strong> Mindbody $159-$699+/mo vs. Vagaro $30/mo base vs. Paulux $0 monthly software rent</li>
+          <li><strong>Clinical Deposit Enforcer:</strong> Complex plugins vs. Basic cancellation fees vs. Paulux Native Deposit Enforcer</li>
+          <li><strong>Patient Privacy:</strong> Shared database vs. Shared directory vs. Paulux 100% isolated private database</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why do MedSpas switch from Mindbody and Vagaro?", "acceptedAnswer": { "@type": "Answer", "text": "MedSpas need patient data privacy and upfront deposit protection for 60-90 min slots. Paulux provides dedicated custom domain software without recurring monthly software rent." } }
+      ]
+    }
+  },
+  {
+    path: "compare/phorest-vs-fresha",
+    title: "Phorest vs. Fresha: 2026 Comparison & The Modern Alternative | Paulux",
+    description: "Evaluating Phorest vs. Fresha? Compare Phorest's $1,000+ setup fees and locked contracts against Fresha's 20% marketplace commissions. See why salons choose Paulux.",
+    keywords: "phorest vs fresha, compare phorest and fresha, salon software alternatives",
+    canonical: "https://www.pauluxbooking.com/compare/phorest-vs-fresha",
+    content: `
+      <header><h1>Phorest vs. Fresha: 2026 Comparison & The Modern Alternative</h1></header>
+      <main>
+        <p>Locked annual corporate contracts vs. 20% marketplace commissions: explore the modern independent alternative with Paulux.</p>
+        <h2>Side-by-Side Comparison</h2>
+        <ul>
+          <li><strong>Pricing:</strong> Phorest $150-$350+/mo + $1,000 setup vs. Fresha 20% commission vs. Paulux 0% commission</li>
+          <li><strong>Dispensary Tracking:</strong> Third-party add-on vs. Whole bottle only vs. Paulux Native ml/g tracking with live ticket margin</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why is Paulux the 'third way' between Phorest and Fresha?", "acceptedAnswer": { "@type": "Answer", "text": "Paulux gives salons enterprise features like ml/g dispensary tracking without Phorest's locked contracts or Fresha's 20% marketplace cuts." } }
+      ]
+    }
+  },
+  {
+    path: "compare/square-vs-booksy",
+    title: "Square Appointments vs. Booksy: 2026 Comparison & The Salon Alternative | Paulux",
+    description: "Comparing Square Appointments vs. Booksy? Compare Square's generic retail POS against Booksy's per-chair fees and marketplace cuts. Discover Paulux.",
+    keywords: "square vs booksy, square appointments vs booksy, barbershop software comparison",
+    canonical: "https://www.pauluxbooking.com/compare/square-vs-booksy",
+    content: `
+      <header><h1>Square Appointments vs. Booksy: 2026 Comparison</h1></header>
+      <main>
+        <p>Generic retail point-of-sale vs. barbershop marketplace: why studios choose Paulux for dedicated salon workflows.</p>
+        <h2>Side-by-Side Comparison</h2>
+        <ul>
+          <li><strong>Multi-Staff Fees:</strong> Square $29-$69/mo vs. Booksy $20/barber/mo vs. Paulux $0 per extra chair</li>
+          <li><strong>Dispensary Tracking:</strong> Not available vs. Not available vs. Paulux Native ml/g tracking</li>
+          <li><strong>Rapid Walk-In Mode:</strong> Standard cart vs. Multi-click vs. Paulux 15-second rapid chair assignment</li>
+        </ul>
+      </main>
+    `,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can Square handle backbar chemical dispensary tracking?", "acceptedAnswer": { "@type": "Answer", "text": "No. Square only tracks retail inventory items. Paulux tracks professional bleach and developer in exact grams and milliliters." } }
+      ]
+    }
+  },
+  {
     path: "salon-chemical-dispensary-software",
     title: "Salon Chemical Dispensary & Backbar Inventory Software (ml/g) | Paulux",
     description: "Stop losing profit at the color bar. Track professional hair dye, lighteners, and developer down to exact grams and milliliters with real-time service gross margin P&L accounting.",
@@ -423,6 +714,534 @@ const PAGES = [
       </main>
     `,
     schema: null
+  },
+  {
+    path: "compare",
+    title: "Salon & Clinic Booking Software Comparison Hub (2026) | Paulux",
+    description: "Compare Fresha, Booksy, Mindbody, Vagaro, Square, and Phorest against Paulux. Discover granular feature parity in chemical dispensary tracking (ml/g), SMS pricing, and zero-commission custom domain booking.",
+    keywords: "salon booking software comparison, compare salon software, fresha vs booksy, mindbody alternative, vagaro competitors, phorest alternative, square appointments salon, salon chemical inventory software",
+    canonical: "https://www.pauluxbooking.com/compare",
+    content: `
+      <header><h1>The Definitive Salon & Clinic Booking Software Comparison (2026)</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is Paulux?</strong> Paulux is a self-hosted, white-label salon booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha and Booksy with a 0% transaction-fee architecture.
+        </blockquote>
+        <p>Evaluate marketplace commission cuts, monthly fee creep, and back-of-house daily workflows across all major beauty, wellness, and grooming booking platforms.</p>
+        <h2>Granular Feature Parity & Pricing Comparison</h2>
+        <table>
+          <thead>
+            <tr><th>Feature</th><th>Marketplace SaaS</th><th>Paulux Dedicated Platform</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>New Client Commission</td><td>Up to 20% cut per client</td><td>0% Always — Keep 100% of revenue</td></tr>
+            <tr><td>Monthly Software Fee</td><td>$30 to $699+/month</td><td>Flat deployment quote — $0 monthly rent</td></tr>
+            <tr><td>Booking Web Address</td><td>Shared marketplace domain</td><td>booking.yourbrand.com (Your Custom Domain)</td></tr>
+            <tr><td>Backbar Consumables</td><td>Retail bottle SKU tracking only</td><td>Gram (g) and milliliter (ml) bowl-by-bowl tracking</td></tr>
+            <tr><td>SMS Reminder Rates</td><td>High per-message markups</td><td>Direct carrier wholesale rates (approx. 1¢)</td></tr>
+            <tr><td>Deposit Enforcer</td><td>Basic card on file or optional</td><td>Native full or partial deposit enforcement</td></tr>
+          </tbody>
+        </table>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Paulux charge commissions on new clients?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can Paulux run on my own custom domain?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Paulux handle deposit collection and chargebacks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: "versus/fresha",
+    title: "Fresha Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Fresha? Compare fee structures, custom domain booking, backbar chemical dispensary tracking (ml/g), and data privacy side-by-side.",
+    keywords: "fresha alternative, fresha competitor, switch from fresha, fresha comparison, zero commission salon software",
+    canonical: "https://www.pauluxbooking.com/versus/fresha",
+    content: `
+      <header><h1>The Dedicated Fresha Alternative for Premier Studios</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Fresha Alternative?</strong> Paulux is a self-hosted, white-label salon booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha with a 0% transaction-fee architecture, complete client data privacy, and backbar chemical dispensary tracking.
+        </blockquote>
+        <p>Stop surrendering 20% of your new client revenue to a marketplace that advertises neighboring salons to your clients. Run your salon on your own custom domain with 100% data ownership.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "versus/booksy",
+    title: "Booksy Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Booksy? Compare per-chair fees, rapid walk-in mode, custom domain booking, and data privacy side-by-side.",
+    keywords: "booksy alternative, booksy competitor, switch from booksy, booksy comparison, barbershop booking software",
+    canonical: "https://www.pauluxbooking.com/versus/booksy",
+    content: `
+      <header><h1>The Dedicated Booksy Alternative for Premier Barbershops</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Booksy Alternative?</strong> Paulux is a dedicated white-label booking platform for barbershops and grooming studios deployed on an independent custom domain, eliminating Booksy's per-chair monthly penalties and marketplace discovery cuts with a 15-second rapid walk-in checkout mode.
+        </blockquote>
+        <p>Ditch Booksy's monthly per-chair fee penalties and marketplace discovery cuts. Deploy a dedicated white-label booking engine on your own custom domain with 15-second walk-in check-in and 0% commission.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "versus/mindbody",
+    title: "Mindbody Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Mindbody? Compare $159-$699/mo subscription fees against Paulux's dedicated deployment with clinical deposit enforcement.",
+    keywords: "mindbody alternative, mindbody competitor, switch from mindbody, medspa booking software, clinic software",
+    canonical: "https://www.pauluxbooking.com/versus/mindbody",
+    content: `
+      <header><h1>The Dedicated Mindbody Alternative for MedSpas & Aesthetic Clinics</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Mindbody Alternative?</strong> Paulux is a modern, white-label booking and clinical deposit enforcement system for aesthetic clinics and medspas, eliminating Mindbody's $159–$699/month subscription fees with 100% patient data isolation and upfront deposit enforcement.
+        </blockquote>
+        <p>Escape Mindbody's $159–$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience on your own domain with clinical deposit enforcement and 100% patient data isolation.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "versus/vagaro",
+    title: "Vagaro Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Vagaro? Compare add-on fees, backbar chemical dispensary tracking (ml/g), and data privacy side-by-side.",
+    keywords: "vagaro alternative, vagaro competitor, switch from vagaro, vagaro comparison, zero commission salon software",
+    canonical: "https://www.pauluxbooking.com/versus/vagaro",
+    content: `
+      <header><h1>The Dedicated Vagaro Alternative for High-Ticket Salons & Spas</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Vagaro Alternative?</strong> Paulux is a luxury, white-label salon and spa management platform deployed on an independent custom domain, replacing Vagaro's tiered add-on fees and marketplace directory cross-selling with an all-inclusive 0% commission architecture and backbar chemical tracking.
+        </blockquote>
+        <p>Tired of Vagaro's endless add-on fees and marketplace cross-promotion? Deploy a luxury, bespoke booking platform on your own custom domain with all features included and 0% commissions.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "versus/square-appointments",
+    title: "Square Appointments Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Square Appointments? Compare chemical dispensary tracking, stylist mobile portals, and custom domain booking.",
+    keywords: "square appointments alternative, square appointments competitor, switch from square appointments, salon POS software",
+    canonical: "https://www.pauluxbooking.com/versus/square-appointments",
+    content: `
+      <header><h1>The Purpose-Built Square Appointments Alternative for Salons</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Square Appointments Alternative?</strong> Paulux is a purpose-built salon and aesthetic clinic booking system deployed on an independent custom domain, replacing generic retail POS tools like Square Appointments with bowl-by-bowl chemical dispensary tracking, stylist mobile portals, and 0% commission booking.
+        </blockquote>
+        <p>Square is great for coffee shops, but salons need purpose-built workflows. Upgrade from Square's basic appointment slots to Paulux's backbar chemical dispensary (ml/g), stylist mobile portals, and white-label custom domain booking.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "versus/phorest",
+    title: "Phorest Alternative: The Modern Zero-Commission Platform | Paulux",
+    description: "Thinking of switching from Phorest? Compare $1,000+ onboarding fees and locked annual contracts against Paulux's dedicated deployment.",
+    keywords: "phorest alternative, phorest competitor, switch from phorest, salon software contracts, hair salon software",
+    canonical: "https://www.pauluxbooking.com/versus/phorest",
+    content: `
+      <header><h1>The Modern Phorest Alternative with 0% Commissions & Zero Contract Lock-In</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Phorest Alternative?</strong> Paulux is a dedicated enterprise salon software platform deployed on an independent custom domain, offering high-end backbar dispensary tracking and automated client marketing without Phorest's $1,000+ setup fees, locked annual contracts, or expensive monthly software rent.
+        </blockquote>
+        <p>Escape Phorest's $1,000+ setup fees, locked annual contracts, and expensive monthly software rent. Deploy a luxury, dedicated salon platform on your own custom domain in 48 hours.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+        <h3>How does Paulux handle deposit collection and chargebacks?</h3>
+        <p>Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "compare/fresha-vs-booksy",
+    title: "Fresha vs. Booksy: 2026 Comparison & The Modern Alternative | Paulux",
+    description: "Evaluating Fresha vs. Booksy for your salon or barbershop? Compare 20% marketplace commissions against $20/chair monthly fees, and see why top studios choose Paulux.",
+    keywords: "fresha vs booksy, compare fresha and booksy, fresha alternative, booksy alternative, salon software comparison",
+    canonical: "https://www.pauluxbooking.com/compare/fresha-vs-booksy",
+    content: `
+      <header><h1>Fresha vs. Booksy: 2026 Comparison & The Modern Alternative</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Alternative to Fresha and Booksy?</strong> Paulux is an independent, white-label booking engine that allows high-earning salons and barbershops to bypass Fresha's 20% new-client commissions and Booksy's per-chair monthly fees by deploying directly on their own custom domain with 0% transaction cuts.
+        </blockquote>
+        <p>Fresha lures salons with free software but charges 20% commission on every new client discovery. Booksy charges $29.99/mo base plus $20/mo for every additional chair, while also charging marketplace cuts. High-earning salons and barbershops use Paulux as the independent third-party alternative to own their domain with 0% fees.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Which takes more money: Fresha or Booksy?</h3>
+        <p>Fresha takes a 20% commission on every new client discovery, costing busy salons hundreds monthly. Booksy charges $29.99 base plus $20 per additional barber chair every month, alongside marketplace fees. Both models erode margins compared to Paulux's flat deployment and 0% booking commission architecture.</p>
+        <h3>Why do clients see competitor salons on Fresha and Booksy?</h3>
+        <p>Both platforms operate consumer directories incentivized to retain app traffic rather than protect salon brand loyalty. They actively display competing nearby salons, sponsored discounts, and alternative provider suggestions directly within booking confirmation screens, directory listings, and client search results.</p>
+        <h3>How does Paulux position as the independent third-party alternative?</h3>
+        <p>Paulux bypasses third-party consumer directories entirely. Instead of listing your chairs alongside competing rivals, Paulux deploys a bespoke, white-label booking engine on your own custom domain with 0% transaction cuts, isolated client data, and direct Stripe or Paystack merchant payouts.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "compare/mindbody-vs-vagaro",
+    title: "Mindbody vs. Vagaro: 2026 Comparison & The Dedicated Alternative | Paulux",
+    description: "Comparing Mindbody vs. Vagaro for your medspa, clinic, or wellness center? Compare $159-$699/mo enterprise bloat against tiered add-on fees, and explore Paulux.",
+    keywords: "mindbody vs vagaro, compare mindbody and vagaro, medspa software, clinic booking software, aesthetic clinic POS",
+    canonical: "https://www.pauluxbooking.com/compare/mindbody-vs-vagaro",
+    content: `
+      <header><h1>Mindbody vs. Vagaro: 2026 Comparison & The Dedicated Alternative</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Alternative to Mindbody and Vagaro?</strong> Paulux is a modern, white-label booking and clinical deposit enforcement platform for aesthetic clinics and medspas, eliminating Mindbody's $159–$699/month software bloat and Vagaro's per-feature add-on fees with 100% patient data isolation on your own custom domain.
+        </blockquote>
+        <p>Mindbody dominates high-cost enterprise fitness and wellness with $159 to $699+/month fees and complex features. Vagaro offers a lower $30/month starting point but steadily adds $10/user, forms fees, website fees, and SMS surcharges. Paulux provides a dedicated, luxury platform on your own domain with patient data isolation and clinical deposit protection.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Why are MedSpas switching away from Mindbody and Vagaro?</h3>
+        <p>Aesthetic clinics require clinical deposit enforcement, medical history privacy, and luxury branding. Mindbody is bloated with enterprise gym features and costs up to $699 monthly, while Vagaro feels like a discount directory. Paulux delivers a dedicated, white-label platform on your own domain with 100% data isolation.</p>
+        <h3>How does Paulux prevent no-shows on expensive laser and injectable slots?</h3>
+        <p>Paulux features a native Deposit Enforcer requiring upfront partial or full deposits during checkout. Funds route directly to your Stripe or Paystack merchant account with automated 3D Secure verification, protecting high-ticket aesthetic treatment slots and virtually eliminating costly late cancellations and no-shows.</p>
+        <h3>Can Paulux run on our medical clinic's custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourclinic.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "compare/phorest-vs-fresha",
+    title: "Phorest vs. Fresha: 2026 Comparison & The Modern Alternative | Paulux",
+    description: "Evaluating Phorest vs. Fresha? Compare Phorest's $1,000+ setup fees and locked contracts against Fresha's 20% marketplace commissions. See why salons choose Paulux.",
+    keywords: "phorest vs fresha, compare phorest and fresha, salon software comparison, phorest alternative, fresha alternative",
+    canonical: "https://www.pauluxbooking.com/compare/phorest-vs-fresha",
+    content: `
+      <header><h1>Phorest vs. Fresha: 2026 Comparison & The Modern Alternative</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Alternative to Phorest and Fresha?</strong> Paulux is a dedicated salon management system offering enterprise backbar chemical tracking and 0% commission booking on an independent custom domain, eliminating Phorest's locked annual contracts and setup fees alongside Fresha's 20% marketplace commissions.
+        </blockquote>
+        <p>Phorest targets high-end salons with comprehensive tools but demands $1,000+ onboarding fees, locked 12-to-36-month contracts, and $150-$350+/month fees. Fresha offers free software upfront but extracts a punishing 20% commission on every new client. Paulux provides the modern third way: enterprise-grade backbar accounting and white-label booking with zero contracts and 0% commission.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Why is Paulux considered the modern alternative to Phorest and Fresha?</h3>
+        <p>Salon owners were historically trapped between two extremes: Phorest's expensive multi-year corporate contracts and $1,000+ setup fees, or Fresha's 20% marketplace commissions and client data sharing. Paulux provides dedicated enterprise software on your own domain with 0% commissions and zero vendor contract lock-in.</p>
+        <h3>How does chemical dispensary tracking work in Paulux?</h3>
+        <p>Paulux tracks bleach powder, developer, and color tubes in exact grams and milliliters per bowl. When a stylist checks out a client, Paulux automatically logs chemical consumption and displays the realized gross profit margin in real time on the service ticket.</p>
+        <h3>Does Paulux charge commissions on new clients?</h3>
+        <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
+  },
+  {
+    path: "compare/square-vs-booksy",
+    title: "Square Appointments vs. Booksy: 2026 Comparison & The Salon Alternative | Paulux",
+    description: "Comparing Square Appointments vs. Booksy? Compare Square's generic retail POS against Booksy's per-chair fees and marketplace cuts. Discover Paulux.",
+    keywords: "square vs booksy, square appointments vs booksy, barbershop software comparison, square salon POS, booksy alternative",
+    canonical: "https://www.pauluxbooking.com/compare/square-vs-booksy",
+    content: `
+      <header><h1>Square Appointments vs. Booksy: 2026 Comparison & The Salon Alternative</h1></header>
+      <main>
+        <blockquote>
+          <strong>What is the Paulux Alternative to Square and Booksy?</strong> Paulux is a purpose-built booking and chair management system for modern barbershops and studios, replacing Square's generic retail POS limitations and Booksy's per-chair fees with a 15-second walk-in check-in mode and custom domain deployment.
+        </blockquote>
+        <p>Square Appointments is a generic appointment add-on designed for retail shops with simple calendar needs. Booksy is built for barbers but penalizes multi-chair shops with $20/month per barber fees while taking marketplace commissions. Paulux gives studios purpose-built salon workflows on their own custom domain with 0% commissions.</p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Can Square Appointments handle chemical dispensary tracking or formula notes?</h3>
+        <p>No. Square was designed as a general retail POS. It lacks professional hair color dispensary tracking in milliliters and grams, structured formula logs, and salon-specific client CRM features. Paulux is built specifically for beauty and grooming studios with purpose-built salon workflows.</p>
+        <h3>Why is Paulux better for multi-chair barbershops than Booksy?</h3>
+        <p>Booksy penalizes growing shops by charging $20 monthly for every additional chair while advertising competing local barbershops. Paulux provides flat deployment with zero per-chair penalties, an independent /stylist mobile schedule portal, and a 15-second rapid walk-in checkout mode.</p>
+        <h3>Can Paulux run on my own custom domain?</h3>
+        <p>Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "White-label custom domain booking",
+          "Chemical dispensary ml/g tracking",
+          "15-second walk-in check-in mode",
+          "No marketplace transaction cuts"
+        ]
+      }
+    ]
   }
 ];
 

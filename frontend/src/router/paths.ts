@@ -13,6 +13,18 @@ export const paths = {
   caseStudies: "/case-studies",
   caseStudyDetail: "/case-studies/:slug",
 
+  // Comparisons & Versus Hub Architecture
+  compareHub: "/compare",
+  versusHub: "/versus",
+  versusCompetitor: "/versus/:slug",
+  comparePair: "/compare/:pair",
+  versusFresha: "/versus/fresha",
+  versusBooksy: "/versus/booksy",
+  versusMindbody: "/versus/mindbody",
+  versusVagaro: "/versus/vagaro",
+  versusSquare: "/versus/square-appointments",
+  versusPhorest: "/versus/phorest",
+
   // Legal & Trust
   terms: "/terms",
   privacy: "/privacy",
