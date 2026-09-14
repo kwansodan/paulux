@@ -1,11 +1,18 @@
-﻿# Paulux - Search Engine Robot Directives
+# Paulux - Search Engine & AI Robot Directives
 User-agent: *
 Allow: /
 Disallow: /api/
 
 # Priority Marketing & Comparison Routes
+Allow: /compare
+Allow: /compare/*
+Allow: /versus
+Allow: /versus/*
 Allow: /fresha-alternative
+Allow: /booksy-alternative
+Allow: /mindbody-alternative
 Allow: /salon-booking-software
+Allow: /salon-chemical-dispensary-software
 Allow: /roi-calculator
 Allow: /demo
 Allow: /standalone
@@ -14,6 +21,9 @@ Allow: /case-studies/*
 Allow: /terms
 Allow: /privacy
 
+# AI Crawlers & LLM Manifests
+Allow: /llms.txt
+Allow: /llms-full.txt
+
 # Production XML Sitemap reference
 Sitemap: https://www.pauluxbooking.com/sitemap.xml
-
