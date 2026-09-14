@@ -11,6 +11,7 @@ import IndustryCaseStudyPage from "@/pages/marketing/IndustryCaseStudyPage";
 import CompareHubPage from "@/pages/marketing/CompareHubPage";
 import CompetitorComparisonPage from "@/pages/marketing/CompetitorComparisonPage";
 import HeadToHeadComparisonPage from "@/pages/marketing/HeadToHeadComparisonPage";
+import MigrationPage from "@/pages/marketing/MigrationPage";
 import { TermsPage, PrivacyPage } from "@/pages/legal/LegalPages";
 import { NotFoundPage } from "@/pages/StatusPages";
 import { paths } from "@/router/paths";
@@ -46,6 +47,8 @@ export default function App() {
             <Route path={paths.dispensarySoftware} element={<DispensarySoftwarePage />} />
             <Route path={paths.salonSoftware} element={<SalonSoftwarePage />} />
             <Route path={paths.roiCalculator} element={<RoiCalculatorPage />} />
+            <Route path={paths.migrate} element={<MigrationPage />} />
+            <Route path={paths.switch} element={<Navigate to={paths.migrate} replace />} />
             <Route path={paths.demo} element={<DemoPage />} />
             <Route path={paths.caseStudies} element={<CaseStudiesHubPage />} />
             <Route path={paths.caseStudyDetail} element={<IndustryCaseStudyPage />} />

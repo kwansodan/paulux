@@ -1242,6 +1242,52 @@ const PAGES = [
         ]
       }
     ]
+  },
+  {
+    path: "migrate",
+    title: "Switch to Paulux Salon Software | Zero-Downtime Turnkey Migration",
+    description: "Switch from Fresha, Booksy, Mindbody, or Vagaro with zero salon downtime. We migrate your clients, appointments, and color dispensary formulas in under 48 hours.",
+    keywords: "switch salon software, migrate from fresha, switch from booksy, mindbody migration service, zero downtime salon software transfer, salon database migration",
+    canonical: "https://www.pauluxbooking.com/migrate",
+    content: `
+      <header><h1>Switch to Paulux Salon Software With Zero Salon Downtime</h1></header>
+      <main>
+        <p>Never lose a client, formula, or future booking. Our engineering team migrates your entire salon database from Fresha, Booksy, Mindbody, or Vagaro in under 48 hours with 0% downtime.</p>
+        <h2>4-Step White-Glove Migration Engineering</h2>
+        <ol>
+          <li><strong>Data Extraction & Sanitization:</strong> Ingest CSV exports of client records, visit histories, and service menus.</li>
+          <li><strong>Private Database Provisioning:</strong> Dedicated PostgreSQL instance on your custom domain (booking.yourbrand.com).</li>
+          <li><strong>Dual-Run Parallel Mode:</strong> Keep legacy software active taking appointments while verifying schedules and formulas.</li>
+          <li><strong>Instant Cutover & Launch:</strong> Zero booking collisions, 0% platform commissions, and full staff training.</li>
+        </ol>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Will our salon experience any booking downtime during the migration?</h3>
+        <p>Zero downtime. We operate in Dual-Run Parallel Mode so your current software stays live taking client appointments right up until the cutover morning.</p>
+        <h3>Can you migrate past chemical color formulas and dispensary notes?</h3>
+        <p>Yes. Our engineering team extracts historical color cards, developer ratios, processing times, and client allergy alerts into Paulux's dispensary module.</p>
+      </main>
+    `,
+    schema: [
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Paulux Salon Software Migration Engine",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "0% booking commission, flat turnkey deployment"
+        },
+        "featureList": [
+          "Zero-downtime database migration",
+          "Client CSV and visit history ingestion",
+          "Color formula and dispensary transfer",
+          "Future appointment sync"
+        ]
+      }
+    ]
   }
 ];
 

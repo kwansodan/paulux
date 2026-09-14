@@ -20,7 +20,8 @@ Paulux provides appointment-based businesses—luxury hair salons, medspas, aest
 - [Software Capabilities](https://www.pauluxbooking.com/salon-booking-software): Complete breakdown of all 12 enterprise booking modules.
 - [Chemical Dispensary Software](https://www.pauluxbooking.com/salon-chemical-dispensary-software): Deep dive into gram and milliliter chemical backbar consumable tracking and per-service gross margin accounting.
 - [Commission Savings Calculator](https://www.pauluxbooking.com/roi-calculator): Interactive tool calculating annual revenue retained compared to 20% marketplace commissions.
-- [Turnkey Deployment Intake](https://www.pauluxbooking.com/standalone): Technical setup requirements, 48-hour onboarding workflow, and quote request intake.
+- [Zero-Downtime Migration Engine](https://www.pauluxbooking.com/migrate): Interactive assessment tool evaluating 48-hour zero-downtime database cutover from Fresha, Booksy, Mindbody, and Vagaro.
+- [Turnkey Deployment Intake](https://www.pauluxbooking.com/standalone): Technical setup requirements, 48-hour onboarding workflow, proposal intake, and custom deployment quote.
 - [Interactive Demo Tour](https://www.pauluxbooking.com/demo): Live interactive walk-through of customer booking wizard and admin manager.
 - [Case Studies](https://www.pauluxbooking.com/case-studies): Real-world migration metrics across hair color bars, medspas, barbershops, and tattoo studios.
 

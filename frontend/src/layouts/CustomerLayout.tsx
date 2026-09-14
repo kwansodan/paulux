@@ -144,6 +144,9 @@ export default function CustomerLayout() {
                   <Link to={paths.compareHub} className="hover:text-foreground font-medium text-accent">Comparison Hub (All Platforms)</Link>
                 </li>
                 <li>
+                  <Link to={paths.migrate} className="hover:text-foreground font-semibold text-emerald-600 dark:text-emerald-400">Zero-Downtime Migration Engine</Link>
+                </li>
+                <li>
                   <Link to={paths.versusFresha} className="hover:text-foreground">Fresha Alternative (0% Cut)</Link>
                 </li>
                 <li>

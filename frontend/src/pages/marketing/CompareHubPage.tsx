@@ -2,8 +2,10 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
+  Calculator,
   Check,
   ChevronDown,
+  RefreshCw,
   Scale,
   Search
 } from "lucide-react";
@@ -515,6 +517,57 @@ export default function CompareHubPage() {
               <p className="text-xs text-foreground/90 mt-2 leading-relaxed">
                 Established, high-performing salons, medspas, and premier barbershops generating consistent revenue who demand 0% commissions, custom domain prestige, patient/client data isolation, and gram/milliliter chemical dispensary accounting.
               </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Zero-Downtime Migration & ROI Callout */}
+      <section className="bg-secondary/30 py-16 border-y border-border/60">
+        <Container>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-3xl border border-border/80 bg-card p-6 md:p-8 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent uppercase tracking-wider">
+                  <Calculator className="size-3.5" />
+                  <span>ROI Savings Engine</span>
+                </div>
+                <h3 className="font-serif mt-3 text-2xl font-semibold">
+                  Calculate What You Lose to Commissions
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                  Discover how much your salon loses to 20% new-client cuts, monthly tier surcharges, and payment markups each year.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Button asChild variant="outline" className="w-full sm:w-auto">
+                  <Link to={paths.roiCalculator}>
+                    Launch ROI Calculator <ArrowRight className="size-4 ml-1.5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-border/80 bg-card p-6 md:p-8 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                  <RefreshCw className="size-3.5" />
+                  <span>Zero Salon Downtime</span>
+                </div>
+                <h3 className="font-serif mt-3 text-2xl font-semibold">
+                  Switch from Any Platform in 48 Hours
+                </h3>
+                <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                  Our engineering team handles full client CSV ingestion, color dispensary notes, and future appointment sync with zero missed bookings.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Button asChild className="w-full sm:w-auto">
+                  <Link to={paths.migrate}>
+                    Run Migration Assessment <ArrowRight className="size-4 ml-1.5" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </Container>

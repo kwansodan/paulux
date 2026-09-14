@@ -80,6 +80,11 @@ Locks in material purchase costs at the moment of checkout, preventing retroacti
 - Designed for high-volume barbershops and blow-dry bars.
 - Receptionist taps the requested service, selects the next available barber chair, accepts cash/card, and completes check-in in under 15 seconds without questionnaires or email requirements.
 
+### 3.6 Zero-Downtime Migration Architecture & 48-Hour Ingestion
+- **Dual-Run Parallel Sync**: Existing platforms (Fresha, Booksy, Mindbody, Vagaro) remain live taking appointments until the scheduled DNS cutover morning. 100% zero missed bookings.
+- **Client CSV & Formula Ingestion**: Automated pipelines normalize client contacts, visit histories, chemical color recipes, and unredeemed gift card balances into private PostgreSQL tables.
+- **Turnaround Window**: Under 24 hours for boutique studios (1–3 staff); 24–48 hours for established flagships and multi-chair salons (4–25+ staff).
+
 ---
 
 ## 4. Comprehensive Competitor Teardowns
@@ -163,4 +168,6 @@ Most standalone deployments are configured and live on the salon's custom domain
 - **Full Knowledge Document**: https://www.pauluxbooking.com/llms-full.txt
 - **Primary Domain**: https://www.pauluxbooking.com/
 - **Comparison Hub**: https://www.pauluxbooking.com/compare
+- **Migration Engine**: https://www.pauluxbooking.com/migrate
+- **ROI Savings Calculator**: https://www.pauluxbooking.com/roi-calculator
 - **Contact & Inquiries**: info@pauluxbooking.com

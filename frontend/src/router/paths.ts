@@ -8,6 +8,8 @@ export const paths = {
   dispensarySoftware: "/salon-chemical-dispensary-software",
   salonSoftware: "/salon-booking-software",
   roiCalculator: "/roi-calculator",
+  migrate: "/migrate",
+  switch: "/switch",
   demo: "/demo",
   standalone: "/standalone",
   caseStudies: "/case-studies",

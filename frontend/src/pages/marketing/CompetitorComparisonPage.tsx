@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
 import RoiCalculator from "@/components/marketing/RoiCalculator";
+import MigrationAssessmentTool from "@/components/marketing/MigrationAssessmentTool";
 import { paths } from "@/router/paths";
 import { COMPETITORS } from "@/data/comparisons";
 
@@ -302,7 +303,24 @@ export default function CompetitorComparisonPage({ forcedSlug }: CompetitorPageP
             </p>
           </div>
 
-          <RoiCalculator />
+          <RoiCalculator defaultPlatform={comp.slug} />
+        </Container>
+      </section>
+
+      {/* Interactive Zero-Downtime Migration Assessment */}
+      <section className="py-16 md:py-24 border-b border-border/60 bg-background">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <p className="text-accent text-xs tracking-luxe uppercase font-semibold">Zero-Downtime Migration</p>
+            <h2 className="font-serif mt-2 text-3xl md:text-4xl font-medium">
+              Switch from {comp.name} to Paulux in Under 48 Hours
+            </h2>
+            <p className="text-muted-foreground mt-3 text-sm md:text-base">
+              Select your salon team size and data assets. Our white-glove migration team handles client CSV imports, formula records, and schedule transitions without a single second of salon downtime.
+            </p>
+          </div>
+
+          <MigrationAssessmentTool defaultPlatform={comp.slug} />
         </Container>
       </section>
 

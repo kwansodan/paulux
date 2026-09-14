@@ -1,10 +1,21 @@
-import { useState, type FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, type FormEvent } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { AxiosError } from "axios";
-import { ArrowLeft, Check, MessageCircle, MessageSquare, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  Check,
+  FileText,
+  MessageCircle,
+  MessageSquare,
+  RefreshCw,
+  ShieldCheck,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
 import { api, ensureCsrf } from "@/lib/api";
 import { openChatwoot } from "@/components/marketing/ChatwootWidget";
 import { useAdmin } from "@/context/AdminContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -28,16 +39,61 @@ const PERKS = [
 ];
 
 export default function StandalonePage() {
+  const [searchParams] = useSearchParams();
+  const { formatAmount } = useCurrency();
   const { addLead } = useAdmin();
+
+  // URL query params from ROI Calculator or Migration Assessment
+  const paramRevenue = searchParams.get("revenue");
+  const paramBookings = searchParams.get("bookings");
+  const paramTicket = searchParams.get("ticket");
+  const paramPlatform = searchParams.get("platform");
+  const paramSavings = searchParams.get("savings");
+  const paramTeamSize = searchParams.get("teamSize");
+  const paramTurnaround = searchParams.get("turnaround");
+  const paramAssets = searchParams.get("assets");
+  const paramSource = searchParams.get("source");
+
+  const hasRoiProposal = Boolean(paramSavings || (paramSource === "roi-calculator" && paramPlatform));
+  const hasMigrationPlan = Boolean(paramSource === "migration-assessment" || paramAssets);
+
   const [form, setForm] = useState({
     name: "",
     businessName: "",
     email: "",
     phone: "",
     city: "",
-    teamSize: "",
+    teamSize: paramTeamSize || "",
     message: "",
   });
+
+  // Pre-fill message with structured proposal details once on load
+  useEffect(() => {
+    if (hasRoiProposal || hasMigrationPlan) {
+      const parts: string[] = [];
+      if (hasRoiProposal) {
+        parts.push(`[ROI Proposal Attached: Switching from ${paramPlatform || "Marketplace"}]`);
+        if (paramBookings && paramTicket) {
+          parts.push(`- Volume: ~${paramBookings} bookings/mo at $${paramTicket} average ticket (Gross: ~$${paramRevenue}/mo)`);
+        }
+        if (paramSavings) {
+          parts.push(`- Projected Annual Savings: ~$${Number(paramSavings).toLocaleString()}/year`);
+        }
+      }
+      if (hasMigrationPlan) {
+        parts.push(`[Zero-Downtime Migration Details]`);
+        if (paramPlatform) parts.push(`- Current System: ${paramPlatform}`);
+        if (paramTurnaround) parts.push(`- Target Turnaround: ${paramTurnaround}`);
+        if (paramAssets) parts.push(`- Assets to Migrate: ${paramAssets}`);
+      }
+      setForm((f) => ({
+        ...f,
+        message: f.message ? f.message : parts.join("\n"),
+        teamSize: f.teamSize ? f.teamSize : (paramTeamSize || ""),
+      }));
+    }
+  }, [hasRoiProposal, hasMigrationPlan, paramPlatform, paramSavings, paramBookings, paramTicket, paramRevenue, paramTurnaround, paramAssets, paramTeamSize]);
+
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
@@ -51,6 +107,14 @@ export default function StandalonePage() {
     setError(null);
     setBusy(true);
 
+    const leadSource = hasMigrationPlan
+      ? "Migration Assessment Wizard"
+      : hasRoiProposal
+      ? "ROI Proposal Calculator"
+      : "Standalone Quote Intake";
+
+    const estimatedSavingsVal = paramSavings ? Number(paramSavings) : 1500;
+
     try {
       // Always capture lead in Admin CRM
       addLead({
@@ -62,8 +126,8 @@ export default function StandalonePage() {
         teamSize: form.teamSize ? `${form.teamSize} staff` : "1-5 staff",
         message: form.message || undefined,
         status: "new",
-        estimatedValue: 1500,
-        source: "Standalone Quote Intake",
+        estimatedValue: estimatedSavingsVal,
+        source: leadSource,
       });
 
       // Best effort forward to backend API if active
@@ -91,23 +155,37 @@ export default function StandalonePage() {
   }
 
   const waLeadMsg = encodeURIComponent(
-    `Hi Paulux Team! I'm ${form.name || "a salon owner"} from ${form.businessName || "my salon"}. I want to get a quote for a standalone booking system on my own domain.`
+    `Hi Paulux Team! I'm ${form.name || "a salon owner"} from ${form.businessName || "my salon"}. ${
+      hasRoiProposal && paramSavings
+        ? `I have an ROI Proposal saving ~${formatAmount(Number(paramSavings))}/yr from ${paramPlatform || "our booking software"}.`
+        : hasMigrationPlan
+        ? `I completed the Migration Assessment to switch from ${paramPlatform || "our current platform"} with zero downtime.`
+        : "I want to get a quote for a standalone booking system on my own domain."
+    }`
   );
 
   if (done) {
     return (
       <Container className="flex min-h-[70vh] flex-col items-center justify-center py-20 text-center">
         <SeoHead
-          title="Enquiry Received | Paulux Standalone Software"
-          description="Your quote request has been received. Our team will be in touch shortly."
+          title="Deployment Proposal Registered | Paulux Standalone Software"
+          description="Your deployment and migration request has been received. Our solutions engineers are preparing your custom configuration."
           canonicalPath="/standalone"
         />
         <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 mb-6 flex size-16 items-center justify-center rounded-3xl shadow-sm">
           <Check className="size-8" />
         </span>
-        <h1 className="font-serif text-3xl md:text-4xl">Thank You — We're Preparing Your Quote</h1>
-        <p className="text-muted-foreground mt-3 max-w-md text-sm md:text-base leading-relaxed">
-          Your enquiry for <strong>{form.businessName}</strong> has reached our deployment specialists. We will reach out to <strong>{form.email}</strong> shortly.
+        <h1 className="font-serif text-3xl md:text-4xl">
+          {hasRoiProposal || hasMigrationPlan
+            ? "Your Migration Proposal Has Been Assigned"
+            : "Thank You — We're Preparing Your Quote"}
+        </h1>
+        <p className="text-muted-foreground mt-3 max-w-lg text-sm md:text-base leading-relaxed">
+          Your details for <strong>{form.businessName}</strong>
+          {paramPlatform ? ` (switching from ${paramPlatform})` : ""} have been handed to a dedicated solutions engineer.
+          {paramSavings && (
+            <> We have attached your projected annual savings of <strong className="text-foreground">{formatAmount(Number(paramSavings))}/year</strong> to your file.</>
+          )} We will reach out to <strong>{form.email}</strong> shortly.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -129,7 +207,7 @@ export default function StandalonePage() {
             className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#20bd5a] transition-all"
           >
             <MessageCircle className="size-4 fill-white text-transparent" />
-            <span>WhatsApp Us</span>
+            <span>WhatsApp Us Now</span>
           </a>
           <Button asChild variant="outline">
             <Link to={paths.home}>
@@ -207,10 +285,49 @@ export default function StandalonePage() {
 
         {/* Lead Capture Form Column */}
         <div className="rounded-3xl border border-border/80 bg-card p-6 shadow-xl md:p-8 lg:col-span-6">
-          <h2 className="font-serif text-2xl font-medium">Request Deployment Quote</h2>
-          <p className="text-muted-foreground mt-1 text-xs">
-            We review each request and provide a detailed timeline and turnkey setup quote.
-          </p>
+          {/* Active Proposal / Migration Plan Context Banner */}
+          {hasRoiProposal && (
+            <div className="mb-6 rounded-2xl border border-accent/40 bg-accent/10 p-4">
+              <div className="flex items-center gap-2 text-xs font-semibold text-accent uppercase tracking-wide">
+                <TrendingUp className="size-4" />
+                <span>ROI Migration Proposal Attached</span>
+              </div>
+              <p className="mt-1 text-xs text-foreground leading-relaxed">
+                Projected to recover{" "}
+                <strong className="text-accent font-semibold">
+                  ~{paramSavings ? formatAmount(Number(paramSavings)) : "$18,000+"}/year
+                </strong>{" "}
+                by eliminating commissions and subscription tiers from {paramPlatform || "your existing platform"}.
+              </p>
+            </div>
+          )}
+
+          {hasMigrationPlan && !hasRoiProposal && (
+            <div className="mb-6 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4">
+              <div className="flex items-center gap-2 text-xs font-semibold text-emerald-700 dark:text-emerald-300 uppercase tracking-wide">
+                <ShieldCheck className="size-4" />
+                <span>Zero-Downtime Migration Assessment Attached</span>
+              </div>
+              <p className="mt-1 text-xs text-foreground leading-relaxed">
+                Targeting a seamless <strong>{paramTurnaround || "24–48 hour"}</strong> cutover from {paramPlatform || "your current software"} with 0 missed bookings.
+              </p>
+            </div>
+          )}
+
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="font-serif text-2xl font-medium">Request Deployment Quote</h2>
+              <p className="text-muted-foreground mt-1 text-xs">
+                We review each request and provide a detailed timeline and turnkey setup quote.
+              </p>
+            </div>
+            {(hasRoiProposal || hasMigrationPlan) && (
+              <span className="hidden sm:inline-flex items-center gap-1 rounded-full bg-accent/15 px-2.5 py-1 text-[10px] font-semibold text-accent">
+                <FileText className="size-3" />
+                <span>Custom Proposal</span>
+              </span>
+            )}
+          </div>
 
           {error && (
             <div className="mt-4 rounded-xl bg-destructive/10 p-3 text-xs font-medium text-destructive">
@@ -235,7 +352,7 @@ export default function StandalonePage() {
                 <Input
                   id="biz"
                   required
-                  placeholder="e.g. Maison de Beaut�"
+                  placeholder="e.g. Maison de Beauté"
                   value={form.businessName}
                   onChange={(e) => set("businessName", e.target.value)}
                 />
@@ -279,9 +396,8 @@ export default function StandalonePage() {
                 <Label htmlFor="team" className="text-xs">Stylist / Team Size</Label>
                 <Input
                   id="team"
-                  type="number"
-                  min="1"
-                  placeholder="e.g. 6"
+                  type="text"
+                  placeholder="e.g. 6 staff"
                   value={form.teamSize}
                   onChange={(e) => set("teamSize", e.target.value)}
                 />
@@ -289,11 +405,13 @@ export default function StandalonePage() {
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="msg" className="text-xs">Current Booking Software & Specific Needs</Label>
+              <Label htmlFor="msg" className="text-xs">
+                Current Booking Software, Migration Notes & Specific Needs
+              </Label>
               <textarea
                 id="msg"
-                rows={3}
-                className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                rows={4}
+                className="w-full rounded-md border border-input bg-transparent px-3 py-2 text-xs leading-relaxed shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring font-sans"
                 placeholder="e.g. Currently on Fresha, looking to eliminate 20% fees and deploy on booking.mybrand.com."
                 value={form.message}
                 onChange={(e) => set("message", e.target.value)}
@@ -301,12 +419,13 @@ export default function StandalonePage() {
             </div>
 
             <Button type="submit" disabled={busy} size="lg" className="mt-2 w-full font-semibold">
-              {busy ? "Submitting..." : "Submit Quote Request"}
+              {busy ? "Submitting..." : hasRoiProposal ? "Submit With Proposal Attached" : "Submit Quote Request"}
             </Button>
 
-            <p className="text-center text-xs text-muted-foreground mt-1">
-              ?? We never sell your data or share your email with third parties.
-            </p>
+            <div className="flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground mt-1">
+              <RefreshCw className="size-3 text-emerald-500" />
+              <span>Zero salon downtime guarantee on all software migrations.</span>
+            </div>
           </form>
         </div>
       </Container>
