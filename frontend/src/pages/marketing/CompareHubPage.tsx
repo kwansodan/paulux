@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
+  Check,
   ChevronDown,
   Scale,
   Search

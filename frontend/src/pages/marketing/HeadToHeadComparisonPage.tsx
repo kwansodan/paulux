@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   ArrowRight,
+  Check,
   ChevronDown,
   Scale
 } from "lucide-react";
