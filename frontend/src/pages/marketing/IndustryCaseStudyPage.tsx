@@ -1,6 +1,18 @@
 import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  BadgeCheck,
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Instagram,
+  MapPin,
+  MessageCircle,
+  RefreshCw,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
@@ -82,9 +94,35 @@ export default function IndustryCaseStudyPage() {
             <span className="rounded-full bg-accent/20 px-3 py-1 font-semibold tracking-wider text-accent uppercase">
               {study.industry}
             </span>
-            <span className="text-primary-foreground/70">?? {study.location}</span>
-            <span className="text-primary-foreground/70">?? {study.teamSize}</span>
-            <span className="text-primary-foreground/70">?? Migrated from {study.previousPlatform}</span>
+            {study.verifiedPilot && (
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 px-3 py-1 font-semibold tracking-wider text-emerald-300 uppercase">
+                <BadgeCheck className="size-3.5 text-emerald-400" />
+                Verified Pilot Salon
+              </span>
+            )}
+            <span className="inline-flex items-center gap-1.5 text-primary-foreground/80">
+              <MapPin className="size-3.5 text-accent" />
+              {study.location}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-primary-foreground/80">
+              <Users className="size-3.5 text-accent" />
+              {study.teamSize}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-primary-foreground/80">
+              <RefreshCw className="size-3.5 text-accent" />
+              Migrated from {study.previousPlatform}
+            </span>
+            {study.instagram && (
+              <a
+                href={study.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full bg-pink-500/20 px-3 py-1 font-medium text-pink-200 hover:bg-pink-500/30 transition-colors"
+              >
+                <Instagram className="size-3.5 text-pink-300" />
+                <span>Instagram Profile</span>
+              </a>
+            )}
           </div>
 
           <h1 className="font-serif mt-6 text-3xl font-medium leading-tight sm:text-4xl md:text-5xl">
@@ -218,7 +256,8 @@ export default function IndustryCaseStudyPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-primary-foreground/30 bg-primary-foreground/10 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-foreground/20 transition-colors"
             >
-              ?? WhatsApp About {study.industry}
+              <MessageCircle className="size-4" />
+              <span>WhatsApp About {study.industry}</span>
             </a>
           </div>
         </div>

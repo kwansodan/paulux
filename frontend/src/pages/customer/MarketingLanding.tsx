@@ -6,13 +6,16 @@ import {
   Clock,
   Globe,
   Lock,
-  Sparkles,
+  MessageCircle,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
 import FeatureShowcase from "@/components/marketing/FeatureShowcase";
 import RoiCalculator from "@/components/marketing/RoiCalculator";
+import PilotSpotlight from "@/components/marketing/PilotSpotlight";
+import PricingSection from "@/components/marketing/PricingSection";
 import { CASE_STUDIES } from "@/data/caseStudies";
 import { paths } from "@/router/paths";
 
@@ -42,41 +45,49 @@ const PAIN_POINTS = [
 const STEPS = [
   {
     n: "01",
-    title: "Architecture & Domain Provisioning",
-    body: "We set up an isolated database and connect your custom domain with automated SSL security.",
+    title: "Domain Setup & System Deployment",
+    body: "We set up an isolated database and connect your custom domain (e.g. booking.yourbrand.com) with automatic SSL security.",
   },
   {
     n: "02",
-    title: "Turnkey Data Migration",
-    body: "We import your treatment menus, pricing, stylist schedules, and client lists with zero downtime.",
+    title: "Menu & Client Migration",
+    body: "We import your service menus, pricing, stylist rosters, and client lists from Fresha, Booksy, or Excel with zero downtime.",
   },
   {
     n: "03",
-    title: "Launch & Keep 100% Revenue",
-    body: "Start taking appointments and gift card orders directly into your own bank account.",
+    title: "Launch & Keep 100% of Revenue",
+    body: "Start taking appointments, deposits, and gift card orders directly into your Paystack or bank account.",
   },
 ];
 
 const FAQS = [
   {
+    q: "How much does Paulux cost?",
+    a: "We believe in 100% transparent pricing. Paulux is GH₵ 500 / month flat subscription for software access, hosting, and continuous updates. There is a one-time deployment setup fee up to GH₵ 3,000, which covers custom domain setup, menu upload, staff onboarding, and Paystack/MoMo payment integration. 0% booking commission, no per-client fees, and no surprise charges.",
+  },
+  {
     q: "Does Paulux charge commissions on new clients?",
-    a: "No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.",
+    a: "No. Paulux operates on a strict 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.",
+  },
+  {
+    q: "Is there a real salon currently using Paulux?",
+    a: "Yes! Polaris Beauty Lounge located in Tesano, Accra (Instagram: @polarisbeautylounge) is our flagship pilot salon. They transitioned from Fresha to Paulux to escape 20% marketplace commissions and now accept bookings directly on their own domain with Paystack and Mobile Money.",
   },
   {
     q: "Can Paulux run on my own custom domain?",
     a: "Yes. Every Paulux deployment connects directly to your custom domain (e.g., booking.yourbrand.com) with automated SSL security. Your clients book directly with your brand, eliminating third-party app downloads and preventing competitor salons from advertising on your booking profile.",
   },
   {
-    q: "How does Paulux handle deposit collection and chargebacks?",
-    a: "Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated 3D Secure fraud protection, minimizing chargeback risks and eliminating no-shows on high-ticket appointment slots.",
+    q: "How does Paulux handle deposit collection and no-shows?",
+    a: "Paulux includes a native Deposit Enforcer requiring clients to authorize full or partial upfront deposits at checkout. Funds route directly to your merchant gateway with automated fraud protection, minimizing no-shows and securing payment before clients arrive at your salon.",
   },
   {
     q: "How is Paulux different from SaaS platforms like Fresha, Mindbody, or Booksy?",
-    a: "SaaS platforms place your salon inside a shared marketplace, take up to 20% commissions, and advertise rival salons to your clients. Paulux is a dedicated standalone software deployment on your own domain with 0% commissions, private client data, and chemical dispensary tracking.",
+    a: "Marketplace platforms place your salon inside a shared directory, take up to 20% commissions, and advertise rival salons to your clients. Paulux is your own standalone software on your own domain with 0% commissions, private client data, and back-of-house stock and formula tracking.",
   },
   {
     q: "How long does turnkey deployment take?",
-    a: "Most standalone deployments go live within 48 hours. Our engineering team handles complete technical setup including server provisioning, custom domain DNS connection, payment gateway integration, and migrating your existing client histories, chemical formula logs, and service menus with zero downtime.",
+    a: "Most standalone deployments go live within 48 hours. Our engineering team handles complete technical setup including server provisioning, custom domain DNS connection, payment gateway integration, and migrating your existing client histories and service menus with zero downtime.",
   },
 ];
 
@@ -129,8 +140,7 @@ export default function MarketingLanding() {
       <section className="bg-brand-wash text-primary-foreground relative overflow-hidden py-24 md:py-36">
         <Container className="relative flex flex-col items-center gap-7 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs tracking-wider uppercase backdrop-blur-sm">
-            <Sparkles className="size-3.5 text-amber-300" />
-            <span>Dedicated White-Label Infrastructure</span>
+            <span>Direct Salon Booking & Management</span>
           </div>
 
           <h1 className="font-serif max-w-4xl text-4xl font-medium leading-[1.08] sm:text-5xl md:text-6xl">
@@ -138,18 +148,18 @@ export default function MarketingLanding() {
             <span className="italic text-accent">Own Your Appointment Booking System</span> Outright.
           </h1>
 
-          {/* Definition-First Semantic Passage Block */}
+          {/* Direct Plain-English Definition */}
           <div className="mx-auto max-w-3xl rounded-2xl border border-accent/40 bg-accent/10 p-5 text-left backdrop-blur-sm shadow-sm">
             <h2 className="text-accent text-xs font-mono uppercase tracking-wider font-semibold">
               What is Paulux?
             </h2>
             <p className="text-primary-foreground/90 mt-1 text-sm sm:text-base leading-relaxed">
-              Paulux is a self-hosted, white-label salon booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha and Booksy with a 0% transaction-fee architecture.
+              Paulux is your salon's own dedicated booking website. Clients book their hair, nails, or grooming appointments directly with you on your own domain. Payments route straight to your Paystack or bank account, with 0% commissions deducted.
             </p>
           </div>
 
           <p className="text-primary-foreground/80 max-w-2xl text-base sm:text-lg">
-            Paulux provisions a dedicated booking platform running on your custom domain for appointment-based businesses (barbershops, aesthetic clinics, salons, tattoo studios, massage therapists, and wellness centers). Keep 100% of your earnings.
+            We connect your custom domain (booking.yourbrand.com), import your service menu and client list, and set up your Mobile Money and card payments. Transparent flat pricing at GH₵ 500 / month with 0% booking cuts.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
@@ -167,7 +177,8 @@ export default function MarketingLanding() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-[#25D366]/40 bg-[#25D366]/15 px-5 py-3 text-sm font-semibold text-white hover:bg-[#25D366]/30 transition-colors"
             >
-              ?? Chat on WhatsApp
+              <MessageCircle className="size-4" />
+              <span>Chat on WhatsApp</span>
             </a>
           </div>
 
@@ -183,11 +194,11 @@ export default function MarketingLanding() {
             </div>
             <div className="flex items-center gap-1.5">
               <Lock className="size-4 text-emerald-400" />
-              <span>100% Private Database</span>
+              <span>Direct Paystack & MoMo Payouts</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Clock className="size-4 text-emerald-400" />
-              <span>48-Hour Turnkey Deployment</span>
+              <span>48-Hour Full Setup</span>
             </div>
           </div>
         </Container>
@@ -220,7 +231,9 @@ export default function MarketingLanding() {
                 {card.points.map((pt) => (
                   <li key={pt} className="flex items-start gap-3 text-sm">
                     {card.bad ? (
-                      <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-rose-500/15 text-rose-500 text-xs font-bold mt-0.5">?</span>
+                      <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-rose-500/15 text-rose-500 text-xs font-bold mt-0.5">
+                        <X className="size-3.5" />
+                      </span>
                     ) : (
                       <Check className="size-5 shrink-0 text-emerald-500 mt-0.5" />
                     )}
@@ -239,19 +252,26 @@ export default function MarketingLanding() {
         </div>
       </Container>
 
+      {/* Real Pilot Salon Spotlight: Polaris Beauty Lounge */}
+      <Container className="pb-16 md:pb-24">
+        <PilotSpotlight />
+      </Container>
+
+      {/* Transparent Pricing Section */}
+      <PricingSection />
+
       {/* Industries & Case Studies Showcase */}
       <section className="bg-secondary/40 py-20 md:py-28 border-y border-border/60">
         <Container>
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="inline-flex items-center gap-2 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold tracking-wider text-accent uppercase">
-              <Sparkles className="size-3" />
-              <span>Multi-Industry Architecture</span>
+              <span>Verified Pilot & Industry Solutions</span>
             </div>
             <h2 className="font-serif mt-3 text-3xl md:text-4xl">
               Powering every business that takes appointments
             </h2>
             <p className="text-muted-foreground mt-3 text-sm md:text-base">
-              Whether you manage a 7-chair barbershop, a clinical aesthetic practice, or private training studio, Paulux adapts to your exact booking workflow.
+              Whether you manage a 7-chair barbershop, a luxury braiding and hair lounge, or a private training studio, Paulux adapts to your exact booking workflow.
             </p>
           </div>
 
@@ -389,7 +409,8 @@ export default function MarketingLanding() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-primary-foreground/30 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
             >
-              ?? WhatsApp Us Now
+              <MessageCircle className="size-4" />
+              <span>WhatsApp Us Now</span>
             </a>
           </div>
         </Container>

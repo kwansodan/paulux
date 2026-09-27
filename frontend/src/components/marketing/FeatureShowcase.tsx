@@ -15,7 +15,6 @@ import {
   Scissors,
   ShieldCheck,
   ShoppingBag,
-  Sparkles,
   Star,
   Tag,
   Users,
@@ -112,7 +111,7 @@ function BookingEngineVignette() {
       {/* Smart Autofill Pill */}
       <div className="flex items-center justify-between rounded-xl bg-emerald-500/10 px-3.5 py-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
         <span className="flex items-center gap-1.5">
-          <Sparkles className="size-3.5" /> Device Memory: Auto-filled for Elena R.
+          <CheckCircle2 className="size-3.5" /> Repeat Client: Auto-filled for Elena R.
         </span>
         <span className="text-[10px] uppercase font-bold tracking-wider">Saved</span>
       </div>
@@ -523,7 +522,7 @@ const ALL_12_PILLARS = [
     num: "08",
     icon: FlaskConical,
     title: "Back-of-House Consumables",
-    category: "Enterprise Differentiator",
+    category: "Dispensary & Stock",
     points: [
       "Tracks professional backbar supplies (dyes, bleaches, acrylics, developer)",
       "Precise measurement by milliliters (ml), grams (g), bottles, or pieces",
@@ -572,7 +571,7 @@ const ALL_12_PILLARS = [
     num: "12",
     icon: Globe,
     title: "White-Label Branding & CMS",
-    category: "Brand Sovereignty",
+    category: "Your Brand, Your Website",
     points: [
       "Dedicated deployment on your custom domain (booking.yourbrand.com)",
       "Dynamic hero showcase with curated photos, video sliders, and lookbooks",
@@ -592,14 +591,13 @@ export default function FeatureShowcase() {
       {/* Introduction Header */}
       <Container className="text-center max-w-3xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-accent uppercase">
-          <Sparkles className="size-3.5" />
-          <span>The Full Enterprise Architecture</span>
+          <span>Complete Salon Management Features</span>
         </div>
         <h2 className="font-serif mt-4 text-3xl md:text-5xl font-medium leading-tight text-foreground">
-          Built for Salons, MedSpas & High-Volume Appointment Studios
+          Built for Salons, Barbershops & Beauty Lounges
         </h2>
         <p className="text-muted-foreground mt-4 text-base md:text-lg leading-relaxed">
-          Paulux goes far beyond basic calendar widgets. It delivers an all-in-one commercial engine
+          Paulux goes far beyond basic calendar widgets. It delivers an all-in-one system
           combining frictionless customer booking, backbar consumable accounting, automated win-backs,
           and complete operational independence.
         </p>
@@ -624,13 +622,13 @@ export default function FeatureShowcase() {
           vignette={<BookingEngineVignette />}
         />
 
-        {/* Module 2: Consumables & Chemical Cost Accounting (The Enterprise Differentiator) */}
+        {/* Module 2: Consumables & Chemical Cost Accounting */}
         <FeatureRow
           reverse
-          badge="Pillar 08 · The Enterprise Differentiator"
+          badge="Pillar 08 · Dispensary & Consumables"
           badgeIcon={FlaskConical}
           title="Back-of-House Consumables & Material Cost Accounting"
-          subtitle="The only salon software that calculates your real net profit on chemical treatments."
+          subtitle="Track product costs down to the gram so you know your true profit margin on color, weaves, and treatments."
           body="Most salon tools only count retail bottles on shelves. Paulux tracks professional backbar supplies (hair color tubes, bleaches, developer lotions, acrylic powders, and facial serums) down to the exact milliliter (ml) and gram (g)."
           bullets={[
             { title: "Precise ml & gram Tracking", desc: "Measure exact product used per station instead of guessing bottle depletion." },

@@ -9,7 +9,6 @@ import {
   MessageSquare,
   RefreshCw,
   ShieldCheck,
-  Sparkles,
   TrendingUp,
 } from "lucide-react";
 import { api, ensureCsrf } from "@/lib/api";
@@ -30,12 +29,12 @@ function errMsg(err: unknown): string {
 }
 
 const PERKS = [
+  "Flat software pricing: GH₵ 500 / month with 0% commissions on all bookings",
+  "One-time turnkey setup fee up to GH₵ 3,000 (custom domain, data migration & training)",
   "Your own domain: booking.yourbrand.com or yoursalon.com",
-  "0% commission fees on all bookings, packages, and gift cards",
-  "A dedicated, private PostgreSQL database for your customer records",
-  "Direct payment integration with your merchant account (Paystack, Stripe)",
-  "Automated SMS & Email appointment confirmations & reminders",
-  "Turnkey setup with hands-on onboarding from our engineering team",
+  "Direct Mobile Money (MTN, Telecel) and card settlement via Paystack into your bank account",
+  "Private PostgreSQL database for your customer formulas, allergy notes & records",
+  "Automated WhatsApp, SMS & Email appointment confirmations & reminders",
 ];
 
 export default function StandalonePage() {
@@ -232,8 +231,7 @@ export default function StandalonePage() {
         {/* Pitch Column */}
         <div className="flex flex-col justify-center lg:col-span-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3.5 py-1 text-xs font-semibold tracking-wider text-accent uppercase w-fit">
-            <Sparkles className="size-3" />
-            <span>Dedicated Turnkey Setup</span>
+            <span>Turnkey Setup & Onboarding</span>
           </div>
           <h1 className="font-serif mt-3 text-4xl leading-tight md:text-5xl">
             Run Paulux on your own domain
@@ -309,7 +307,7 @@ export default function StandalonePage() {
                 <span>Zero-Downtime Migration Assessment Attached</span>
               </div>
               <p className="mt-1 text-xs text-foreground leading-relaxed">
-                Targeting a seamless <strong>{paramTurnaround || "24–48 hour"}</strong> cutover from {paramPlatform || "your current software"} with 0 missed bookings.
+                Targeting a seamless <strong>{paramTurnaround || "24-48 hour"}</strong> cutover from {paramPlatform || "your current software"} with 0 missed bookings.
               </p>
             </div>
           )}
@@ -327,6 +325,17 @@ export default function StandalonePage() {
                 <span>Custom Proposal</span>
               </span>
             )}
+          </div>
+
+          {/* Transparent Flat Rate Notice */}
+          <div className="mt-4 rounded-2xl border border-accent/30 bg-accent/5 p-4 text-xs space-y-1">
+            <div className="flex items-center justify-between font-bold">
+              <span className="text-accent uppercase tracking-wider text-[11px]">Pricing Standard</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-mono">0% Booking Cuts</span>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Software access: <strong>GH₵ 500 / month</strong> flat. Turnkey deployment: <strong>Up to GH₵ 3,000</strong> one-time (covers custom domain setup, menu upload, and payment integration).
+            </p>
           </div>
 
           {error && (

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, BadgeCheck, MessageCircle, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SeoHead } from "@/components/seo/SeoHead";
@@ -32,7 +32,6 @@ export default function CaseStudiesHubPage() {
       <section className="bg-brand-wash text-primary-foreground py-24 md:py-32 text-center">
         <Container className="flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-xs tracking-wider uppercase">
-            <Sparkles className="size-3.5 text-amber-300" />
             <span>Proven Business Impact</span>
           </div>
 
@@ -42,7 +41,7 @@ export default function CaseStudiesHubPage() {
           </h1>
 
           <p className="text-primary-foreground/80 mt-5 max-w-2xl text-base md:text-lg">
-            From high-turnover barbershops and clinical medspas to private coaching and tattoo studios â€” see how businesses eliminated 20% marketplace commissions and took total control of their client relationships.
+            From high-turnover barbershops and clinical medspas to luxury hair and braiding lounges - see how businesses eliminated 20% marketplace commissions and took total control of their client relationships.
           </p>
 
           {/* Aggregate Metrics Bar */}
@@ -91,6 +90,13 @@ export default function CaseStudiesHubPage() {
                   <span className="text-xs font-medium text-muted-foreground">{study.location}</span>
                 </div>
 
+                {study.verifiedPilot && (
+                  <div className="mt-2.5 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                    <BadgeCheck className="size-3.5" />
+                    <span>Verified Pilot Salon</span>
+                  </div>
+                )}
+
                 <h3 className="font-serif mt-4 text-xl font-medium group-hover:text-accent transition-colors">
                   {study.businessName}
                 </h3>
@@ -138,7 +144,8 @@ export default function CaseStudiesHubPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium hover:bg-secondary transition-colors"
             >
-              ?? WhatsApp a Specialist
+              <MessageCircle className="size-4" />
+              <span>WhatsApp a Specialist</span>
             </a>
           </div>
         </div>

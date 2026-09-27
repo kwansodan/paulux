@@ -460,10 +460,10 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
     primaryFeeModel: "$159 to $699+/month + add-on fees + merchant interchange surcharges",
     heroHeadline: "The Modern Mindbody Alternative for MedSpas & Aesthetic Clinics",
     heroSubheadline:
-      "Escape Mindbody's $159–$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience on your own domain with clinical deposit enforcement and 100% patient data isolation.",
+      "Escape Mindbody's $159-$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience on your own domain with clinical deposit enforcement and 100% patient data isolation.",
     definitionPassageTitle: "What is the Paulux Mindbody Alternative?",
     definitionPassageBody:
-      "Paulux is a modern, white-label booking and clinical deposit enforcement system for aesthetic clinics and medspas, eliminating Mindbody's $159–$699/month subscription fees with 100% patient data isolation and upfront deposit enforcement.",
+      "Paulux is a modern, white-label booking and clinical deposit enforcement system for aesthetic clinics and medspas, eliminating Mindbody's $159-$699/month subscription fees with 100% patient data isolation and upfront deposit enforcement.",
     objectiveEvaluation: {
       competitorStrengths: [
         "Comprehensive class scheduling engine for large gyms, yoga franchises, and fitness centers managing 50+ classes daily.",
@@ -473,7 +473,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
       competitorBestFor:
         "Large multi-location fitness franchises, CrossFit boxes, and boutique fitness studios that depend primarily on dynamic group class schedules, recurring gym memberships, and physical facility turnstile access control.",
       pauluxStrengths: [
-        "Flat dedicated deployment with zero recurring $159–$699/month subscription fees.",
+        "Flat dedicated deployment with zero recurring $159-$699/month subscription fees.",
         "100% private, isolated database: complete patient record privacy and GDPR/data governance peace of mind.",
         "Native Clinical Deposit Enforcer protecting high-ticket 60-90 minute Botox, laser, and aesthetic treatment slots from no-shows.",
         "Clinical CRM with allergy warnings, technical injectable/peel formula notes, and service prep/aftercare instructions sent via SMS.",
@@ -1189,7 +1189,7 @@ export const HEAD_TO_HEAD_COMPARISONS: Record<string, HeadToHeadComparison> = {
     subtitle: "High-Cost Legacy Enterprise vs. Add-On Tiered Subscription: Why Clinics Choose Dedicated Systems",
     definitionPassageTitle: "What is the Paulux Alternative to Mindbody and Vagaro?",
     definitionPassageBody:
-      "Paulux is a modern, white-label booking and clinical deposit enforcement platform for aesthetic clinics and medspas, eliminating Mindbody's $159–$699/month software bloat and Vagaro's per-feature add-on fees with 100% patient data isolation on your own custom domain.",
+      "Paulux is a modern, white-label booking and clinical deposit enforcement platform for aesthetic clinics and medspas, eliminating Mindbody's $159-$699/month software bloat and Vagaro's per-feature add-on fees with 100% patient data isolation on your own custom domain.",
     summary:
       "Mindbody dominates high-cost enterprise fitness and wellness with $159 to $699+/month fees and complex features. Vagaro offers a lower $30/month starting point but steadily adds $10/user, forms fees, website fees, and SMS surcharges. Paulux provides a dedicated, luxury platform on your own domain with patient data isolation and clinical deposit protection.",
     tableRows: [

@@ -108,7 +108,7 @@ const PLATFORMS: Record<string, PlatformProfile> = {
     name: "Mindbody",
     exportEase: "Standard Export",
     baseDowntimeRisk: "0% Downtime with dual-run sync",
-    keyWin: "Saves $159–$699/month in subscription tiers and replaces clunky legacy interfaces with blazing fast mobile booking.",
+    keyWin: "Saves $159-$699/month in subscription tiers and replaces clunky legacy interfaces with blazing fast mobile booking.",
     migrationInsight: "Mindbody report exports are standardized. We handle bulk client CSV ingestion and service menu structure translation in under 48 hours.",
   },
   vagaro: {
@@ -176,7 +176,7 @@ export default function MigrationAssessmentTool({
 
   // Turnaround calculation based on team size & asset complexity
   const isLarge = teamSize === "11-25" || teamSize === "25+";
-  const turnaround = isLarge ? "24 – 48 Hours" : "Under 24 Hours";
+  const turnaround = isLarge ? "24-48 Hours" : "Under 24 Hours";
 
   // Standalone link params
   const standaloneUrl = `${paths.standalone}?platform=${encodeURIComponent(
@@ -260,9 +260,9 @@ export default function MigrationAssessmentTool({
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               {[
-                { label: "1 – 3 Stylists", value: "1-3", sub: "Solo / Boutique" },
-                { label: "4 – 10 Stylists", value: "4-10", sub: "Established Salon" },
-                { label: "11 – 25 Stylists", value: "11-25", sub: "High-Volume Hub" },
+                { label: "1-3 Stylists", value: "1-3", sub: "Solo / Boutique" },
+                { label: "4-10 Stylists", value: "4-10", sub: "Established Salon" },
+                { label: "11-25 Stylists", value: "11-25", sub: "High-Volume Hub" },
                 { label: "25+ Stylists", value: "25+", sub: "Multi-Location" },
               ].map((tier) => (
                 <button

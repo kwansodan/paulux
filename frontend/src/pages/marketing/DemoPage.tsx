@@ -437,7 +437,7 @@ export default function DemoPage() {
               <div className="space-y-2">
                 <div className="rounded-2xl border border-border/70 bg-card p-3.5 space-y-1.5 text-xs">
                   <div className="flex justify-between font-semibold">
-                    <span>1:00 PM – Jessica Miller</span>
+                    <span>1:00 PM - Jessica Miller</span>
                     <span className="text-accent font-mono">$180.00</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground">Service: Full Balayage + Gloss</p>
@@ -448,7 +448,7 @@ export default function DemoPage() {
 
                 <div className="rounded-2xl border border-border/70 bg-card p-3.5 space-y-1.5 text-xs">
                   <div className="flex justify-between font-semibold">
-                    <span>3:30 PM – Amanda Cole</span>
+                    <span>3:30 PM - Amanda Cole</span>
                     <span className="text-accent font-mono">$65.00</span>
                   </div>
                   <p className="text-[11px] text-muted-foreground">Service: Blowout & Style (Split with Sarah on Color)</p>

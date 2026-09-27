@@ -41,13 +41,13 @@ const PLATFORM_FEES: Record<string, PlatformFeeModel> = {
     name: "Mindbody",
     blendedRate: 0.105,
     fixedAnnualSurcharge: 2400,
-    feeLabel: "$159–$699/mo subscription tiers + client marketplace cut",
+    feeLabel: "$159-$699/mo subscription tiers + client marketplace cut",
   },
   vagaro: {
     name: "Vagaro",
     blendedRate: 0.08,
     fixedAnnualSurcharge: 1200,
-    feeLabel: "$25–$85/mo + paid add-ons (forms, SMS packages, cards)",
+    feeLabel: "$25-$85/mo + paid add-ons (forms, SMS packages, cards)",
   },
   square: {
     name: "Square Appointments",
