@@ -171,19 +171,16 @@ export default function CustomerLayout() {
             </div>
 
             <div className="space-y-2.5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Case Studies</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-foreground">Verified Pilot</p>
               <ul className="space-y-2 text-xs text-muted-foreground">
                 <li>
-                  <Link to={paths.caseStudies} className="hover:text-foreground font-medium text-accent">All Industry Studies</Link>
+                  <Link to={paths.caseStudies} className="hover:text-foreground font-medium text-accent">Pilot Case Study</Link>
                 </li>
                 <li>
-                  <Link to="/case-studies/barbershops" className="hover:text-foreground">Barbershops & Grooming</Link>
+                  <Link to="/case-studies/polaris-beauty-salon" className="hover:text-foreground">Polaris Beauty Lounge</Link>
                 </li>
                 <li>
-                  <Link to="/case-studies/medspas-aesthetics" className="hover:text-foreground">MedSpa & Aesthetics</Link>
-                </li>
-                <li>
-                  <Link to="/case-studies/hair-salons" className="hover:text-foreground">Hair Salons & Color Bars</Link>
+                  <a href="https://instagram.com/polarisbeautylounge" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Polaris on Instagram</a>
                 </li>
               </ul>
             </div>

@@ -16,7 +16,6 @@ import FeatureShowcase from "@/components/marketing/FeatureShowcase";
 import RoiCalculator from "@/components/marketing/RoiCalculator";
 import PilotSpotlight from "@/components/marketing/PilotSpotlight";
 import PricingSection from "@/components/marketing/PricingSection";
-import { CASE_STUDIES } from "@/data/caseStudies";
 import { paths } from "@/router/paths";
 
 const PAIN_POINTS = [
@@ -259,67 +258,6 @@ export default function MarketingLanding() {
 
       {/* Transparent Pricing Section */}
       <PricingSection />
-
-      {/* Industries & Case Studies Showcase */}
-      <section className="bg-secondary/40 py-20 md:py-28 border-y border-border/60">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold tracking-wider text-accent uppercase">
-              <span>Verified Pilot & Industry Solutions</span>
-            </div>
-            <h2 className="font-serif mt-3 text-3xl md:text-4xl">
-              Powering every business that takes appointments
-            </h2>
-            <p className="text-muted-foreground mt-3 text-sm md:text-base">
-              Whether you manage a 7-chair barbershop, a luxury braiding and hair lounge, or a private training studio, Paulux adapts to your exact booking workflow.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {CASE_STUDIES.slice(0, 6).map((study) => (
-              <div
-                key={study.slug}
-                className="group flex flex-col justify-between rounded-3xl border border-border/80 bg-card p-6 shadow-sm transition-all hover:border-accent/60 hover:shadow-lg"
-              >
-                <div>
-                  <span className="rounded-full bg-accent/10 px-3 py-1 text-[11px] font-semibold tracking-wider text-accent uppercase">
-                    {study.industry}
-                  </span>
-                  <h3 className="font-serif mt-3 text-lg font-medium text-foreground group-hover:text-accent transition-colors">
-                    {study.businessName}
-                  </h3>
-                  <p className="text-muted-foreground mt-2 text-xs leading-relaxed line-clamp-2">
-                    {study.tagline}
-                  </p>
-                  <div className="mt-4 rounded-xl bg-secondary/60 p-3 text-xs">
-                    <p className="text-emerald-600 dark:text-emerald-400 font-semibold">
-                      {study.metrics.annualSavings}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-5 pt-3 border-t border-border/60">
-                  <Link
-                    to={`/case-studies/${study.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline"
-                  >
-                    <span>Read Case Study</span>
-                    <ArrowRight className="size-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Button asChild size="lg" className="bg-primary text-primary-foreground font-semibold">
-              <Link to={paths.caseStudies}>
-                View All Case Studies & Industry Solutions <ArrowRight className="size-4 ml-1.5" />
-              </Link>
-            </Button>
-          </div>
-        </Container>
-      </section>
 
       {/* Embedded ROI Calculator */}
       <section className="bg-secondary/20 py-20 md:py-28">

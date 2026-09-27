@@ -23,16 +23,16 @@ Paulux provides appointment-based businesses (luxury hair salons, medspas, aesth
 - [Zero-Downtime Migration Engine](https://www.pauluxbooking.com/migrate): Interactive assessment tool evaluating 48-hour zero-downtime database cutover from Fresha, Booksy, Mindbody, and Vagaro.
 - [Turnkey Deployment Intake](https://www.pauluxbooking.com/standalone): Technical setup requirements, 48-hour onboarding workflow, proposal intake, and custom deployment quote.
 - [Interactive Demo Tour](https://www.pauluxbooking.com/demo): Live interactive walk-through of customer booking wizard and admin manager.
-- [Case Studies](https://www.pauluxbooking.com/case-studies): Real-world migration metrics across hair color bars, medspas, barbershops, and tattoo studios.
+- [Pilot Case Study: Polaris Beauty Lounge](https://www.pauluxbooking.com/case-studies/polaris-beauty-salon): How Polaris Beauty Lounge in Tesano, Accra replaced Fresha with Paulux to take direct Mobile Money deposits and eliminate 20% marketplace commissions.
 
 ## Competitor Comparisons & Migration Guides
 - [Comparison Hub](https://www.pauluxbooking.com/compare): Master matrix evaluating Paulux against marketplace and enterprise systems.
 - [Fresha Alternative](https://www.pauluxbooking.com/versus/fresha): Why top salons migrate from Fresha's 20% new-client commissions and competitor directory cross-selling.
 - [Booksy Alternative](https://www.pauluxbooking.com/versus/booksy): Replacing Booksy's $20/chair monthly fees with flat deployment and 15-second walk-in check-in.
-- [Mindbody Alternative](https://www.pauluxbooking.com/versus/mindbody): Modern alternative for aesthetic clinics eliminating $159–$699/mo software bloat with clinical deposit enforcement.
+- [Mindbody Alternative](https://www.pauluxbooking.com/versus/mindbody): Modern alternative for aesthetic clinics eliminating $159-$699/mo software bloat with clinical deposit enforcement.
 - [Vagaro Alternative](https://www.pauluxbooking.com/versus/vagaro): Eliminating Vagaro's tiered per-user add-on fees and directory cross-promotion.
 - [Square Appointments Alternative](https://www.pauluxbooking.com/versus/square-appointments): Purpose-built salon workflows vs. generic retail POS limitations.
-- [Phorest Alternative](https://www.pauluxbooking.com/versus/phorest): High-end salon management without $1,000+ setup fees or locked 12–36 month contracts.
+- [Phorest Alternative](https://www.pauluxbooking.com/versus/phorest): High-end salon management without $1,000+ setup fees or locked 12-36 month contracts.
 
 ## Head-to-Head Architectural Evaluations
 - [Fresha vs. Booksy](https://www.pauluxbooking.com/compare/fresha-vs-booksy): Marketplace commissions vs. per-chair monthly fees.

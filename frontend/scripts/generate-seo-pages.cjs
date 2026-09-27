@@ -266,10 +266,10 @@ const PAGES = [
     content: `
       <header><h1>Modern Mindbody Alternative for MedSpas & Aesthetic Clinics</h1></header>
       <main>
-        <p>Escape Mindbody's $159–$699/month recurring subscription tiers. Paulux provides a full-featured, white-label booking and clinical deposit enforcement system on your custom domain.</p>
+        <p>Escape Mindbody's $159-$699/month recurring subscription tiers. Paulux provides a full-featured, white-label booking and clinical deposit enforcement system on your custom domain.</p>
         <h2>Why MedSpas Are Switching from Mindbody to Paulux</h2>
         <ul>
-          <li><strong>Monthly Cost:</strong> Mindbody $159–$699+/month vs. Paulux flat dedicated deployment - no monthly lock-in</li>
+          <li><strong>Monthly Cost:</strong> Mindbody $159-$699+/month vs. Paulux flat dedicated deployment - no monthly lock-in</li>
           <li><strong>Client Data Privacy:</strong> Mindbody shared corporate database vs. Paulux 100% private isolated database owned by your clinic</li>
           <li><strong>Clinical Deposit Enforcer:</strong> Mindbody complex merchant add-ons vs. Paulux native full/partial deposit requirement on high-ticket slots</li>
           <li><strong>Custom Booking Domain:</strong> mindbodyonline.com/your-spa vs. booking.yourmedspa.com</li>
@@ -286,7 +286,7 @@ const PAGES = [
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Why are MedSpas leaving Mindbody for Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Mindbody charges $159–$699/month in subscription fees, locks clinics into proprietary payment processors, and stores patient data in a shared corporate database. Paulux provides a 0% commission, white-label system on your custom domain with full database isolation." } },
+        { "@type": "Question", "name": "Why are MedSpas leaving Mindbody for Paulux?", "acceptedAnswer": { "@type": "Answer", "text": "Mindbody charges $159-$699/month in subscription fees, locks clinics into proprietary payment processors, and stores patient data in a shared corporate database. Paulux provides a 0% commission, white-label system on your custom domain with full database isolation." } },
         { "@type": "Question", "name": "How does Paulux protect high-value medspa treatment slots?", "acceptedAnswer": { "@type": "Answer", "text": "Paulux's native Deposit Enforcer requires clients to authorize a full or fixed deposit at booking time, preventing ghost appointments on high-ticket slots like Botox, laser, or HydraFacial treatments." } }
       ]
     }
@@ -305,7 +305,7 @@ const PAGES = [
         <ul>
           <li><strong>Fresha:</strong> Free software but charges an aggressive 20% commission on every new client discovery.</li>
           <li><strong>Booksy:</strong> Built for barbers, but charges $29.99/mo + $20/mo per additional barber chair plus marketplace fees.</li>
-          <li><strong>Mindbody:</strong> Legacy fitness/wellness enterprise charging $159–$699+/month in subscription rent.</li>
+          <li><strong>Mindbody:</strong> Legacy fitness/wellness enterprise charging $159-$699+/month in subscription rent.</li>
           <li><strong>Vagaro:</strong> Advertises $30/mo base but adds $10/user, forms fees, website fees, and SMS surcharges.</li>
           <li><strong>Square Appointments:</strong> Generic retail POS lacking backbar chemical dispensary accounting (ml/g) and custom domain white-labeling.</li>
           <li><strong>Phorest:</strong> Feature-rich for hair chains but requires $1,000+ setup fees, locked annual contracts, and high monthly rent.</li>
@@ -378,7 +378,7 @@ const PAGES = [
   {
     path: "versus/mindbody",
     title: "Mindbody Alternative for MedSpas & Aesthetic Clinics | Paulux",
-    description: "Escape Mindbody's $159–$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience with clinical deposit enforcement and patient data isolation.",
+    description: "Escape Mindbody's $159-$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience with clinical deposit enforcement and patient data isolation.",
     keywords: "mindbody alternative, mindbody alternative medspa, aesthetic clinic booking software",
     canonical: "https://www.pauluxbooking.com/versus/mindbody",
     content: `
@@ -661,56 +661,28 @@ const PAGES = [
   },
   {
     path: "case-studies",
-    title: "Appointment Booking Software Case Studies | Barbers, MedSpas, Salons & Studios | Paulux",
-    description: "See how barbershops, aesthetic clinics, hair studios, tattoo artists, massage therapists, and pet groomers eliminated marketplace commissions and automated appointments with Paulux.",
-    keywords: "salon booking case study, barbershop software case study, medspa appointment software, tattoo studio booking system, white label booking software industries",
+    title: "Verified Pilot Salon Case Study | Polaris Beauty Lounge | Paulux",
+    description: "Discover how Polaris Beauty Lounge in Tesano, Accra deployed Paulux on their own domain, eliminated 20% Fresha marketplace commissions, and automated Mobile Money deposits.",
+    keywords: "polaris beauty lounge case study, salon booking case study accra, fresha alternative ghana, standalone salon software pilot",
     canonical: "https://www.pauluxbooking.com/case-studies",
     content: `
-      <header><h1>Appointment Booking Software Case Studies</h1></header>
+      <header><h1>Verified Pilot Salon Case Study: Polaris Beauty Lounge</h1></header>
       <main>
-        <p>Real-world results from barbershops, medspas, hair studios, tattoo artists, and fitness coaching businesses running on their own custom booking domain with 0% commissions.</p>
+        <p>Real-world results from Polaris Beauty Lounge in Tesano, Accra running on their own custom booking domain with 0% commissions and direct Paystack Mobile Money settlements.</p>
       </main>
     `,
     schema: null
   },
   {
-    path: "case-studies/barbershops",
-    title: "Barbershop Booking Software Case Study | The Noble Barber Co. | Paulux",
-    description: "How The Noble Barber Co. saved $19,400/year and eliminated no-shows by migrating from Booksy to their own dedicated domain.",
-    keywords: "barbershop booking software case study, booksy alternative for barbers, own domain barbershop booking, zero commission barber system",
-    canonical: "https://www.pauluxbooking.com/case-studies/barbershops",
+    path: "case-studies/polaris-beauty-salon",
+    title: "How Polaris Beauty Lounge Replaced Fresha with Paulux | Case Study",
+    description: "Located in Tesano, Accra, Polaris Beauty Lounge deployed Paulux to stop losing cuts to Fresha, take upfront Mobile Money deposits, and give clients a smooth booking experience on their own link.",
+    keywords: "polaris beauty lounge case study, salon booking software accra, paystack momo salon booking, fresha alternative ghana",
+    canonical: "https://www.pauluxbooking.com/case-studies/polaris-beauty-salon",
     content: `
-      <header><h1>Barbershop Booking Software Case Study: The Noble Barber Co.</h1></header>
+      <header><h1>How Polaris Beauty Lounge Replaced Fresha with a Standalone Booking Engine</h1></header>
       <main>
-        <p>Saved $19,400 per year, cut no-shows by 92%, and enabled individual barber chair booking on their own domain.</p>
-      </main>
-    `,
-    schema: null
-  },
-  {
-    path: "case-studies/medspas-aesthetics",
-    title: "MedSpa & Clinical Aesthetics Booking Case Study | Aura Aesthetics | Paulux",
-    description: "How Aura Medical Aesthetics secured $42,000 in pre-paid treatment deposits and protected patient privacy with Paulux.",
-    keywords: "medspa booking software case study, aesthetic clinic scheduling, mindbody alternative medspa, clinical deposit booking system",
-    canonical: "https://www.pauluxbooking.com/case-studies/medspas-aesthetics",
-    content: `
-      <header><h1>MedSpa & Clinical Aesthetics Case Study: Aura Medical Aesthetics</h1></header>
-      <main>
-        <p>Saved $31,200 annually, reduced consultation no-shows by 98%, and enforced mandatory card hold deposits on their own domain.</p>
-      </main>
-    `,
-    schema: null
-  },
-  {
-    path: "case-studies/tattoo-piercing",
-    title: "Tattoo & Piercing Studio Case Study | Iron & Oak Tattoo | Paulux",
-    description: "How Iron & Oak eliminated 8-hour artist gaps with mandatory online non-refundable booking deposits on their own domain.",
-    keywords: "tattoo studio booking software, tattoo deposit booking system, artist schedule software, custom tattoo booking",
-    canonical: "https://www.pauluxbooking.com/case-studies/tattoo-piercing",
-    content: `
-      <header><h1>Tattoo & Piercing Studio Case Study: Iron & Oak Tattoo</h1></header>
-      <main>
-        <p>Eliminated no-shows with mandatory non-refundable deposits, saving artists $22,500 in lost downtime.</p>
+        <p>Located at 12 Brenya Avenue in Tesano, Accra, Polaris Beauty Lounge deployed Paulux to stop losing cuts to Fresha, take upfront Momo deposits, and give clients a smooth booking experience on their own link.</p>
       </main>
     `,
     schema: null
@@ -901,9 +873,9 @@ const PAGES = [
       <header><h1>The Dedicated Mindbody Alternative for MedSpas & Aesthetic Clinics</h1></header>
       <main>
         <blockquote>
-          <strong>What is the Paulux Mindbody Alternative?</strong> Paulux is a modern, white-label booking and clinical deposit enforcement system for aesthetic clinics and medspas, eliminating Mindbody's $159–$699/month subscription fees with 100% patient data isolation and upfront deposit enforcement.
+          <strong>What is the Paulux Mindbody Alternative?</strong> Paulux is a modern, white-label booking and clinical deposit enforcement system for aesthetic clinics and medspas, eliminating Mindbody's $159-$699/month subscription fees with 100% patient data isolation and upfront deposit enforcement.
         </blockquote>
-        <p>Escape Mindbody's $159–$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience on your own domain with clinical deposit enforcement and 100% patient data isolation.</p>
+        <p>Escape Mindbody's $159-$699/month subscription fees and bloated legacy menus. Deploy a luxury, white-label booking experience on your own domain with clinical deposit enforcement and 100% patient data isolation.</p>
         <h2>Frequently Asked Questions</h2>
         <h3>Does Paulux charge commissions on new clients?</h3>
         <p>No. Paulux operates on a 0% booking commission model. Unlike marketplaces that take 20% of your new client revenue, all payments process directly into your Stripe or Paystack merchant account. You keep 100% of every ticket, deposit, and gift card transaction with zero marketplace fees.</p>
@@ -1121,7 +1093,7 @@ const PAGES = [
       <header><h1>Mindbody vs. Vagaro: 2026 Comparison & The Dedicated Alternative</h1></header>
       <main>
         <blockquote>
-          <strong>What is the Paulux Alternative to Mindbody and Vagaro?</strong> Paulux is a modern, white-label booking and clinical deposit enforcement platform for aesthetic clinics and medspas, eliminating Mindbody's $159–$699/month software bloat and Vagaro's per-feature add-on fees with 100% patient data isolation on your own custom domain.
+          <strong>What is the Paulux Alternative to Mindbody and Vagaro?</strong> Paulux is a modern, white-label booking and clinical deposit enforcement platform for aesthetic clinics and medspas, eliminating Mindbody's $159-$699/month software bloat and Vagaro's per-feature add-on fees with 100% patient data isolation on your own custom domain.
         </blockquote>
         <p>Mindbody dominates high-cost enterprise fitness and wellness with $159 to $699+/month fees and complex features. Vagaro offers a lower $30/month starting point but steadily adds $10/user, forms fees, website fees, and SMS surcharges. Paulux provides a dedicated, luxury platform on your own domain with patient data isolation and clinical deposit protection.</p>
         <h2>Frequently Asked Questions</h2>

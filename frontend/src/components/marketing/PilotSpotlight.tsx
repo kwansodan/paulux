@@ -34,7 +34,7 @@ export default function PilotSpotlight({ className }: PilotSpotlightProps) {
           </h3>
 
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-            Before Paulux, Polaris Beauty Lounge was listed on Fresha—paying marketplace commissions on new client bookings and dealing with platform fees that did not fit local mobile money workflows in Accra.
+            Before Paulux, Polaris Beauty Lounge was listed on Fresha, paying marketplace commissions on new client bookings and dealing with platform fees that did not fit local mobile money workflows in Accra.
           </p>
 
           <p className="text-muted-foreground text-sm md:text-base leading-relaxed">

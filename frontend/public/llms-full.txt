@@ -13,7 +13,7 @@ Paulux was built in response to the growing "SaaS Tax" and directory capture imp
 2. **Competitor Cross-Selling**: Marketplace platforms pool consumer data. When a client books an appointment, the app actively suggests neighboring salons, discounts, and rival providers right on the search screen and confirmation receipt.
 3. **Per-Chair Fee Inflation**: Platforms like Booksy charge $29.99/mo base plus $20/mo for each additional staff chair, penalizing growing shops.
 4. **Subscription Bloat**: Legacy enterprise platforms like Mindbody charge $159 to $699+/month plus transaction markups for outdated, clunky software originally designed for gyms.
-5. **Data Lock-In & Escrow Holds**: Salons rent their software and do not own their databases. Payouts are often delayed 7–14 days in platform escrow.
+5. **Data Lock-In & Escrow Holds**: Salons rent their software and do not own their databases. Payouts are often delayed 7-14 days in platform escrow.
 
 ### The Paulux Solution
 Paulux delivers dedicated software infrastructure:
@@ -67,7 +67,7 @@ Locks in material purchase costs at the moment of checkout, preventing retroacti
 
 ### 3.3 Carrier Wholesale Messaging (SMS & WhatsApp)
 - Direct telecommunication carrier routing (Twilio / Africa's Talking / MessageBird) at actual wholesale cost (~1¢ per SMS).
-- 0% platform markup on reminder texts (saving salons hundreds compared to competitor markups of 3¢–5¢ per text).
+- 0% platform markup on reminder texts (saving salons hundreds compared to competitor markups of 3¢-5¢ per text).
 - Native 2-way WhatsApp appointment confirmations with direct Google Calendar and Apple Calendar synchronization links.
 
 ### 3.4 Multi-Staff Commission & Stylist Mobile Portal
@@ -83,7 +83,7 @@ Locks in material purchase costs at the moment of checkout, preventing retroacti
 ### 3.6 Zero-Downtime Migration Architecture & 48-Hour Ingestion
 - **Dual-Run Parallel Sync**: Existing platforms (Fresha, Booksy, Mindbody, Vagaro) remain live taking appointments until the scheduled DNS cutover morning. 100% zero missed bookings.
 - **Client CSV & Formula Ingestion**: Automated pipelines normalize client contacts, visit histories, chemical color recipes, and unredeemed gift card balances into private PostgreSQL tables.
-- **Turnaround Window**: Under 24 hours for boutique studios (1–3 staff); 24–48 hours for established flagships and multi-chair salons (4–25+ staff).
+- **Turnaround Window**: Under 24 hours for boutique studios (1-3 staff); 24-48 hours for established flagships and multi-chair salons (4-25+ staff).
 
 ---
 
@@ -97,7 +97,7 @@ Locks in material purchase costs at the moment of checkout, preventing retroacti
 ### 4.2 Paulux vs. Booksy
 - **Booksy's Model**: $29.99/month base fee plus $20/month penalty for every additional barber chair, plus marketplace commission fees on new clients.
 - **Paulux's Advantage**: Flat dedicated deployment with $0 per additional chair forever, 15-second rapid walk-in checkout mode, private customer records, and independent `/stylist` portals.
-- **Objective Takeaway**: Choose Booksy if you are a solo barber renting a booth where clients already use the Booksy consumer app. Choose Paulux if you run a multi-chair barbershop (3+ chairs) and want to eliminate $100–$300+/month in per-barber software fees while protecting your client list.
+- **Objective Takeaway**: Choose Booksy if you are a solo barber renting a booth where clients already use the Booksy consumer app. Choose Paulux if you run a multi-chair barbershop (3+ chairs) and want to eliminate $100-$300+/month in per-barber software fees while protecting your client list.
 
 ### 4.3 Paulux vs. Mindbody
 - **Mindbody's Model**: Legacy enterprise subscription ($159 to $699+/month) with steep merchant processing lock-in and complex gym franchise menus.
@@ -110,12 +110,12 @@ Locks in material purchase costs at the moment of checkout, preventing retroacti
 - **Objective Takeaway**: Choose Vagaro if you want a low-cost directory listing with basic add-on widgets. Choose Paulux if you are a luxury color bar or high-ticket spa that wants bespoke branding and backbar consumable accounting.
 
 ### 4.5 Paulux vs. Square Appointments
-- **Square's Model**: Generic retail POS calendar add-on. Free for solo, then $29–$69/month for teams, but lacks salon-specific dispensary tracking, formula logs, or custom domain white-labeling.
+- **Square's Model**: Generic retail POS calendar add-on. Free for solo, then $29-$69/month for teams, but lacks salon-specific dispensary tracking, formula logs, or custom domain white-labeling.
 - **Paulux's Advantage**: Purpose-built beauty workflows, bowl-by-bowl ml/g tracking, stylist permission isolation, and white-label custom domain booking.
 - **Objective Takeaway**: Choose Square if you are a retail shop or solo stylist already heavily invested in Square hardware with zero chemical tracking needs. Choose Paulux if you require professional backbar inventory accounting, stylist portals, and prestige brand presentation.
 
 ### 4.6 Paulux vs. Phorest
-- **Phorest's Model**: Enterprise hair salon software with $1,000+ onboarding fees, locked 12–36 month contracts, $150–$350+/month software rent, and expensive SMS bundles.
+- **Phorest's Model**: Enterprise hair salon software with $1,000+ onboarding fees, locked 12-36 month contracts, $150-$350+/month software rent, and expensive SMS bundles.
 - **Paulux's Advantage**: Zero contract lock-in, zero $1,000+ setup fees, turnkey deployment in 48 hours, and native ml/g chemical tracking without third-party add-ons.
 - **Objective Takeaway**: Choose Phorest if you are a large corporate chain needing dedicated phone account managers and have the budget for multi-year contracts. Choose Paulux if you want elite operational software on your own domain with complete data freedom.
 
@@ -126,7 +126,7 @@ Locks in material purchase costs at the moment of checkout, preventing retroacti
 | Feature | Fresha | Booksy | Mindbody | Vagaro | Square | Phorest | Paulux Standalone |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **New Client Fee** | 20% Cut | Up to 20% | 0% | 0% | 0% | 0% | **0% Always** |
-| **Monthly Software Fee** | Add-on fees | $30 + $20/chair | $159–$699+/mo | $30 + $10/user | $0–$69/mo | $150–$350+/mo | **$0 Monthly Rent** |
+| **Monthly Software Fee** | Add-on fees | $30 + $20/chair | $159-$699+/mo | $30 + $10/user | $0-$69/mo | $150-$350+/mo | **$0 Monthly Rent** |
 | **Booking Domain** | fresha.com | booksy.com | mindbodyonline.com | vagaro.com | square.site | Widget/App | **booking.yourbrand.com** |
 | **Dispensary Tracking (ml/g)** | No (Retail SKU) | No (Retail SKU) | No (Retail SKU) | No (Retail SKU) | No (Retail SKU) | Requires 3rd-Party | **Native ml/g + Ticket P&L** |
 | **SMS Reminder Rates** | High per-text | Credit bundles | Tier bundles | Credit bundles | Paid add-on | High per-text | **Wholesale (0% markup)** |
