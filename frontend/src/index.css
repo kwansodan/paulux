@@ -50,7 +50,7 @@
 :root {
   --radius: 0.875rem;
 
-  /* Light — airy warm ivory ground, deep-purple ink */
+  /* Light - airy warm ivory ground, deep-purple ink */
   --background: #faf6f3;
   --foreground: #1b1220;
   --card: #fffdfb;
@@ -84,7 +84,7 @@
 }
 
 .dark {
-  /* Dark — deep plum ground, lavender highlights */
+  /* Dark - deep plum ground, lavender highlights */
   --background: #1a0d16;
   --foreground: #efe6e2;
   --card: #271227;

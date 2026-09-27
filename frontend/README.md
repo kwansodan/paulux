@@ -1,4 +1,4 @@
-# Paulux Booking — Frontend (React SPA)
+# Paulux Booking - Frontend (React SPA)
 
 Decoupled single-page app that talks to the Flask API. React 19 · Vite 6 ·
 TypeScript · Tailwind v4 · React Router 7 · TanStack Query.

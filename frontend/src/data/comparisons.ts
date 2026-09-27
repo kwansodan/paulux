@@ -76,9 +76,9 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
       competitorBestFor:
         "Brand-new solo stylists or junior technicians with zero existing clientele, no brand equity, and no initial marketing budget who rely 100% on marketplace strangers discovering them in an online directory.",
       pauluxStrengths: [
-        "0% marketplace commission — keep 100% of every penny earned from new and returning clients.",
+        "0% marketplace commission: keep 100% of every penny earned from new and returning clients.",
         "Dedicated custom domain (booking.yourbrand.com) reinforcing your prestige brand rather than promoting a third-party app.",
-        "100% private, isolated database — zero competitor cross-selling to your clients.",
+        "100% private, isolated database: zero competitor cross-selling to your clients.",
         "Backbar chemical dispensary inventory tracking down to exact milliliters (ml) and grams (g) with live service gross margin P&L.",
         "Direct merchant account payouts via Stripe or Paystack with zero 7-14 day marketplace payout escrow holds."
       ],
@@ -93,7 +93,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
           {
             name: "New Client Commission",
             description: "Fee charged when a new client books an appointment.",
-            paulux: "0% — Keep 100% of every ticket",
+            paulux: "0% - Keep 100% of every ticket",
             competitor: "20% cut + payment processing surcharge on every new client",
             highlight: true
           },
@@ -295,7 +295,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
       competitorBestFor:
         "Independent solo barbers or casual walk-in shops where barbers already maintain a personal client following on the Booksy consumer app and don't require chemical dispensary tracking or unified multi-chair deposit management.",
       pauluxStrengths: [
-        "Flat turnkey deployment with zero per-chair or per-staff monthly penalties — add unlimited barbers at no extra cost.",
+        "Flat turnkey deployment with zero per-chair or per-staff monthly penalties: add unlimited barbers at no extra cost.",
         "0% marketplace commission on new or returning clients.",
         "15-second rapid front-desk walk-in check-in mode designed for high foot-traffic shops.",
         "Independent /stylist mobile portal giving each barber access to their personal chair schedule and earnings without exposing shop accounting.",
@@ -319,7 +319,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
           {
             name: "Marketplace Commission",
             description: "Fee taken on new client bookings.",
-            paulux: "0% — Keep 100% of all client revenue",
+            paulux: "0% - Keep 100% of all client revenue",
             competitor: "Up to 20% on new client discovery via marketplace",
             highlight: true
           },
@@ -474,7 +474,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
         "Large multi-location fitness franchises, CrossFit boxes, and boutique fitness studios that depend primarily on dynamic group class schedules, recurring gym memberships, and physical facility turnstile access control.",
       pauluxStrengths: [
         "Flat dedicated deployment with zero recurring $159–$699/month subscription fees.",
-        "100% private, isolated database — complete patient record privacy and GDPR/data governance peace of mind.",
+        "100% private, isolated database: complete patient record privacy and GDPR/data governance peace of mind.",
         "Native Clinical Deposit Enforcer protecting high-ticket 60-90 minute Botox, laser, and aesthetic treatment slots from no-shows.",
         "Clinical CRM with allergy warnings, technical injectable/peel formula notes, and service prep/aftercare instructions sent via SMS.",
         "Fast, modern booking wizard that completes in under 60 seconds without requiring clients to navigate legacy multi-page portals."
@@ -645,8 +645,8 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
       competitorBestFor:
         "Budget-conscious solo practitioners or generalist salons looking for an off-the-shelf directory listing with basic low-cost add-on widgets who don't mind marketplace cross-selling.",
       pauluxStrengths: [
-        "Zero add-on nickel-and-diming — custom domain, intake forms, chemical dispensary, and staff portals are fully included.",
-        "No per-user monthly penalties — add unlimited stylists and receptionists without software price increases.",
+        "Zero add-on nickel-and-diming: custom domain, intake forms, chemical dispensary, and staff portals are fully included.",
+        "No per-user monthly penalties: add unlimited stylists and receptionists without software price increases.",
         "Enterprise chemical dispensary tracking down to exact grams and milliliters with live ticket gross margins.",
         "100% private database with zero competitor cross-selling on your booking domain.",
         "Bespoke luxury visual aesthetics tailored to high-ticket salons rather than generic directory templates."
@@ -669,7 +669,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
           {
             name: "Per-User Penalties",
             description: "Monthly fee added for each staff member.",
-            paulux: "$0 — Unlimited staff members and receptionists",
+            paulux: "$0 - Unlimited staff members and receptionists",
             competitor: "$10/month for every additional user login",
             highlight: true
           },
@@ -813,7 +813,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
         "Bespoke salon and clinic workflows: chemical dispensary tracking down to grams/milliliters, service prep/aftercare notes, and patch-test health records.",
         "White-label custom domain booking (booking.yourbrand.com) rather than generic square.site pages.",
         "Independent /stylist mobile portal keeping shop financial accounting private while empowering stylists.",
-        "No tiered monthly feature paywalls — full enterprise modules included.",
+        "No tiered monthly feature paywalls: full enterprise modules included.",
         "Advanced deposit enforcement with dual Paystack/Stripe failover."
       ],
       pauluxBestFor:
@@ -961,7 +961,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
       competitorBestFor:
         "Large multi-location salon chains with 15+ chairs per location who prefer traditional enterprise vendor contracts, require dedicated corporate account managers, and have the budget for $1,000+ setup fees and $250+/month ongoing software rent.",
       pauluxStrengths: [
-        "Zero annual contract lock-in and zero exorbitant $1,000+ setup fees — turnkey deployment in under 48 hours.",
+        "Zero annual contract lock-in and zero exorbitant $1,000+ setup fees: turnkey deployment in under 48 hours.",
         "100% data autonomy with an isolated database on your custom domain rather than proprietary vendor lock-in.",
         "Superior chemical dispensary tracking down to milliliters and grams with real-time per-ticket gross margin P&L.",
         "Direct merchant account routing (Stripe / Paystack) with immediate deposit access and zero middleman holds.",
@@ -1095,7 +1095,7 @@ export const COMPETITORS: Record<string, CompetitorProfile> = {
       },
       {
         q: "Why are premier salons switching from Phorest to Paulux?",
-        a: "Phorest locks salons into rigid 12-to-36-month contracts, requires $1,000+ onboarding fees, and charges high monthly software fees with SMS markups. Paulux delivers the same high-end operational power—including backbar chemical dispensary tracking and 0% commission booking—on your own custom domain with zero contract lock-in and direct merchant payouts."
+        a: "Phorest locks salons into rigid 12-to-36-month contracts, requires $1,000+ onboarding fees, and charges high monthly software fees with SMS markups. Paulux delivers the same high-end operational power (including backbar chemical dispensary tracking and 0% commission booking) on your own custom domain with zero contract lock-in and direct merchant payouts."
       },
       {
         q: "How does chemical dispensary tracking work in Paulux?",
@@ -1123,7 +1123,7 @@ export const HEAD_TO_HEAD_COMPARISONS: Record<string, HeadToHeadComparison> = {
         feature: "New Client Discovery Fee",
         comp1Val: "20% cut on every new client booked",
         comp2Val: "Up to 20% commission via marketplace",
-        pauluxVal: "0% — Keep 100% of every ticket"
+        pauluxVal: "0% - Keep 100% of every ticket"
       },
       {
         feature: "Staff & Chair Monthly Fees",
@@ -1203,7 +1203,7 @@ export const HEAD_TO_HEAD_COMPARISONS: Record<string, HeadToHeadComparison> = {
         feature: "Additional Staff Fees",
         comp1Val: "Included in high-tier bundles",
         comp2Val: "$10 / month per extra staff login",
-        pauluxVal: "$0 — Unlimited staff and receptionist seats"
+        pauluxVal: "$0 - Unlimited staff and receptionist seats"
       },
       {
         feature: "Clinical Deposit Enforcer",

@@ -30,7 +30,7 @@ const PAIN_POINTS = [
   {
     title: "The Paulux Standalone Solution",
     points: [
-      "0% commission — keep 100% of your earnings",
+      "0% commission - keep 100% of your earnings",
       "Runs on your custom domain (booking.yourbrand.com)",
       "Clients stay 100% loyal to your brand only",
       "You own your dedicated deployment and customer database",
@@ -149,7 +149,7 @@ export default function MarketingLanding() {
           </div>
 
           <p className="text-primary-foreground/80 max-w-2xl text-base sm:text-lg">
-            Paulux provisions a dedicated booking platform running on your custom domain for appointment-based businesses — barbershops, aesthetic clinics, salons, tattoo studios, massage therapists, and wellness centers. Keep 100% of your earnings.
+            Paulux provisions a dedicated booking platform running on your custom domain for appointment-based businesses (barbershops, aesthetic clinics, salons, tattoo studios, massage therapists, and wellness centers). Keep 100% of your earnings.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">

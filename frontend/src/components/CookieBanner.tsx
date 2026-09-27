@@ -7,7 +7,7 @@ const KEY = "paulux_cookie_consent";
 
 /**
  * Minimal, honest cookie notice. Paulux only sets strictly-necessary cookies
- * (session + CSRF), so this is an acknowledgement rather than a consent gate —
+ * (session + CSRF), so this is an acknowledgement rather than a consent gate -
  * nothing is blocked pending a choice.
  */
 export function CookieBanner() {

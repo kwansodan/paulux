@@ -7,7 +7,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { queryClient } from "@/lib/queryClient";
 import App from "./App";
 
-// Self-hosted variable fonts (no external CDN — CSP/Docker safe)
+// Self-hosted variable fonts (no external CDN - CSP/Docker safe)
 import "@fontsource-variable/fraunces";
 import "@fontsource-variable/manrope";
 import "./index.css";

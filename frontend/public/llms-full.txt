@@ -1,4 +1,4 @@
-# Paulux — Complete Platform Architecture & Knowledge Base
+# Paulux - Complete Platform Architecture & Knowledge Base
 
 > Paulux is a self-hosted, white-label salon and clinic booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha and Booksy with a 0% transaction-fee architecture.
 

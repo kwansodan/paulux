@@ -3,7 +3,7 @@
 > Paulux is a self-hosted, white-label salon and clinic booking software deployed on an independent custom domain, designed to replace commission-based platforms like Fresha and Booksy with a 0% transaction-fee architecture.
 
 ## Overview
-Paulux provides appointment-based businesses—luxury hair salons, medspas, aesthetic clinics, barbershops, and wellness studios—with standalone, private booking infrastructure. Unlike SaaS marketplace directories that extract 20% cuts on new clients and cross-promote neighboring competitors, Paulux operates on an isolated database on the salon's own custom domain (e.g., booking.yourbrand.com) with direct merchant account integration (Stripe & Paystack) and zero recurring commissions.
+Paulux provides appointment-based businesses (luxury hair salons, medspas, aesthetic clinics, barbershops, and wellness studios) with standalone, private booking infrastructure. Unlike SaaS marketplace directories that extract 20% cuts on new clients and cross-promote neighboring competitors, Paulux operates on an isolated database on the salon's own custom domain (e.g., booking.yourbrand.com) with direct merchant account integration (Stripe & Paystack) and zero recurring commissions.
 
 ## Core Architectural Pillars
 - **0% Commission & Flat Deployment**: Keep 100% of service ticket, deposit, and gift card revenue with zero marketplace cuts or monthly software fee inflation.

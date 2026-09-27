@@ -30,7 +30,7 @@ function errMsg(err: unknown): string {
 }
 
 const PERKS = [
-  "Your own domain — booking.yourbrand.com or yoursalon.com",
+  "Your own domain: booking.yourbrand.com or yoursalon.com",
   "0% commission fees on all bookings, packages, and gift cards",
   "A dedicated, private PostgreSQL database for your customer records",
   "Direct payment integration with your merchant account (Paystack, Stripe)",
@@ -178,7 +178,7 @@ export default function StandalonePage() {
         <h1 className="font-serif text-3xl md:text-4xl">
           {hasRoiProposal || hasMigrationPlan
             ? "Your Migration Proposal Has Been Assigned"
-            : "Thank You — We're Preparing Your Quote"}
+            : "Thank You: We're Preparing Your Quote"}
         </h1>
         <p className="text-muted-foreground mt-3 max-w-lg text-sm md:text-base leading-relaxed">
           Your details for <strong>{form.businessName}</strong>

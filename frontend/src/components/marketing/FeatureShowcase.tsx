@@ -90,7 +90,7 @@ function FeatureRow({
 }
 
 /* ------------------------------------------------------------------ */
-/* Mock Vignettes — Styled UI Previews                                 */
+/* Mock Vignettes - Styled UI Previews                                 */
 /* ------------------------------------------------------------------ */
 
 const cardBase =
@@ -631,7 +631,7 @@ export default function FeatureShowcase() {
           badgeIcon={FlaskConical}
           title="Back-of-House Consumables & Material Cost Accounting"
           subtitle="The only salon software that calculates your real net profit on chemical treatments."
-          body="Most salon tools only count retail bottles on shelves. Paulux tracks professional backbar supplies—hair color tubes, bleaches, developer lotions, acrylic powders, and facial serums—down to the exact milliliter (ml) and gram (g)."
+          body="Most salon tools only count retail bottles on shelves. Paulux tracks professional backbar supplies (hair color tubes, bleaches, developer lotions, acrylic powders, and facial serums) down to the exact milliliter (ml) and gram (g)."
           bullets={[
             { title: "Precise ml & gram Tracking", desc: "Measure exact product used per station instead of guessing bottle depletion." },
             { title: "Department Cost Centers", desc: "Issue materials directly to specific divisions (Hair Lab, Nail Bar, MedSpa, Barbershop)." },

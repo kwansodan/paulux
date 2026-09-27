@@ -234,7 +234,7 @@ const PAGES = [
         <p>Stop paying Booksy's $29.99/month base fee plus $20/month per additional barber while surrendering your client list to a marketplace that advertises your competitors.</p>
         <h2>Why Barbershops Are Migrating from Booksy to Paulux</h2>
         <ul>
-          <li><strong>Marketplace Commission:</strong> Booksy up to 20% on new client discovery vs. Paulux 0% — keep 100% of your earnings</li>
+          <li><strong>Marketplace Commission:</strong> Booksy up to 20% on new client discovery vs. Paulux 0% - keep 100% of your earnings</li>
           <li><strong>Monthly Staff Fees:</strong> Booksy $29.99/mo base + $20/mo per barber vs. Paulux flat deployment quote with no per-staff penalties</li>
           <li><strong>Booking Domain:</strong> booksy.com/your-shop vs. booking.yourbarbershop.com (your own custom domain)</li>
           <li><strong>Walk-In Mode:</strong> Multi-click process vs. Paulux 15-second rapid walk-in chair assignment</li>
@@ -245,7 +245,7 @@ const PAGES = [
         <h3>Can each barber manage their own schedule independently?</h3>
         <p>Yes. Paulux includes an independent /stylist mobile portal where each barber accesses their own daily schedule, chair assignments, and revenue totals without seeing shop-wide financials.</p>
         <h3>How does the 15-second walk-in check-in work?</h3>
-        <p>The front-desk walk-in mode lets staff tap a service, select the available barber chair, process payment, and lock the chair all within 15 seconds — built specifically for high foot-traffic barbershops.</p>
+        <p>The front-desk walk-in mode lets staff tap a service, select the available barber chair, process payment, and lock the chair all within 15 seconds - built specifically for high foot-traffic barbershops.</p>
       </main>
     `,
     schema: {
@@ -269,7 +269,7 @@ const PAGES = [
         <p>Escape Mindbody's $159–$699/month recurring subscription tiers. Paulux provides a full-featured, white-label booking and clinical deposit enforcement system on your custom domain.</p>
         <h2>Why MedSpas Are Switching from Mindbody to Paulux</h2>
         <ul>
-          <li><strong>Monthly Cost:</strong> Mindbody $159–$699+/month vs. Paulux flat dedicated deployment — no monthly lock-in</li>
+          <li><strong>Monthly Cost:</strong> Mindbody $159–$699+/month vs. Paulux flat dedicated deployment - no monthly lock-in</li>
           <li><strong>Client Data Privacy:</strong> Mindbody shared corporate database vs. Paulux 100% private isolated database owned by your clinic</li>
           <li><strong>Clinical Deposit Enforcer:</strong> Mindbody complex merchant add-ons vs. Paulux native full/partial deposit requirement on high-ticket slots</li>
           <li><strong>Custom Booking Domain:</strong> mindbodyonline.com/your-spa vs. booking.yourmedspa.com</li>
@@ -595,10 +595,10 @@ const PAGES = [
         <h2>What Makes Paulux the Enterprise Dispensary Standard</h2>
         <ul>
           <li><strong>Gram & Milliliter Precision:</strong> Record bleach powder (g), developer oxidants (ml), gloss shades (ml), and bond rebuilders (ml) per bowl</li>
-          <li><strong>Live Service Gross Margin:</strong> Real-time ticket P&L — e.g. Service Price $165.00 - Chemical Cost $22.70 = Gross Margin $142.30 (86.2%)</li>
+          <li><strong>Live Service Gross Margin:</strong> Real-time ticket P&L: e.g. Service Price $165.00 - Chemical Cost $22.70 = Gross Margin $142.30 (86.2%)</li>
           <li><strong>Historical Snapshot P&L Accounting:</strong> Locks in purchase costs at checkout time so historical P&L reports stay 100% accurate forever</li>
           <li><strong>Department Cost Centers:</strong> Separate Color Bar, Aesthetics, and Nail Backbar into independent chemical cost centers</li>
-          <li><strong>Formula Vault in Client CRM:</strong> Complete color formula history saved per client — developer ratios, toner codes, processing times</li>
+          <li><strong>Formula Vault in Client CRM:</strong> Complete color formula history saved per client: developer ratios, toner codes, processing times</li>
           <li><strong>Low-Stock Reorder Alerts:</strong> Automated threshold alerts based on projected bookings and remaining ml/g volume</li>
         </ul>
         <h2>Frequently Asked Questions</h2>
@@ -734,8 +734,8 @@ const PAGES = [
             <tr><th>Feature</th><th>Marketplace SaaS</th><th>Paulux Dedicated Platform</th></tr>
           </thead>
           <tbody>
-            <tr><td>New Client Commission</td><td>Up to 20% cut per client</td><td>0% Always — Keep 100% of revenue</td></tr>
-            <tr><td>Monthly Software Fee</td><td>$30 to $699+/month</td><td>Flat deployment quote — $0 monthly rent</td></tr>
+            <tr><td>New Client Commission</td><td>Up to 20% cut per client</td><td>0% Always - Keep 100% of revenue</td></tr>
+            <tr><td>Monthly Software Fee</td><td>$30 to $699+/month</td><td>Flat deployment quote - $0 monthly rent</td></tr>
             <tr><td>Booking Web Address</td><td>Shared marketplace domain</td><td>booking.yourbrand.com (Your Custom Domain)</td></tr>
             <tr><td>Backbar Consumables</td><td>Retail bottle SKU tracking only</td><td>Gram (g) and milliliter (ml) bowl-by-bowl tracking</td></tr>
             <tr><td>SMS Reminder Rates</td><td>High per-message markups</td><td>Direct carrier wholesale rates (approx. 1¢)</td></tr>
